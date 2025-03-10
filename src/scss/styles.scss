@@ -1,32 +1,32 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700');
 
-
 //
 // VARIABLES
 // ----------------------------------------------------
-$font-size-base: 1;
-// $font-size-larger: 150%;
+$primary:#a40c24;
+$secondary:#DEDEDE;
+
+$font-size-base: 1rem;
+$font-size-bigger: 1.5rem;
+
 $font-family-sans: "Montserrat", sans-serif;
 $font-family-serif: "Roboto Slab","Big Caslon", Georgia, serif;
 
 $color-text: #343a40;
 
-$color-bg-body: linear-gradient(to bottom, rgba(219,219,219,1) 9%, rgba(215,215,215,1) 24%, rgba(209,209,209,1) 49%, rgba(226,226,226,1) 66%, rgba(254,254,254,1) 95%, rgba(254,254,254,1) 100%);;
+$color-bg-body: linear-gradient(to bottom, rgba(219,219,219,1) 9%, rgba(215,215,215,1) 24%, rgba(209,209,209,1) 49%, rgba(226,226,226,1) 66%, rgba(254,254,254,1) 95%, rgba(254,254,254,1) 100%);
 
-$primary:#a40c24;
-$secondary:#DEDEDE;
-// $success:       $green !default;
-// $info:          $cyan !default;
-// $warning:       $yellow !default;
-// $danger:        $red !default;
-// $light:         $gray-100 !default;
-// $dark:          $gray-900 !default;
+//
+//BOOTSTRAP IMPORT
+// ----------------------------------------------------
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+
 
 //
 // GENERAL
 // ----------------------------------------------------
-
 body {
     color: $color-text;
     background: $color-bg-body;
@@ -34,81 +34,50 @@ body {
     background-attachment: fixed;
 
     font: {
-        size: $font-size-base;
-        family: $font-family-serif;
+        family: $font-family-sans;
         weight: normal;
     }
 }
 
+h1, h2, h3 {
+    font: {
+        family: $font-family-serif;
+        // weight: bolder;
+    }
+}
 
+.img-logo{
+    width: 50%;
+}
 
-
-//
-// TYPOGRAPHY
-// ----------------------------------------------------
-
-// h1 {
-//     font-size: 75px;
-//     text-transform: uppercase;
-// }
-
-// a {
-//     font-size: $font-size-larger !important;
-// }
-
-// span {
-//     font-size: $font-size-larger;
-// }
-
-
-//
-// BOOTSTRAP
-// ----------------------------------------------------
-
-// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
-// @import "~bootstrap/scss/functions";
-@import "../../node_modules/bootstrap/scss/_functions";
-
-// 2. Include any default variable overrides here
-
-// 3. Include remainder of required Bootstrap stylesheets
-@import "../../node_modules/bootstrap/scss/_variables";
-
-// 4. Include any default map overrides here
+a:hover {
+    color: $primary !important;
+}
 
 //
 // NAVBAR
 // ----------------------------------------------------
-.navbar-nav .nav-link.active {
-    color: pink !important
+.navbar {
+    background: linear-gradient(
+        to bottom, 
+        rgba(217, 217, 217, 1) 0%, 
+        rgba(217, 217, 217, 1) 21%, 
+        rgba(227, 227, 227, 1) 40%, 
+        rgba(254, 254, 254, 1) 94%, 
+        rgba(254, 254, 254, 1) 100%
+    );
 }
 
 
-// 5. Include remainder of required parts
-@import "../../node_modules/bootstrap/scss/_maps";
-@import "../../node_modules/bootstrap/scss/_mixins";
-@import "../../node_modules/bootstrap/scss/_root";
 
+.navbar-nav .nav-link.active {
+    color: $primary;
+}
 
+.nav-link {
+    font-size: $font-size-bigger;
+}
 
-@import "../../node_modules/bootstrap/scss/utilities";
-@import "../../node_modules/bootstrap/scss/reboot";
-@import "../../node_modules/bootstrap/scss/type";
-@import "../../node_modules/bootstrap/scss/images";
-@import "../../node_modules/bootstrap/scss/containers";
-@import "../../node_modules/bootstrap/scss/grid";
-@import "../../node_modules/bootstrap/scss/helpers";
-
-//
-//BOOTSTRAP Components
-// ----------------------------------------------------
-
-@import "../../node_modules/bootstrap/scss/_buttons";
-@import "../../node_modules/bootstrap/scss/_forms";
-@import "../../node_modules/bootstrap/scss/utilities/api";
-@import "../../node_modules/bootstrap/scss/dropdown";
-@import "../../node_modules/bootstrap/scss/navbar";
-@import "../../node_modules/bootstrap/scss/nav";
-@import "../../node_modules/bootstrap/scss/dropdown";
-//Import all of Bootstrap's CSS
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+.navbar-collapse {
+    align-items: end;
+}
