@@ -8,8 +8,6 @@
         <title>Zábradlí Hanák - nerezové zábradlí a schodište</title>
         <!-- Favicon-->
         <!-- <link rel="icon" type="image/x-icon" href="./imgs/favicon.ico"/> -->
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <script defer type="module" src="./js/main.js"></script>
     </head>
 
@@ -21,11 +19,11 @@
 
             <div class="container-fluid">
 
-              <a class="navbar-brand" href="#">
-
-                <img class="img-logo" src="./imgs/logo_zabradli_hanak.png" alt="Logo Zábradlí Hanák">
-
-              </a>
+              <div class="container">
+                <a class="navbar-brand" href="#">
+                  <img class="img-logo" src="./imgs/logo_zabradli_hanak.png" alt="Logo Zábradlí Hanák">
+                </a>
+              </div>
 
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 
@@ -35,23 +33,63 @@
 
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                <ul class="ms-auto navbar-nav">
+                <ul class="navbar-nav">
 
                   <li class="nav-item">
 
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" aria-current="page" href="#">Úvod</a> <!--mozno pouzit class "active"-->
 
                   </li>
 
                   <li class="nav-item">
 
-                    <a class="nav-link" href="#lol">Link</a>
+                    <a class="nav-link" aria-current="page" href="#">Služby</a>
+
+                  </li>
+
+                  <li class="nav-item">
+
+                    <a class="nav-link" href="#">Reference</a>
+
+                  </li>
+
+                  <li class="nav-item">
+
+                    <a class="nav-link" href="#">Galerie</a>
+
+                  </li>
+
+                  <li class="nav-item">
+
+                    <a class="nav-link" href="#">Kontakt</a>
 
                   </li>
           
                 </ul>
 
               </div>
+
+              <div class="container-fluid navbar-contact-details">
+                
+                <ul class="navbar-nav">
+
+                  <li>
+                    
+                    <i class="fa-solid fa-phone" style="color: #a40c24;"></i>
+                    
+                    hello
+                  
+                  </li>
+
+                  <li>
+
+                    <i class="fa-solid fa-location-dot" style="color: #a40c24;"></i>
+                    
+                    mello
+                  
+                  </li>
+          
+                </ul>
 
             </div>
 

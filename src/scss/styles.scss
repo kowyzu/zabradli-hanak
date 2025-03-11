@@ -8,7 +8,7 @@ $primary:#a40c24;
 $secondary:#DEDEDE;
 
 $font-size-base: 1rem;
-$font-size-bigger: 1.5rem;
+$font-size-bigger: 1.2rem;
 
 $font-family-sans: "Montserrat", sans-serif;
 $font-family-serif: "Roboto Slab","Big Caslon", Georgia, serif;
@@ -80,4 +80,10 @@ a:hover {
 
 .navbar-collapse {
     align-items: end;
+}
+
+.navbar-contact-details ul {
+    margin: 0;
+    justify-self: flex-end;
+    flex-direction: column !important;
 }
