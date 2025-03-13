@@ -91,27 +91,36 @@ a:hover {
 //
 // INTRODUCTION
 // ----------------------------------------------------
-// .introduction {
-//     background-color: gray;
-
-// }
+.introduction {
+    background-color: #e7e1e1;
+}
 
 
 .introduction-container {
-    border: 1px solid red;
+    // border: 1px solid red;
+    background-color: #e7e1e1;
+    margin-left: 0;
 }
 
-.introduction-carousel{
-    background-color: #e2e2e2;
-    clip-path: polygon(0 0, 95% 0, 75% 100%, 0% 90%);
+.carousel-polygon {
+    background-color: #e7e1e1;
+    clip-path: polygon(0 92%, 0 100%, 100% 100%, 100% 0%, 96% 0, 85% 98%);
+    width: 570.5px;
+    height: 426.78px;
 }
 
 .introduction-text {
-    background: linear-gradient(to bottom, #eaeaea 0%, #ffffff 80%);
-    // clip-path: polygon(30% 0, 100% 0, 100% 100%, 45% 100%);
+    // background: linear-gradient(to bottom, #eaeaea 0%, #ffffff 80%);
+    background-color: #e7e1e1;
+    padding: 0;
 
 }
 
 .introduction-container .col{
-    border: 0.5px solid rgb(55, 0, 255);
+    padding: 0;
+}
+
+.carousel-btn{
+    // background-color: $primary !important;
+    margin-bottom: 3%;
 }
