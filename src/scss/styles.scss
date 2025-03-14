@@ -15,7 +15,7 @@ $font-family-serif: "Roboto Slab","Big Caslon", Georgia, serif;
 
 $color-text: #343a40;
 
-$color-bg-primary: #f1efeffa;
+$color-bg-primary: #f1efef;
 $color-bg-secondary: #DEDEDE;
 $color-bg-gradient: linear-gradient(
     to bottom, 
@@ -96,25 +96,17 @@ a:hover {
     background-color: $color-bg-primary;
 }
 
-.introduction-container{
-    margin-left: 0;
+
+.carousel-polygon {
+    background-color: $color-bg-primary;
+    clip-path: polygon(0 92%, 0 100%, 100% 100%, 100% 0%, 96% 0, 85% 98%);
+    width: 546px;
+    height: 409px;
 }
-
-.introduction-text{
-    width: 200rem;
-}
-
-// .carousel-polygon {
-//     background-color: #e7e1e1;
-//     clip-path: polygon(0 92%, 0 100%, 100% 100%, 100% 0%, 96% 0, 85% 98%);
-//     width: 570.5px;
-//     height: 426.78px;
-// }
-
-
 
 
 .carousel-btn{
     // background-color: $primary !important;
     margin-bottom: 3%;
 }
+
