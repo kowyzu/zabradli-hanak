@@ -15,8 +15,16 @@ $font-family-serif: "Roboto Slab","Big Caslon", Georgia, serif;
 
 $color-text: #343a40;
 
-$color-bg-body: linear-gradient(to bottom, rgba(219,219,219,1) 9%, rgba(215,215,215,1) 24%, rgba(209,209,209,1) 49%, rgba(226,226,226,1) 66%, rgba(254,254,254,1) 95%, rgba(254,254,254,1) 100%);
-
+$color-bg-primary: #f1efeffa;
+$color-bg-secondary: #DEDEDE;
+$color-bg-gradient: linear-gradient(
+    to bottom, 
+    rgba(217, 217, 217, 1) 0%, 
+    rgba(217, 217, 217, 1) 21%, 
+    rgba(227, 227, 227, 1) 40%, 
+    rgba(254, 254, 254, 1) 94%, 
+    rgba(254, 254, 254, 1) 100%
+);
 //
 //BOOTSTRAP IMPORT
 // ----------------------------------------------------
@@ -58,14 +66,7 @@ a:hover {
 // NAVBAR
 // ----------------------------------------------------
 .navbar {
-    background: linear-gradient(
-        to bottom, 
-        rgba(217, 217, 217, 1) 0%, 
-        rgba(217, 217, 217, 1) 21%, 
-        rgba(227, 227, 227, 1) 40%, 
-        rgba(254, 254, 254, 1) 94%, 
-        rgba(254, 254, 254, 1) 100%
-    );
+    background: $color-bg-gradient
 }
 
 
@@ -92,33 +93,26 @@ a:hover {
 // INTRODUCTION
 // ----------------------------------------------------
 .introduction {
-    background-color: #e7e1e1;
+    background-color: $color-bg-primary;
 }
 
-
-.introduction-container {
-    // border: 1px solid red;
-    background-color: #e7e1e1;
+.introduction-container{
     margin-left: 0;
 }
 
-.carousel-polygon {
-    background-color: #e7e1e1;
-    clip-path: polygon(0 92%, 0 100%, 100% 100%, 100% 0%, 96% 0, 85% 98%);
-    width: 570.5px;
-    height: 426.78px;
+.introduction-text{
+    width: 200rem;
 }
 
-.introduction-text {
-    // background: linear-gradient(to bottom, #eaeaea 0%, #ffffff 80%);
-    background-color: #e7e1e1;
-    padding: 0;
+// .carousel-polygon {
+//     background-color: #e7e1e1;
+//     clip-path: polygon(0 92%, 0 100%, 100% 100%, 100% 0%, 96% 0, 85% 98%);
+//     width: 570.5px;
+//     height: 426.78px;
+// }
 
-}
 
-.introduction-container .col{
-    padding: 0;
-}
+
 
 .carousel-btn{
     // background-color: $primary !important;
