@@ -5,6 +5,7 @@
 // VARIABLES
 // ----------------------------------------------------
 $primary:#a40c24;
+$primary-transparent:#a40c236a; 
 $secondary:#DEDEDE;
 
 $font-size-base: 1rem;
@@ -102,7 +103,7 @@ a:hover {
 
 //Carousel mask - inspiration from https://alunad.cz/zabradli
 .mask-skew-first{
-    mask-image: conic-gradient(from 25deg at 100% 0%,transparent 50%,#000 50%);;
+    mask-image: conic-gradient(from 25deg at 100% 0%,transparent 50%,#000 50%);
 }
 
 .mask-skew-second{
@@ -126,3 +127,7 @@ a:hover {
 //     width: 546px;
 //     height: 409px;
 // }
+
+.btn-request-quote:hover {
+    color: $secondary !important;
+}
