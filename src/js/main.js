@@ -12,7 +12,7 @@ dom.watch(); // Aplikuje ikony na HTML automaticky
 // ---------------------
 
 const carouselIntroduction = new bootstrap.Carousel("#carouselIntroduction", {
-  interval: 4000,
+  interval: 5000,
   pause: false,
   touch: true,
 });

@@ -25,6 +25,7 @@ $color-bg-gradient: linear-gradient(
     rgba(254, 254, 254, 1) 94%, 
     rgba(254, 254, 254, 1) 100%
 );
+
 //
 //BOOTSTRAP IMPORT
 // ----------------------------------------------------
@@ -70,8 +71,6 @@ a:hover {
     background: $color-bg-gradient
 }
 
-
-
 .navbar-nav .nav-link.active {
     color: $primary;
 }
@@ -99,20 +98,31 @@ a:hover {
 
 .introduction img{
     max-height: 500px;
-
 }
 
-// .carousel-polygon {
-    
-//     background-color: $color-bg-primary;
-//     clip-path: polygon(0 92%, 0 100%, 100% 100%, 100% 0%, 96% 0, 85% 98%);
-//     width: 546px;
-//     height: 409px;
-// }
+//Carousel mask - inspiration from https://alunad.cz/zabradli
+.mask-skew-first{
+    mask-image: conic-gradient(from 25deg at 100% 0%,transparent 50%,#000 50%);;
+}
 
+.mask-skew-second{
+    mask-image: conic-gradient(from 80deg at 100% 79%,transparent 50%,#000 50%);
+}
+
+.mask-skew-third{
+    mask-image: conic-gradient(from 100deg at 10% 85%,transparent 50%,#000 50%);
+}
 
 .carousel-btn{
-    // background-color: $primary !important;
     margin-bottom: 3%;
 }
 
+//My custom svg - not used
+
+// .carousel-polygon {
+    
+// background-color: $color-bg-primary;
+// clip-path: polygon(0 92%, 0 100%, 100% 100%, 100% 0%, 96% 0, 85% 98%);
+//     width: 546px;
+//     height: 409px;
+// }
