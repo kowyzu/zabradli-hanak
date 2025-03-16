@@ -103,16 +103,32 @@ a:hover {
 
 //Carousel mask - inspiration from https://alunad.cz/zabradli
 .mask-skew-first{
-    mask-image: conic-gradient(from 25deg at 100% 0%,transparent 50%,#000 50%);
+    mask-image: conic-gradient(from 25deg at 100% 0%,transparent 0%,#000 0%);
 }
 
 .mask-skew-second{
-    mask-image: conic-gradient(from 80deg at 100% 79%,transparent 50%,#000 50%);
+    mask-image: conic-gradient(from 80deg at 100% 79%,transparent 0%,#000 0%);
 }
 
 .mask-skew-third{
-    mask-image: conic-gradient(from 100deg at 10% 85%,transparent 50%,#000 50%);
+    mask-image: conic-gradient(from 100deg at 10% 85%,transparent 0%,#000 0%);
 }
+
+//show masks only from lg breakpoint
+@include media-breakpoint-up(lg) {
+    .mask-skew-first{
+        mask-image: conic-gradient(from 25deg at 100% 0%,transparent 50%,#000 50%);
+    }
+    
+    .mask-skew-second{
+        mask-image: conic-gradient(from 80deg at 100% 79%,transparent 50%,#000 50%);
+    }
+
+    .mask-skew-third {
+        mask-image: conic-gradient(from 100deg at 10% 85%,transparent 50%,#000 50%);
+    }
+  }
+
 
 .carousel-btn{
     margin-bottom: 3%;
@@ -130,4 +146,8 @@ a:hover {
 
 .btn-request-quote:hover {
     color: $secondary !important;
+}
+
+.btn-request-quote:active {
+    background-color: pink;
 }

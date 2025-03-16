@@ -105,15 +105,15 @@
 
       <main>
 
-        <section class="introduction">
+        <section id="introduction" class="introduction">
 
           <div class="container-fluid introduction-container">
 
-            <div class="row justify-content-md-left p-0">
+            <div class="row justify-content-md-left align-items-xl-center p-0">
               
-              <div class="col-md-7 introduction-carousel p-0">
+              <div class="col-xl-7 introduction-carousel p-0">
                 
-                <div id="carouselIntroduction" class="carousel slide mask-skew-first"> <!--data-bs-ride="carousel" -->
+                <div class="carousel slide mask-skew-first"> <!--data-bs-ride="carousel" -->
 
                   <div class="mask-skew-second">
 
@@ -149,19 +149,23 @@
                 
               </div>
 
-              <div class="offset-md-1 col-md-3 introduction-text">
+              <div class="offset-xxl-1 col-xxl-3 col-xl-5 introduction-text p-5">
 
                 <!-- text to update? -->
-                <h1>
+                <h1 class="mb-xxl-3 mb-xl-2">
                   Zakázková výroba schodišť a zábradlí
                 </h1>
 
                 <!-- text to update -->
-                <p>
+                <p class="lead mb-xxl- mb-xl-3">
                   Specializujeme se na nerez, hliník a sklo. Precizní řemeslné zpracování a individuální přístup jsou pro nás samozřejmostí.
                 </p>
 
-                <a href="#" class="btn btn-primary btn-lg btn-request-quote">Začněme vaši realizaci!</button></a>
+                <form action="#request-quote">
+                  <button class="btn btn-primary btn-lg btn-request-quote" type="submit">Začněme vaši realizaci!</button>
+                </form>
+
+                <!-- <a href="#" class="btn btn-primary btn-lg btn-request-quote">Začněme vaši realizaci!</a> -->
 
               </div>
 
@@ -193,6 +197,10 @@
             </div>
 
           </div>
+
+        </section>
+
+        <section id="request-quote">
 
         </section>
 
