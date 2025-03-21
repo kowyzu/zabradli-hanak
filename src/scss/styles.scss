@@ -7,6 +7,7 @@
 $primary:#a40c24;
 $primary-transparent:#a40c236a; 
 $secondary:#DEDEDE;
+$tertiary:#9c9898;
 
 $font-size-base: 1rem;
 $font-size-bigger: 1.2rem;
@@ -152,17 +153,18 @@ a:hover {
     color: $secondary !important;
 }
 
-.btn-request-quote:active {
-    background-color: pink;
-}
+// .btn-request-quote:active {
+//     background-color: pink;
+// }
 
 //
 // PROCESS
 // ----------------------------------------------------
 hr.rounded {
-    border: 2px solid #bbb;
+    border: 2px solid $tertiary;
     border-radius: 5px;
   }
+
 
 .process .process-step-icon {
     background-color: $primary;
@@ -184,6 +186,8 @@ hr.rounded {
     font-size: 3rem;
 
     box-shadow:$box-shadow-primary;
+
+    color: $secondary;
 }
 
 h5 {
