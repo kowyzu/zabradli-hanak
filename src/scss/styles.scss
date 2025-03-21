@@ -159,11 +159,10 @@ a:hover {
 //
 // PROCESS
 // ----------------------------------------------------
-
-
-.process-step {
-    border: solid 1px $primary;
-}
+hr.rounded {
+    border: 2px solid #bbb;
+    border-radius: 5px;
+  }
 
 .process .process-step-icon {
     background-color: $primary;
