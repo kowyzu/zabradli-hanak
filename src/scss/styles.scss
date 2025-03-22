@@ -7,6 +7,7 @@
 $primary:#a40c24;
 $primary-transparent:#a40c236a; 
 $secondary:#DEDEDE;
+$secondary-transparent:#dedede8e;
 $tertiary:#9c9898;
 
 $font-size-base: 1rem;
@@ -98,11 +99,11 @@ a:hover {
 //
 // INTRODUCTION
 // ----------------------------------------------------
-.introduction {
+#introduction {
     background-color: $color-bg-primary;
 }
 
-.introduction img{
+#introduction img{
     max-height: 500px;
 }
 
@@ -160,9 +161,15 @@ a:hover {
 //
 // PROCESS
 // ----------------------------------------------------
+
+.process p {
+    margin: 0;
+}
+
 hr.rounded {
     border: 2px solid $tertiary;
     border-radius: 5px;
+    margin: 0;
   }
 
 
@@ -192,4 +199,12 @@ hr.rounded {
 
 h5 {
     font-weight: 600;
+}
+
+
+//
+// INTRODUCTION
+// ----------------------------------------------------
+#gallery {
+    background-color: $color-bg-primary;
 }
