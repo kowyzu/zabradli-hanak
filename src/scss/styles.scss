@@ -201,10 +201,37 @@ h5 {
     font-weight: 600;
 }
 
+.process-step-first-row {
+    opacity: 0;
+    // transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  
+.process-step-first-row.show {
+    opacity: 1;
+    // transform: translateY(0);
+}
+
+
+
+.process-step-second-row {
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+.process-step-second-row.show {
+    opacity: 1;
+}
+
 
 //
-// INTRODUCTION
+// GALERRY
 // ----------------------------------------------------
 #gallery {
     background-color: $color-bg-primary;
 }
+
+// .galerry-tabs {
+//     background-color: $tertiary;
+// }
