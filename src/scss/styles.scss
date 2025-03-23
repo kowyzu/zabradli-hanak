@@ -232,12 +232,30 @@ h5 {
     background-color: $color-bg-primary;
 }
 
-// .galerry-tabs {
-//     background-color: $tertiary;
-// }
+#gallery img {
+    border-radius: 1%;
+    transition: .4s all ease-in-out;
+}
+
+#gallery img:hover {
+    cursor: pointer;
+    transform: scale(.97);
+	filter: brightness(85%);
+    border-radius: 1%;
+}
 
 .show-more-img {
     opacity: 0.2;
+    border-radius: 1%;
+    transition: none !important;
+}
+
+.show-more-img:hover {
+    cursor: default !important;
+    transform: none !important;
+	filter: none !important;
+    border-radius: 1%;
+
 }
 
 .show-more-container {
