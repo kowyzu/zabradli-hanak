@@ -43,6 +43,8 @@ $box-shadow-primary:0 2px 1px rgba(0, 0, 0, 0.05),
 //
 // GENERAL
 // ----------------------------------------------------
+
+
 body {
     color: $color-text;
     // background: $color-bg-body;
@@ -228,6 +230,7 @@ h5 {
 //
 // GALERRY
 // ----------------------------------------------------
+
 #gallery {
     background-color: $color-bg-primary;
 }
@@ -235,6 +238,7 @@ h5 {
 #gallery img {
     border-radius: 1%;
     transition: .4s all ease-in-out;
+    max-height: 315.47px;
 }
 
 #gallery img:hover {
@@ -258,7 +262,7 @@ h5 {
 
 }
 
-.show-more-container {
+.show-more-container, .show-less-container {
     position: relative;
     text-align: center;
     color: white;
@@ -276,3 +280,7 @@ h5 {
     color: $primary;
     font-weight: 600;
   }
+
+//   .more-img {
+//     display: none;
+//   }

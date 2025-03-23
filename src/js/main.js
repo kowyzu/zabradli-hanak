@@ -66,3 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   observer.observe(waypoint);
 });
+
+//
+// Gallery show more
+// -----------------
