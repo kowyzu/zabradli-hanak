@@ -43,7 +43,9 @@ $box-shadow-primary:0 2px 1px rgba(0, 0, 0, 0.05),
 //
 // GENERAL
 // ----------------------------------------------------
-
+html {
+    scroll-behavior: smooth;
+  }
 
 body {
     color: $color-text;
@@ -247,6 +249,9 @@ h5 {
     border-radius: 1%;
     transition: .4s all ease-in-out;
     max-height: 315.47px;
+
+    animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s;
 }
 
 #gallery img:hover {
@@ -289,6 +294,8 @@ h5 {
     font-weight: 600;
   }
 
-//   .more-img {
-//     display: none;
-//   }
+  .hidden {
+    display: none;
+  }
+
+ 

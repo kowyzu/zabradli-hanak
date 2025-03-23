@@ -70,3 +70,37 @@ document.addEventListener("DOMContentLoaded", () => {
 //
 // Gallery show more
 // -----------------
+
+const gallerySection = document.getElementById("gallery");
+const showBtn = document.querySelector(".btn-show-more");
+const hideBtn = document.querySelector(".btn-show-less");
+const imgsToShow = document.querySelectorAll(".more-img");
+const showMoreImg = document
+  .querySelector(".show-more-container")
+  .querySelector("img");
+
+showBtn.addEventListener("click", () => {
+  imgsToShow.forEach((imgToShow) => {
+    imgToShow.classList.remove("hidden");
+  });
+
+  showBtn.classList.add("hidden");
+  hideBtn.classList.remove("hidden");
+  showMoreImg.classList.remove("show-more-img");
+});
+
+hideBtn.addEventListener("click", () => {
+  imgsToShow.forEach((imgToShow) => {
+    imgToShow.classList.add("hidden");
+  });
+
+  showBtn.classList.remove("hidden");
+  hideBtn.classList.add("hidden");
+  showMoreImg.classList.add("show-more-img");
+
+  gallerySection.scrollIntoView({
+    behavior: "instant",
+    block: "start",
+    inline: "nearest",
+  });
+});
