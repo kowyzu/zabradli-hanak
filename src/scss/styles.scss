@@ -233,7 +233,15 @@ h5 {
 
 #gallery {
     background-color: $color-bg-primary;
+    scroll-margin-top: 8rem;
 }
+
+@include media-breakpoint-up(xl) {
+    #gallery {
+        background-color: $color-bg-primary;
+        scroll-margin-top: 5rem;
+    }    
+  }
 
 #gallery img {
     border-radius: 1%;
