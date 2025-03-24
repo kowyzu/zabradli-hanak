@@ -6,9 +6,13 @@ import { fas } from "@fortawesome/free-solid-svg-icons";
 
 import "animate.css";
 
+import { createApp } from "vue";
+import App from "../App.vue";
+
 library.add(fas);
 dom.watch(); // Aplikuje ikony na HTML automaticky
 
+createApp(App).mount("#app");
 //
 // Introduction Carousel
 // ---------------------

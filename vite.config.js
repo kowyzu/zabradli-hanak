@@ -1,5 +1,6 @@
 import path from "path";
 import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
 
 export default {
   css: {
@@ -15,4 +16,5 @@ export default {
     port: 5173,
     hot: true,
   },
+  plugins: [vue()],
 };
