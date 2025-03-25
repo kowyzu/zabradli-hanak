@@ -1,5 +1,5 @@
 <template>
-    <section id="contact-form">
+  <section id="contact-form">
 
-    </section>
+  </section>
 </template>

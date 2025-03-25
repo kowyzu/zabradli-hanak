@@ -1,4 +1,4 @@
 <template>
-    <section id="references">
-    </section>
+  <section id="references">
+  </section>
 </template>

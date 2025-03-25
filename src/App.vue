@@ -5,21 +5,15 @@ import Process from './components/Process.vue'
 import Gallery from './components/Gallery.vue'
 import References from './components/References.vue'
 import ContactForm from './components/ContactForm.vue'
-
-import { ref } from 'vue'
-
-let message = ref('Hello Vue in Vite!')
-
 </script>
 
 <template>
-    <Navigation />
-
-    <main>
-        <Introduction />
-        <Process />
-        <Gallery />
-        <References />
-        <ContactForm />
-    </main>
+  <Navigation />
+  <main>
+    <Introduction />
+    <Process />
+    <Gallery />
+    <References />
+    <ContactForm />
+  </main>
 </template>
