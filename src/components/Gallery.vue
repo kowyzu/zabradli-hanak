@@ -33,7 +33,22 @@
         <!-- <div v-for="item in items" class="col">
                     {{ item.message }}
                 </div> -->
-        <div class="col">
+
+        <template v-for="img in galleryJson" :key="img.id">
+          <div class="col" v-if="img.hidden === false">
+            <img :src="'../imgs/galery-imgs/big/' + img.id + '.jpg'" class="img-fluid" alt="galerry img of rail">
+          </div>
+        </template>
+
+        <template v-for="img in galleryJson" :key="img.id">
+          <div class="col hidden" v-if="img.hidden === true">
+            <img :src="'../imgs/galery-imgs/big/' + img.id + '.jpg'" class="img-fluid" alt="galerry img of rail">
+          </div>
+        </template>
+
+
+
+        <!-- <div class="col">
           <img src="../imgs/galery-imgs/big/147.jpg" class="img-fluid" alt="galerry img of rail">
         </div>
         <div class="col">
@@ -56,7 +71,7 @@
         </div>
         <div class="col">
           <img src="../imgs/galery-imgs/big/149.jpg" class="img-fluid" alt="galerry img of rail">
-        </div>
+        </div> -->
 
         <div class="col">
           <div class="show-more-container">
@@ -68,7 +83,7 @@
           </div>
         </div>
 
-        <div class="col more-img hidden">
+        <!-- <div class="col more-img hidden">
           <img src="../imgs/galery-imgs/big/130.jpg" class="img-fluid" alt="galerry img of rail">
         </div>
         <div class="col more-img hidden">
@@ -199,20 +214,23 @@
         </div>
         <div class="col more-img hidden">
           <img src="../imgs/galery-imgs/big/148.jpg" class="img-fluid" alt="galerry img of rail">
-        </div>
+        </div> -->
       </div>
     </div>
-    <button class="btn btn-primary btn-lg btn-show-less sticky-bottom mb-2 z-3 hidden" type="submit">Zobrazit
-      méně</button>
+    <!-- <button class="btn btn-primary btn-lg btn-show-less sticky-bottom mb-2 z-3 hidden" type="submit">
+      Zobrazit méně
+    </button> -->
   </section>
 </template>
 
 <script>
+import gallery_JSON from '../objects/gallery.json'
 export default {
   data() {
     return {
       name: "overuji",
-      zkouskasirem: "jej"
+      zkouskasirem: "jej",
+      galleryJson: gallery_JSON,
     }
   },
   methods: {
@@ -221,5 +239,7 @@ export default {
     }
   }
 }
+
+console.log(gallery_JSON);
 
 </script>

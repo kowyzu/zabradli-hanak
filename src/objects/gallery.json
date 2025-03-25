@@ -1,0 +1,52 @@
+[
+  {
+    "id": 0,
+    "tabs": ["interior", "staircase-rail", "outerior", "french-windows", "others"],
+    "hidden": true
+  },
+  {
+    "id": 147,
+    "tabs": ["interior", "staircase-rail"],
+    "hidden": false
+  },
+  {
+    "id": 103,
+    "tabs": ["interior", "staircase-rail"],
+    "hidden": false
+  },
+  {
+    "id": 117,
+    "tabs": ["outerior"],
+    "hidden": false
+  },
+  {
+    "id": 146,
+    "tabs": ["interior", "staircase-rail"],
+    "hidden": false
+  },
+  {
+    "id": 124,
+    "tabs": ["interior", "staircase-rail"],
+    "hidden": false
+  },
+  {
+    "id": 151,
+    "tabs": ["outerior", "staircase-rail"],
+    "hidden": false
+  },
+  {
+    "id": 137,
+    "tabs": ["interior", "staircase-rail"],
+    "hidden": false
+  },
+  {
+    "id": 149,
+    "tabs": ["interior", "staircase-rail"],
+    "hidden": false
+  },
+  {
+    "id": 130,
+    "tabs": ["interior", "staircase-rail"],
+    "hidden": true
+  }
+]
