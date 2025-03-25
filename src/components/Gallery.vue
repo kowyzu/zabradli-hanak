@@ -40,6 +40,16 @@
           </div>
         </template>
 
+        <div class="col">
+          <div class="show-more-container">
+            <img src="../imgs/galery-imgs/big/131.jpg" class="img-fluid show-more-img" alt="galerry img of rail">
+            <div class="centered show-more-text">
+              <button class="btn btn-primary btn-lg btn-show-more" type="submit">Zobrazit více {{ concat(name,
+                zkouskasirem) }}</button>
+            </div>
+          </div>
+        </div>
+
         <template v-for="img in galleryJson" :key="img.id">
           <div class="col hidden" v-if="img.hidden === true">
             <img :src="'../imgs/galery-imgs/big/' + img.id + '.jpg'" class="img-fluid" alt="galerry img of rail">
@@ -73,15 +83,7 @@
           <img src="../imgs/galery-imgs/big/149.jpg" class="img-fluid" alt="galerry img of rail">
         </div> -->
 
-        <div class="col">
-          <div class="show-more-container">
-            <img src="../imgs/galery-imgs/big/131.jpg" class="img-fluid show-more-img" alt="galerry img of rail">
-            <div class="centered show-more-text">
-              <button class="btn btn-primary btn-lg btn-show-more" type="submit">Zobrazit více {{ concat(name,
-                zkouskasirem) }}</button>
-            </div>
-          </div>
-        </div>
+
 
         <!-- <div class="col more-img hidden">
           <img src="../imgs/galery-imgs/big/130.jpg" class="img-fluid" alt="galerry img of rail">
