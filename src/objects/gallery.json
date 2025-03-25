@@ -40,6 +40,11 @@
     "hidden": false
   },
   {
+    "id": 131,
+    "tabs": ["outerior", "other"],
+    "hidden": true
+  },
+  {
     "id": 130,
     "tabs": ["interior", "staircase-rail"],
     "hidden": true
