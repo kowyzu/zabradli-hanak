@@ -23,20 +23,29 @@
         </div>
       </div>
 
-      <div v-if="galleryJson.length < 8">
+      <!-- <div v-if="galleryJson.length < 8">
         <div id="galerry-all" class="row row-cols-md-3 row-cols-1 gy-3 gx-3 mt-1 mb-2">
           <div v-for="img in galleryJson" :key="img.id" class="col">
             {{ console.log(img.id) }}
             <img :src="'../imgs/galery-imgs/big/' + img.id + '.jpg'" class="img-fluid" alt="galerry img of rail">
           </div>
         </div>
-      </div>
+      </div> -->
 
-      <div v-if="galleryJson.length > 8">
+      <div>
         <div id="galerry-preview" class="row row-cols-md-3 row-cols-1 gy-3 gx-3 mt-1 mb-2">
-          <div v-for="img in galleryJson" :key="img.id" class="col">
-            {{ console.log(img.id) }}
+          <div v-for="img in galleryJson" :key="img.id" :class="['col', { hidden: img.hidden === true }]">
             <img :src="'../imgs/galery-imgs/big/' + img.id + '.jpg'" class="img-fluid" alt="galerry img of rail">
+          </div>
+          <div class="show-more-container">
+            <img :src="'../imgs/galery-imgs/big/' + galleryJson[8].id + '.jpg'" class="img-fluid"
+              alt="gallery img of rail">
+            <div class="centered show-more-text">
+              <button class="btn btn-primary btn-lg btn-show-more" type="submit">Zobrazit více</button>
+            </div>
+            <div class="col more-img hidden">
+              <img src="./imgs/galery-imgs/big/104.jpg" class="img-fluid" alt="galerry img of rail">
+            </div>
           </div>
         </div>
       </div>
@@ -70,8 +79,15 @@ export default {
     }
   },
   methods: {
-    concat(name, zkouskasirem) {
-      return (name + zkouskasirem)
+    getGalleryArray() {
+      let galleryArray = [];
+      let galleryHidden = [];
+      if (this.galleryJson.length > 8) {
+        galleryArray = this.galleryJson.slice(0, 8)
+        galleryHidden = this.galleryJson.slice(8)
+        console.log(galleryHidden);
+      }
+      return galleryArray
     }
   }
 }
