@@ -34,20 +34,32 @@
 
       <div>
         <div id="galerry-preview" class="row row-cols-md-3 row-cols-1 gy-3 gx-3 mt-1 mb-2">
-          <div v-for="img in galleryJson" :key="img.id" :class="['col', { hidden: img.hidden === true }]">
-            <img :src="'../imgs/galery-imgs/big/' + img.id + '.jpg'" class="img-fluid" alt="galerry img of rail">
+          <div v-for="(img, index) in galleryJson" :key="img.id"
+            :class="['col', { hidden: index > 8 && galleryAction === 'hide' }]">
+            <div :class="{ 'show-more-container': galleryAction === 'hide' }">
+              <img :src="'../imgs/galery-imgs/big/' + img.id + '.jpg'" class="img-fluid show-more-img"
+                alt="galerry img of rail">
+
+              <div v-if="index === 8" class="centered show-more-text">
+                <button @click="displayOrHideGallery('display')" class="btn btn-primary btn-lg btn-show-more"
+                  type="submit">Zobrazit více</button>
+              </div>
+            </div>
           </div>
-          <div class="show-more-container">
-            <img :src="'../imgs/galery-imgs/big/' + galleryJson[8].id + '.jpg'" class="img-fluid"
+          <!-- <div class="show-more-container">
+            <img :src="'../imgs/galery-imgs/big/' + galleryJson[8].id + '.jpg'" class="img-fluid show-more-img"
               alt="gallery img of rail">
             <div class="centered show-more-text">
-              <button class="btn btn-primary btn-lg btn-show-more" type="submit">Zobrazit více</button>
+              <button @click="displayOrHideGallery('display')" class="btn btn-primary btn-lg btn-show-more"
+                type="submit">Zobrazit více</button>
             </div>
-            <div class="col more-img hidden">
-              <img src="./imgs/galery-imgs/big/104.jpg" class="img-fluid" alt="galerry img of rail">
-            </div>
-          </div>
+          </div> -->
+
         </div>
+        <button @click="displayOrHideGallery('hide')"
+          class="btn btn-primary btn-lg btn-show-less sticky-bottom mb-2 z-3" :class="galleryAction" type="submit">
+          Zobrazit méně
+        </button>
       </div>
 
       <!-- <div v-if="galleryJson.length > 8" class="col">
@@ -69,6 +81,7 @@
 </template>
 
 <script>
+import { useTemplateRef } from 'vue';
 import gallery_JSON from '../objects/gallery.json'
 export default {
   data() {
@@ -76,22 +89,30 @@ export default {
       name: "overuji",
       zkouskasirem: "jej",
       galleryJson: gallery_JSON,
+      galleryAction: "hide",
     }
   },
   methods: {
-    getGalleryArray() {
-      let galleryArray = [];
-      let galleryHidden = [];
-      if (this.galleryJson.length > 8) {
-        galleryArray = this.galleryJson.slice(0, 8)
-        galleryHidden = this.galleryJson.slice(8)
-        console.log(galleryHidden);
+    displayOrHideGallery(action) {
+      if (action === "hide") {
+        this.galleryAction = "hide"
+        return this.galleryAction
       }
-      return galleryArray
-    }
+      this.galleryAction = "display"
+      return this.galleryAction
+    },
+    // getGalleryArray() {
+    //   let galleryArray = [];
+    //   let galleryHidden = [];
+    //   if (this.galleryJson.length > 8) {
+    //     galleryArray = this.galleryJson.slice(0, 8)
+    //     galleryHidden = this.galleryJson.slice(8)
+    //     // console.log(galleryHidden);
+    //   }
+    //   return galleryArray
+    // }
   }
 }
 
-console.log(gallery_JSON);
 
 </script>
