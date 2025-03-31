@@ -249,10 +249,11 @@ h5 {
     border-radius: 1%;
     transition: .4s all ease-in-out;
     max-height: 315.47px;
-
     animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
-    animation-duration: 2s;
+    animation-duration: 1.5s;
 }
+
+
 
 
 #gallery img:hover {

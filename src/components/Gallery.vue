@@ -5,26 +5,32 @@
         <div class="col text-center p-0 mt-3">
           <ul class="nav nav-tabs justify-content-center">
             <li class="nav-item">
-              <button @click="filterGalleryByCategory('all')" class="nav-link" type="submit">Vše</button>
+              <button @click="setCategory(this.categoryTypeAll)" class="nav-link"
+                :class="{ 'active': this.category === this.categoryTypeAll }" type="submit">Vše</button>
             </li>
             <li class="nav-item">
-              <button @click="filterGalleryByCategory('interior')" class="nav-link" type="submit">Interiérové
+              <button @click="setCategory(this.categoryTypeInterior)" class="nav-link"
+                :class="{ 'active': this.category === this.categoryTypeInterior }" type="submit">Interiérové
                 zábradlí</button>
             </li>
             <li class="nav-item">
-              <button @click="filterGalleryByCategory('staircase-rail')" class="nav-link" type="submit">Schodišťové
+              <button @click="setCategory(this.categoryTypeStaircaseRail)" class="nav-link"
+                :class="{ 'active': this.category === this.categoryTypeStaircaseRail }" type="submit">Schodišťové
                 zábradlí</button>
             </li>
             <li class="nav-item">
-              <button @click="filterGalleryByCategory('outerior')" class="nav-link" type="submit">Venkovní
+              <button @click="setCategory(this.categoryTypeExterior)" class="nav-link"
+                :class="{ 'active': this.category === this.categoryTypeExterior }" type="submit">Venkovní
                 zábradlí</button>
             </li>
             <li class="nav-item">
-              <button @click="filterGalleryByCategory('french-windows')" class="nav-link" type="submit">Zábradlí před
+              <button @click="setCategory(this.categoryTypeFrenchWindows)" class="nav-link"
+                :class="{ 'active': this.category === this.categoryTypeFrenchWindows }" type="submit">Zábradlí před
                 francouzská okna</button>
             </li>
             <li class="nav-item">
-              <button @click="filterGalleryByCategory('other')" class="nav-link" type="submit">Ostatní</button>
+              <button @click="setCategory(this.categoryTypeOther)" class="nav-link"
+                :class="{ 'active': this.category === this.categoryTypeOther }" type="submit">Ostatní</button>
               <!-- <a class="nav-link" href="#">Ostatní</a> -->
             </li>
           </ul>
@@ -34,7 +40,7 @@
 
       <div>
         <div id="galerry-preview" class="row row-cols-md-3 row-cols-1 gy-3 gx-3 mt-1 mb-2">
-          <div v-for="(img, index) in galleryJson" :key="img.id"
+          <div v-for="(img, index) in getGalleryImgs()" :key="img.id + this.category"
             :class="['col', { hidden: index > 8 && isGalleryOpened === false }]">
             <div :class="{ 'show-more-container': isGalleryOpened === false }">
               <img :src="'../imgs/galery-imgs/big/' + img.id + '.jpg'" class="img-fluid"
@@ -47,7 +53,7 @@
           </div>
         </div>
         <button @click="isGalleryOpened = false" class="btn btn-primary btn-lg btn-show-less sticky-bottom mb-2 z-3"
-          :class="isGalleryOpened" type="submit">
+          :class="{ 'hidden': isGalleryOpened === false }" type="submit">
           Zobrazit méně
         </button>
       </div>
@@ -58,22 +64,33 @@
 <script>
 import { useTemplateRef } from 'vue';
 import gallery_JSON from '../objects/gallery.json'
+
 export default {
   data() {
     return {
       galleryJson: gallery_JSON,
+      category: 'all',
       isGalleryOpened: false,
+      categoryTypeAll: 'all',
+      categoryTypeInterior: 'interior',
+      categoryTypeStaircaseRail: 'staircase-rail',
+      categoryTypeExterior: 'exterior',
+      categoryTypeFrenchWindows: 'french-windows',
+      categoryTypeOther: 'other'
     }
   },
   methods: {
-    //TODO fix - use contains!!!!!!
-    filterGalleryByCategory(category) {
-      if (category !== 'all') {
-        this.galleryJson = this.galleryJson.filter((img) => img.category === category)
-        console.log(this.galleryJson);
-        return this.galleryJson
+    getGalleryImgs() {
+      if (this.category === 'all') {
+        return this.galleryJson;
       }
-      return this.galleryJson
+      console.log(this.galleryJson);
+      return this.galleryJson.filter((img) => img.category.includes(this.category));
+
+    },
+    setCategory(category) {
+      this.category = category;
+      this.isGalleryOpened = false;
     }
   }
 }

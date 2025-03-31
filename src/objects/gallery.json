@@ -11,7 +11,7 @@
   },
   {
     "id": 117,
-    "category": ["outerior"],
+    "category": ["exterior"],
     "hidden": false
   },
   {
@@ -26,7 +26,7 @@
   },
   {
     "id": 151,
-    "category": ["outerior", "staircase-rail"],
+    "category": ["exterior", "staircase-rail"],
     "hidden": false
   },
   {
@@ -41,7 +41,7 @@
   },
   {
     "id": 131,
-    "category": ["outerior", "other"],
+    "category": ["exterior", "other"],
     "hidden": true
   },
   {
@@ -51,7 +51,7 @@
   },
   {
     "id": 94,
-    "category": ["outerior", "french-windows"],
+    "category": ["exterior", "french-windows"],
     "hidden": true
   },
   {
@@ -76,7 +76,7 @@
   },
   {
     "id": 134,
-    "category": ["outerior", "french-windows"],
+    "category": ["exterior", "french-windows"],
     "hidden": true
   },
   {
@@ -86,7 +86,7 @@
   },
   {
     "id": 98,
-    "category": ["outerior"],
+    "category": ["exterior"],
     "hidden": true
   },
   {
@@ -96,7 +96,7 @@
   },
   {
     "id": 95,
-    "category": ["outerior"],
+    "category": ["exterior"],
     "hidden": true
   },
   {
@@ -111,12 +111,12 @@
   },
   {
     "id": 96,
-    "category": ["outerior", "french-windows"],
+    "category": ["exterior", "french-windows"],
     "hidden": true
   },
   {
     "id": 97,
-    "category": ["outerior", "french-windows"],
+    "category": ["exterior", "french-windows"],
     "hidden": true
   },
   {
@@ -151,27 +151,27 @@
   },
   {
     "id": 118,
-    "category": ["outerior", "staircase-rail"],
+    "category": ["exterior", "staircase-rail"],
     "hidden": true
   },
   {
     "id": 119,
-    "category": ["outerior", "other"],
+    "category": ["exterior", "other"],
     "hidden": true
   },
   {
     "id": 120,
-    "category": ["outerior", "staircase-rail"],
+    "category": ["exterior", "staircase-rail"],
     "hidden": true
   },
   {
     "id": 121,
-    "category": ["outerior"],
+    "category": ["exterior"],
     "hidden": true
   },
   {
     "id": 122,
-    "category": ["outerior", "staircase-rail"],
+    "category": ["exterior", "staircase-rail"],
     "hidden": true
   },
   {
@@ -181,27 +181,27 @@
   },
   {
     "id": 126,
-    "category": ["outerior", "other"],
+    "category": ["exterior", "other"],
     "hidden": true
   },
   {
     "id": 127,
-    "category": ["outerior", "staircase-rail"],
+    "category": ["exterior", "staircase-rail"],
     "hidden": true
   },
   {
     "id": 128,
-    "category": ["outerior", "staircase-rail"],
+    "category": ["exterior", "staircase-rail"],
     "hidden": true
   },
   {
     "id": 129,
-    "category": ["outerior", "other"],
+    "category": ["exterior", "other"],
     "hidden": true
   },
   {
     "id": 133,
-    "category": ["outerior", "other"],
+    "category": ["exterior", "other"],
     "hidden": true
   },
   {
@@ -216,7 +216,7 @@
   },
   {
     "id": 152,
-    "category": ["outerior", "other"],
+    "category": ["exterior", "other"],
     "hidden": true
   },
   {
@@ -226,7 +226,7 @@
   },
   {
     "id": 110,
-    "category": ["outerior", "other"],
+    "category": ["exterior", "other"],
     "hidden": true
   },
   {
