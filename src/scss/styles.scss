@@ -254,6 +254,7 @@ h5 {
     animation-duration: 2s;
 }
 
+
 #gallery img:hover {
     cursor: pointer;
     transform: scale(.97);
@@ -265,6 +266,7 @@ h5 {
     opacity: 0.2;
     border-radius: 1%;
     transition: none !important;
+    animation: none !important;
 }
 
 .show-more-img:hover {
