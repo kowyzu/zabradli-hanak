@@ -52,11 +52,12 @@
             </div>
           </div>
         </div>
-        <div :class="{ 'hidden': isGalleryOpened === false }" class="sticky-bottom show-less-container">
+        <div :class="{ 'hidden': isGalleryOpened === false }"
+          class="sticky-bottom show-less-container align-items-start">
           <button @click="isGalleryOpened = false"
-            class="btn btn-primary btn-lg btn-show-less sticky-bottom mb-2 mt-2 z-3"
+            class="btn btn-primary btn-md btn-show-less sticky-bottom mb-3 mt-3 z-3"
             :class="{ 'hidden': isGalleryOpened === false }" type="submit">
-            Zobrazit méně
+            <i class="fa-solid fa-angle-up"></i> Sbalit <i class="fa-solid fa-angle-up"></i>
           </button>
         </div>
       </div>

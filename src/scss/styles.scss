@@ -294,15 +294,15 @@ h5 {
     rgba(241, 239, 239, 0.8) 75%,
     rgba(241, 239, 239, 1) 100%
   );
-  background: linear-gradient(
-  to bottom,
-  rgba(241, 239, 239, 0) 0%,
-  rgba(241, 239, 239, 0) 15%,
-  rgba(241, 239, 239, 0.4) 40%,
-  rgba(241, 239, 239, 0.7) 70%,
-  rgba(241, 239, 239, 0.9) 85%,
-  rgba(241, 239, 239, 1) 100%
-);
+//   background: linear-gradient(
+//   to bottom,
+//   rgba(241, 239, 239, 0) 0%,
+//   rgba(241, 239, 239, 0) 15%,
+//   rgba(241, 239, 239, 0.4) 40%,
+//   rgba(241, 239, 239, 0.7) 70%,
+//   rgba(241, 239, 239, 0.9) 85%,
+//   rgba(241, 239, 239, 1) 100%
+// );
 }
 
 
@@ -321,6 +321,11 @@ h5 {
 
   .hidden {
     display: none;
+  }
+  
+
+  #gallery svg {
+    color: lighten($color: $tertiary, $amount: 15%) !important;
   }
 
  
