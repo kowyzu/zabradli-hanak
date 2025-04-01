@@ -1,6 +1,6 @@
 <template>
-  <section class="process">
-    <div class="container text-center process-container ">
+  <section class="process p-5">
+    <div class="container text-center process-container">
       <div class="row process-header">
         <div class="col text-center p-0">
           <h3 class="text-center mt-3 p-2 align-middle">Od nápadu k realizaci...</h3>

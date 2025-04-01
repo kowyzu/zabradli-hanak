@@ -30,7 +30,7 @@
           </div>
         </div>
 
-        <div class="col-xl-5 offset-xxl-1 col-xxl-3 introduction-text p-5">
+        <div class="col-xl-5 offset-xxl-1 col-xxl-3 introduction-text">
           <!-- text to update? -->
           <h1 class="mb-xxl-3 mb-xl-2">
             Zakázková výroba schodišť a zábradlí

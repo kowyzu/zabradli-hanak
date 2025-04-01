@@ -1,5 +1,5 @@
 <template>
-  <section id="gallery" class="pt-3 mt-3">
+  <section id="gallery" class="pt-5">
     <div class="container text-center galerry-container ">
       <div class="row gallery-tabs align-items-center">
         <div class="col text-center p-0 mt-3">
@@ -52,10 +52,13 @@
             </div>
           </div>
         </div>
-        <button @click="isGalleryOpened = false" class="btn btn-primary btn-lg btn-show-less sticky-bottom mb-2 z-3"
-          :class="{ 'hidden': isGalleryOpened === false }" type="submit">
-          Zobrazit méně
-        </button>
+        <div :class="{ 'hidden': isGalleryOpened === false }" class="sticky-bottom show-less-container">
+          <button @click="isGalleryOpened = false"
+            class="btn btn-primary btn-lg btn-show-less sticky-bottom mb-2 mt-2 z-3"
+            :class="{ 'hidden': isGalleryOpened === false }" type="submit">
+            Zobrazit méně
+          </button>
+        </div>
       </div>
     </div>
   </section>
