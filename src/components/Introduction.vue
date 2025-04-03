@@ -27,14 +27,15 @@
           </div>
         </div>
 
-        <div class="col-xl-5 offset-xxl-1 col-xxl-3 introduction-text p-xl-3 p-6">
+        <div class="col-xl-5 offset-xxl-1 col-xxl-3 introduction-text p-xl-4 p-5">
           <!-- text to update? -->
           <h1 class="mb-xxl-3 mb-xl-2">
             Zakázková výroba schodišť a zábradlí
           </h1>
           <!-- text to update -->
           <p class="lead mb-xl-3">
-            Specializujeme se na nerez, hliník a sklo. Precizní řemeslné zpracování a individuální přístup jsou pro nás
+            Specializujeme se na <strong>nerez, hliník a sklo</strong>. Precizní řemeslné zpracování a individuální
+            přístup jsou pro nás
             samozřejmostí.
           </p>
           <form action="#contact-form">

@@ -77,8 +77,11 @@ a:hover {
     color: $primary !important;
 }
 
-.p-6 {
-  padding: 4rem !important;
+
+
+strong {
+  color: $primary;
+  font-weight: bolder;
 }
 
 //
@@ -128,6 +131,12 @@ a:hover {
   overflow: hidden;
   }    
 }
+
+// @include media-breakpoint-down(xl) {
+//   .introduction-text {
+//     padding: 4rem !important;
+//   }
+// }
 
 
 
