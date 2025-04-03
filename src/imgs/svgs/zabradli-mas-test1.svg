@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="zabradli-mas-test1.svg"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showguides="false"
+     inkscape:zoom="1.3095539"
+     inkscape:cx="389.0638"
+     inkscape:cy="563.93251"
+     inkscape:window-width="2880"
+     inkscape:window-height="1514"
+     inkscape:window-x="-2"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g10" />
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect39"
+       is_visible="true"
+       lpeversion="1.3"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false"
+       uniform="false" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect38"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect35"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect9"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect7"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect5"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect2"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect1"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="fill_between_many"
+       method="originald"
+       linkedpaths="#g10,0,1|"
+       id="path-effect10" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g9"
+       transform="translate(6.8693878,-8.0816325)">
+      <path
+         inkscape:original-d="M 0,0"
+         inkscape:path-effect="#path-effect10"
+         d="M 0,0"
+         id="path11" />
+      <g
+         id="g10"
+         style="fill:#ff00ff"
+         transform="translate(-31.922449,-52.732653)">
+        <path
+           style="opacity:0.922432;fill:#ff00ff;fill-opacity:1;stroke:#000000;stroke-width:0.157465;stroke-dasharray:none;stroke-opacity:0"
+           d="m 218.37768,313.76348 c -72.56011,0.20736 -188.76766,3.31067 -234.01034,1.14622 -5.82276,-0.27856 -2.48121,-9.85188 -3.43768,-20.84788 -1.09398,-12.57673 2.66583,-14.93716 0.65282,-16.16982 22.45871,25.80677 42.73615,27.16365 75.9692,28.18574 7.45045,0.22914 144.90855,8.05951 174.7006,-1.07104 59.58408,-18.2611 40.32419,-100.2848 36.79072,-158.05537 -2.12541,-34.74946 -1.26582,-16.61453 -2.56178,-37.80478 -0.37281,-6.09583 1.67765,-4.28616 5.38865,-4.77778 8.61708,-1.14156 7.14849,2.8162 6.71009,-0.1938 -0.27868,-1.91333 1.99006,4.36369 0.6692,18.33968 0.71833,66.85252 -0.81319,175.27363 -0.8132,191.74038"
+           id="path38"
+           sodipodi:nodetypes="cssssssssscc" />
+      </g>
+    </g>
+  </g>
+</svg>
