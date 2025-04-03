@@ -114,32 +114,45 @@ a:hover {
 }
 
 //Carousel mask - inspiration from https://alunad.cz/zabradli
-.mask-skew-first{
-    mask-image: conic-gradient(from 25deg at 100% 0%,transparent 0%,#000 0%);
-}
+// .mask-skew-first{
+//     mask-image: conic-gradient(from 25deg at 100% 0%,transparent 0%,#000 0%);
+// }
 
-.mask-skew-second{
-    mask-image: conic-gradient(from 80deg at 100% 79%,transparent 0%,#000 0%);
-}
+// .mask-skew-second{
+//     mask-image: conic-gradient(from 80deg at 100% 79%,transparent 0%,#000 0%);
+// }
 
-.mask-skew-third{
-    mask-image: conic-gradient(from 100deg at 10% 85%,transparent 0%,#000 0%);
-}
+// .mask-skew-third{
+//     mask-image: conic-gradient(from 100deg at 10% 85%,transparent 0%,#000 0%);
+// }
 
 //show masks only from lg breakpoint
-@include media-breakpoint-up(lg) {
-    .mask-skew-first{
-        mask-image: conic-gradient(from 25deg at 100% 0%,transparent 50%,#000 50%);
-    }
+// @include media-breakpoint-up(lg) {
+//     .mask-skew-first{
+//         mask-image: conic-gradient(from 25deg at 100% 0%,transparent 50%,#000 50%);
+//     }
     
-    .mask-skew-second{
-        mask-image: conic-gradient(from 80deg at 100% 79%,transparent 50%,#000 50%);
-    }
+//     .mask-skew-second{
+//         mask-image: conic-gradient(from 80deg at 100% 79%,transparent 50%,#000 50%);
+//     }
 
-    .mask-skew-third {
-        mask-image: conic-gradient(from 100deg at 10% 85%,transparent 50%,#000 50%);
-    }
+//     .mask-skew-third {
+//         mask-image: conic-gradient(from 100deg at 10% 85%,transparent 50%,#000 50%);
+//     }
+//   }
+
+  .u-shape-mask {
+    // clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
+    // /* You can tweak the points for a more rounded or dramatic curve */
+    // overflow: hidden;
+
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      clip-path: url(#u-curve-horizontal-flip);
+
   }
+
 
 
 .carousel-btn{
@@ -335,4 +348,3 @@ h5 {
   }
 
 
- 

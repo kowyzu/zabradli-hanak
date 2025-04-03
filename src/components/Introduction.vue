@@ -1,9 +1,77 @@
 <template>
+  <svg width="0" height="0">
+    <defs>
+      <clipPath id="rounded-u-shape" clipPathUnits="objectBoundingBox">
+        <path d="M0,0 H1 V0.75 C0.85,1 0.15,1 0,0.75 Z" />
+      </clipPath>
+    </defs>
+  </svg>
+
+  <svg width="0" height="0">
+    <defs>
+      <clipPath id="u-curve" clipPathUnits="objectBoundingBox">
+        <path d="
+        M0,1 
+        C0.05,0.6 0.2,0.3 0.45,0.15 
+        C0.7,0.03 0.85,0.01 1,0 
+        L1,0 
+        L1,1 
+        Z
+      " />
+      </clipPath>
+    </defs>
+  </svg>
+
+  <svg width="0" height="0">
+    <defs>
+      <clipPath id="u-curve-reversed" clipPathUnits="objectBoundingBox">
+        <path d="
+        M0,0
+        C0.05,0.4 0.2,0.7 0.45,0.85
+        C0.7,0.97 0.85,0.99 1,1
+        L1,0
+        Z
+      " />
+      </clipPath>
+    </defs>
+  </svg>
+
+  <svg width="0" height="0">
+    <defs>
+      <clipPath id="u-curve-vertical-flip" clipPathUnits="objectBoundingBox">
+        <path d="
+        M0,1
+        C0.05,0.6 0.2,0.3 0.45,0.15
+        C0.7,0.03 0.85,0.01 1,0
+        L1,1
+        Z
+      " />
+      </clipPath>
+    </defs>
+  </svg>
+  <svg width="0" height="0">
+    <defs>
+      <clipPath id="u-curve-horizontal-flip" clipPathUnits="objectBoundingBox">
+        <path d="
+        M1,0
+        C0.95,0.4 0.8,0.7 0.55,0.85
+        C0.3,0.97 0.15,0.99 0,1
+        L0,0
+        Z
+      " />
+      </clipPath>
+    </defs>
+  </svg>
+
+
+
+
   <section id="introduction">
     <div class="container-fluid introduction-container">
       <div class="row justify-content-md-left align-items-xl-center p-0">
         <div class="col-xl-7 introduction-carousel p-0">
-          <div id="carouselIntroduction" class="carousel slide mask-skew-first"> <!--data-bs-ride="carousel" -->
+          <div id="carouselIntroduction" class="carousel slide mask-skew-first u-shape-mask">
+            <!--data-bs-ride="carousel" -->
             <div class="mask-skew-second">
               <div class="mask-skew-third">
                 <div class="carousel-inner">
