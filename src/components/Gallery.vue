@@ -57,7 +57,8 @@
           <button @click="isGalleryOpened = false"
             class="btn btn-primary btn-md btn-show-less sticky-bottom mb-3 mt-3 z-3"
             :class="{ 'hidden': isGalleryOpened === false }" type="submit">
-            <i class="fa-solid fa-angle-up"></i> Sbalit <i class="fa-solid fa-angle-up"></i>
+            <i class="fa-solid fa-angle-up icon-show-less"></i> Sbalit <i
+              class="fa-solid fa-angle-up icon-show-less"></i>
           </button>
         </div>
       </div>
