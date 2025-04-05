@@ -1,0 +1,52 @@
+[
+  {
+    "id": 100,
+    "category": ["interior"],
+    "hidden": true
+  },
+  {
+    "id": 104,
+    "category": ["interior", "staircase-rail"],
+    "hidden": true
+  },
+  {
+    "id": 106,
+    "category": ["interior", "staircase-rail"],
+    "hidden": true
+  },
+  {
+    "id": 113,
+    "category": ["interior", "staircase-rail"],
+    "hidden": true
+  },
+  {
+    "id": 114,
+    "category": ["interior", "staircase-rail"],
+    "hidden": true
+  },
+  {
+    "id": 118,
+    "category": ["exterior", "staircase-rail"],
+    "hidden": true
+  },
+  {
+    "id": 119,
+    "category": ["exterior", "other"],
+    "hidden": true
+  },
+  {
+    "id": 120,
+    "category": ["exterior", "staircase-rail"],
+    "hidden": true
+  },
+  {
+    "id": 121,
+    "category": ["exterior"],
+    "hidden": true
+  },
+  {
+    "id": 122,
+    "category": ["exterior", "staircase-rail"],
+    "hidden": true
+  }
+]

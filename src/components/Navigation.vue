@@ -24,13 +24,13 @@ import logo from '../imgs/logo_zabradli_hanak.png'
               <a class="nav-link" aria-current="page" href="#">Úvod</a> <!--mozno pouzit class "active"-->
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Služby</a>
+              <a class="nav-link" aria-current="page" href="#process-title">Služby</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#gallery">Galerie</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Reference</a>
+              <a class="nav-link" href="#references">Reference</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Kontakt</a>
