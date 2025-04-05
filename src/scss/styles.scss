@@ -355,3 +355,35 @@ h5 {
   }
 
 
+//
+// REFERENCES
+// ----------------------------------------------------
+
+#references img {
+  border-radius: $border-radius-primary;
+  transition: .4s all ease-in-out;
+  animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 1.5s;
+}
+
+#references img:hover {
+  cursor: pointer;
+  transform: scale(.97);
+  filter: brightness(85%);
+  border-radius: $border-radius-primary;
+}
+
+.references-underline{
+  border-top: 5px solid $primary;
+  border-radius: 5px;
+}
+
+.reference-preview-img-first {
+  background-color: $color-bg-primary;
+  border-radius: $border-radius-primary 0 0 $border-radius-primary;
+}
+
+.reference-detail {
+  background-color: $color-bg-primary;
+  border-radius: 0 $border-radius-primary $border-radius-primary $border-radius-primary;
+}
