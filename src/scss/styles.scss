@@ -359,7 +359,9 @@ h5 {
 //
 // REFERENCES
 // ----------------------------------------------------
-
+#references .nav-link:hover {
+  color: $primary;
+}
 #references img {
   border-radius: $border-radius-primary;
   transition: .4s all ease-in-out;
@@ -384,10 +386,12 @@ h5 {
   background-color: $color-bg-primary;
   border-radius: $border-radius-primary 0 0 $border-radius-primary;
   border-left: 5px solid $primary;
+  box-shadow: var(--bs-box-shadow) !important;
 }
 
 .reference-detail {
   background-color: $color-bg-primary;
   border-radius: 0 $border-radius-primary $border-radius-primary $border-radius-primary;
 }
+
 
