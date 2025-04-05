@@ -5,12 +5,15 @@
       <div class="row row-cols-1">
         <div class="col-md-3 col-4">
           <div class="reference-preview-img">
-            <div class="row reference-preview-img-first">
+
+            <div class="row active">
+
               <img class="p-3" src="../imgs/galery-imgs/big/125.jpg" alt="galerry img of rail">
+              <h4>hello</h4>
             </div>
           </div>
-          <div class="reference-preview-img-second">
-            <div class="row reference-preview-img">
+          <div class="reference-preview-img">
+            <div class="row">
               <img class="p-3" src="../imgs/galery-imgs/big/134.jpg" alt="galerry img of rail">
             </div>
           </div>

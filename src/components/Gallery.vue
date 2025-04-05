@@ -1,5 +1,5 @@
 <template>
-  <section id="gallery" class="pt-5">
+  <section id="gallery" class="pt-5 pb-5">
     <div class="container text-center galerry-container ">
       <div class="row gallery-tabs align-items-center">
         <div class="col text-center p-0 mt-3">

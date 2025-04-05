@@ -38,15 +38,5 @@
     "id": 120,
     "category": ["exterior", "staircase-rail"],
     "hidden": true
-  },
-  {
-    "id": 121,
-    "category": ["exterior"],
-    "hidden": true
-  },
-  {
-    "id": 122,
-    "category": ["exterior", "staircase-rail"],
-    "hidden": true
   }
 ]
