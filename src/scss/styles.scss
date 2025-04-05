@@ -28,12 +28,23 @@ $color-bg-gradient: linear-gradient(
     rgba(254, 254, 254, 1) 94%, 
     rgba(254, 254, 254, 1) 100%
 );
+$color-bg-gradient-ligher: linear-gradient(
+  to bottom, 
+  rgba(235, 232, 232, 1) 0%, 
+  rgba(235, 232, 232, 1) 10%, 
+  rgba(235, 232, 232, 1) 30%, 
+  rgba(235, 232, 232, 0.187) 74%, 
+  rgba(235, 232, 232, 0.187) 60%
+);
 
 $box-shadow-primary:0 2px 1px rgba(0, 0, 0, 0.05),
                     0 2px 3px rgba(0, 0, 0, 0.05),
                     0 4px 8px rgba(0, 0, 0, 0.05);
 
 $btn-box-shadow: 3px 4px 14px -3px rgba(0, 0, 0, 0.75);
+
+$border-radius-primary: 1%;
+$border-radius-secondary: 2%;
 
 //
 //BOOTSTRAP IMPORT
@@ -174,12 +185,13 @@ strong {
     font-size: large;
 }
 
-hr.rounded {
-    border: 2px solid $tertiary;
-    border-radius: 5px;
-    margin: 0;
-  }
+.process-header-icon .icon-link .fa-chevron-down{
+  height: 3rem;
+}
 
+#process-title {
+  scroll-margin-top: 7rem;
+}
 
 .process .process-step-icon {
     background-color: $primary;
@@ -207,6 +219,12 @@ hr.rounded {
 
 h5 {
     font-weight: 600;
+}
+
+.process-step-first-row, .process-step-second-row {
+  background: $color-bg-gradient-ligher;
+  border-radius: $border-radius-secondary;
+  box-shadow: $box-shadow-primary;
 }
 
 // .process-step-first-row {
@@ -250,7 +268,7 @@ h5 {
   }
 
 #gallery img {
-    border-radius: 1%;
+    border-radius: $border-radius-primary;
     transition: .4s all ease-in-out;
     max-height: 315.47px;
     animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
@@ -264,12 +282,12 @@ h5 {
     cursor: pointer;
     transform: scale(.97);
 	filter: brightness(85%);
-    border-radius: 1%;
+    border-radius: $border-radius-primary;
 }
 
 .show-more-img {
     opacity: 0.2;
-    border-radius: 1%;
+    border-radius: $border-radius-primary;
     transition: none !important;
     animation: none !important;
 }
