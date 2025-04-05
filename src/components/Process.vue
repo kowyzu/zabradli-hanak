@@ -1,93 +1,37 @@
 <template>
-  <section class="process p-5 m-5">
-    <div class="container text-center process-container">
-      <div class="row process-header">
-        <div class="col text-center p-0">
+  <section class="process">
+    <div class="container-fluid text-center process-container mt-5 mb-5 pb-5 px-5">
+      <div class="row process-header justify-content-center p-3 mb-4">
+        <div class="col-5 text-center p-5">
+
           <h3 class="text-center mt-3 p-2 align-middle">Od nápadu k realizaci...</h3>
-        </div>
-      </div>
-      <!-- <div class="row row-cols-md-5 row-cols-1 align-items-center m-1 justify-content-between process-first-row">
-        <div class="col process-step-first-row">
-          <div class="process-step-icon">
-            <i class="fa-solid fa-pen-to-square"></i>
-          </div>
-          <h5 class="mt-2">1. Konzultace a plánování</h5>
-          <p>Společně vymyslíme řešení na míru</p>
-        </div>
-        <div class="col process-step-first-row">
-          <div class="process-step-icon">
-            <i class="fa-solid fa-cubes"></i>
-          </div>
-          <h5 class="mt-2">2. Materiál a návrh</h5>
-          <p>Doporučíme správný materiál a design</p>
-        </div>
-        <div class="col process-step-first-row">
-          <div class="process-step-icon">
-            <i class="fa-solid fa-calculator"></i>
-          </div>
-          <h5 class="mt-2">3. Cenová nabídka</h5>
-          <p>Připravíme jasnou a férovou kalkulaci</p>
-        </div>
-      </div>
-
-      <div class="row row-cols-md-5 row-cols-1 align-items-center m-1 mt-3 justify-content-evenly process-second-row">
-        <div class="col process-step-second-row">
-          <div class="process-step-icon">
-            <i class="fa-solid fa-screwdriver-wrench"></i>
-          </div>
-          <h5 class="mt-2">4. Precizní provedení</h5>
-          <p>Kvalitní a detailní řemeslná práce</p>
-        </div>
-        <div class="col process-step-second-row">
-          <div class="process-step-icon">
-            <i class="fa-solid fa-clock"></i>
-          </div>
-          <h5 class="mt-2">5. Rychlá realizace</h5>
-          <p>Dokončíme zakázku v co nejkratším termínu</p>
-        </div>
-      </div> -->
-
-
-      <!-- TEST -->
-      <div class="row row-cols-5  justify-content-between">
-        <div class="col ">
-          <div class="process-step-icon">
-            <i class="fa-solid fa-pen-to-square"></i>
-          </div>
-          <h5 class="mt-2">1. Konzultace a plánování</h5>
-          <p>Společně vymyslíme řešení na míru</p>
-        </div>
-        <div class="col-5 lead">
-          <!-- TEXT TO BE UPDATED -->
-          <p>Vyrábíme zakázková schodiště, nerezová a hliníková zábradlí, skleněné výplně i dřevěná madla.
+          <!-- TEXT TO BE UPDATED - in mobile need to display above! -->
+          <p class="lead">Vyrábíme zakázková schodiště, nerezová a hliníková zábradlí, skleněné výplně i dřevěná madla.
             Specializujeme se na precizní svařování MMA, MIG/MAG a TIG.</p>
         </div>
-        <div class="col">
-          <div class="process-step-icon">
-            <i class="fa-solid fa-clock"></i>
-          </div>
-          <h5 class="mt-2">5. Rychlá realizace</h5>
-          <p>Dokončíme zakázku v co nejkratším termínu</p>
-        </div>
+        <!-- <div class="col-md-5 lead">
+          <p>Vyrábíme zakázková schodiště, nerezová a hliníková zábradlí, skleněné výplně i dřevěná madla.
+            Specializujeme se na precizní svařování MMA, MIG/MAG a TIG.</p>
+        </div> -->
       </div>
-      <div class="row row-cols-5  justify-content-evenly">
-        <div class="col">
+
+      <div
+        class="row row-cols-md-5 row-cols-1 align-items-center justify-content-between process-first-row m-md-4 p-md-4">
+        <div class="col process-step-first-row">
+          <div class="process-step-icon ">
+            <i class="fa-solid fa-pen-to-square"></i>
+          </div>
+          <h5 class="mt-2">1. Konzultace a plánování</h5>
+          <p>Společně vymyslíme řešení na míru</p>
+        </div>
+        <div class="col process-step-first-row">
           <div class="process-step-icon">
             <i class="fa-solid fa-cubes"></i>
           </div>
           <h5 class="mt-2">2. Materiál a návrh</h5>
           <p>Doporučíme správný materiál a design</p>
         </div>
-        <div class="col ">
-          <div class="process-step-icon">
-            <i class="fa-solid fa-screwdriver-wrench"></i>
-          </div>
-          <h5 class="mt-2">4. Precizní provedení</h5>
-          <p>Kvalitní a detailní řemeslná práce</p>
-        </div>
-      </div>
-      <div class="row row-cols-5 justify-content-center">
-        <div class="col ">
+        <div class="col process-step-first-row ">
           <div class="process-step-icon">
             <i class="fa-solid fa-calculator"></i>
           </div>
@@ -95,7 +39,25 @@
           <p>Připravíme jasnou a férovou kalkulaci</p>
         </div>
       </div>
+
+      <div
+        class="row row-cols-md-5 row-cols-1 align-items-center justify-content-evenly process-second-row m-md-4 p-md-4">
+        <div class="col process-step-second-row">
+          <div class="process-step-icon">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+          </div>
+          <h5 class="mt-2">4. Precizní provedení</h5>
+          <p>Kvalitní a detailní řemeslná práce</p>
+        </div>
+        <div class="col process-step-second-row">
+          <div class="process-step-icon">
+            <i class="fa-solid fa-clock"></i>
+          </div>
+          <h5 class="mt-2">5. Rychlá realizace</h5>
+          <p>Dokončíme zakázku v co nejkratším termínu</p>
+        </div>
+      </div>
+      <div class="waypoint"></div>
     </div>
-    <div class="waypoint"></div>
   </section>
 </template>
