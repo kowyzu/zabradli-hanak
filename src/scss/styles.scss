@@ -41,6 +41,8 @@ $color-bg-gradient-ligher: linear-gradient(
 $box-shadow-primary:0 2px 1px rgba(0, 0, 0, 0.05),
                     0 2px 3px rgba(0, 0, 0, 0.05),
                     0 4px 8px rgba(0, 0, 0, 0.05);
+$box-shadow-right: 12px 9px 10px 0px rgba(0,0,0,0.3);
+$box-shadow-left:  -1px 6px 8px 0px rgba(0,0,0,0.3);
 
 $btn-box-shadow: 3px 4px 14px -3px rgba(0, 0, 0, 0.75);
 
@@ -276,9 +278,6 @@ h5 {
     animation-duration: 1.5s;
 }
 
-
-
-
 #gallery img:hover {
     cursor: pointer;
     transform: scale(.97);
@@ -359,13 +358,41 @@ h5 {
 //
 // REFERENCES
 // ----------------------------------------------------
+
+#references .tab {
+  background-color:$color-bg-primary;
+  border-radius: $border-radius-secondary 0 0 $border-radius-secondary;  
+}
+
+#references .active-tab {
+  background-color: $primary;
+  border-radius: $border-radius-secondary;
+  border-left: 5px solid $tertiary;
+  box-shadow: $box-shadow-left;
+}
+
+#references .active-tab .btn {
+color: $color-text;
+}
+
+#references svg {
+  height: 1.6rem;
+}
+
 #references .nav-link {
-  // padding: 0;
   color: $color-text;
-  // font-size: large;
 }
 #references .nav-link:hover {
-  color: $primary;
+  color: $tertiary;
+}
+
+#references .active {
+  color: white;
+}
+
+.reference-detail {
+  background-color: $color-bg-primary;
+  border-radius: 0 $border-radius-primary $border-radius-primary $border-radius-primary;
 }
 
 #references img {
@@ -388,18 +415,4 @@ h5 {
   opacity: 1;
 }
 
-#references .active {
-  background-color: $color-bg-primary;
-  border-radius: $border-radius-primary 0 0 $border-radius-primary;
-  border-left: 5px solid $primary;
-  box-shadow: var(--bs-box-shadow) !important;
-}
 
-.reference-detail {
-  background-color: $color-bg-primary;
-  border-radius: 0 $border-radius-primary $border-radius-primary $border-radius-primary;
-}
-
-// #collapseReferenceSecond{
-//   display: none;
-// }
