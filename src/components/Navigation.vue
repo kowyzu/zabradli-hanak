@@ -1,8 +1,7 @@
 <script setup>
 import logo from '../imgs/logo_zabradli_hanak.png'
-
-
 </script>
+
 <template>
   <header class="sticky-top">
     <nav class="navbar navbar-expand-lg shadow-sm"> <!--bg-body-tertiary-->

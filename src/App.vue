@@ -4,7 +4,7 @@ import Introduction from './components/Introduction.vue'
 import Process from './components/Process.vue'
 import Gallery from './components/Gallery.vue'
 import References from './components/References.vue'
-import ContactForm from './components/ContactForm.vue'
+import FooterSection from './components/Footer.vue'
 </script>
 
 <template>
@@ -15,7 +15,5 @@ import ContactForm from './components/ContactForm.vue'
     <Gallery />
     <References />
   </main>
-  <footer>
-    <ContactForm />
-  </footer>
+  <FooterSection />
 </template>
