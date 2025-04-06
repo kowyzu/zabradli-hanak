@@ -3,21 +3,23 @@
     <h1 class="p-4">Vybrané reference</h1>
     <div class="container text-center">
       <div class="row row-cols-1">
-        <div class="col-md-2 col-4">
+        <div class="col-md-2 col-2">
           <div class="row p-3 mb-3 tab" :class="{ 'active-tab': this.firstTabStatus === 'active' }">
             <nav class="nav flex-column">
               <button @click="handleTabClicked('first')" class="nav-link" :class="firstTabStatus" type="button"
-                aria-expanded="false" aria-controls="collapseReferenceFirst"><i class="fa-solid fa-1"></i></button>
+                aria-expanded="false" aria-controls="collapseReferenceFirst">
+                <span class="h3">1</span>
+              </button>
             </nav>
           </div>
           <div class="row p-3 tab" :class="{ 'active-tab': this.secondTabStatus === 'active' }">
             <nav class="nav flex-column">
               <button @click="handleTabClicked('second')" class="nav-link" :class="secondTabStatus" type=" button"
-                aria-expanded="false" aria-controls="#collapseReferenceSecond"><i class="fa-solid fa-2"></i></button>
+                aria-expanded="false" aria-controls="#collapseReferenceSecond"><span class="h3">2</span></button>
             </nav>
           </div>
         </div>
-        <div class="col-md-10 col-8 reference-detail px-5 py-2 pb-4 shadow">
+        <div class="col-md-10 col-10 reference-detail px-5 py-2 pb-4">
           <div class="row text-start ">
             <div class="collapse show " id="collapseReferenceFirst" ref="collapseFirst">
               <h2 class="pt-3">1. reference</h2>

@@ -46,8 +46,8 @@ $box-shadow-left:  -1px 6px 8px 0px rgba(0,0,0,0.3);
 
 $btn-box-shadow: 3px 4px 14px -3px rgba(0, 0, 0, 0.75);
 
-$border-radius-primary: 1%;
-$border-radius-secondary: 2%;
+$border-radius-primary: 10px;
+$border-radius-secondary: 5px;
 
 //
 //BOOTSTRAP IMPORT
@@ -366,33 +366,39 @@ h5 {
 
 #references .active-tab {
   background-color: $primary;
-  border-radius: $border-radius-secondary;
-  border-left: 5px solid $tertiary;
+  border-top-left-radius: $border-radius-secondary;
+  border-bottom-left-radius: $border-radius-secondary;
   box-shadow: $box-shadow-left;
+  z-index: 1;
+  position: relative;
 }
 
 #references .active-tab .btn {
 color: $color-text;
 }
 
-#references svg {
-  height: 1.6rem;
-}
-
 #references .nav-link {
-  color: $color-text;
+  color: $tertiary;
 }
 #references .nav-link:hover {
-  color: $tertiary;
+  color: $primary;
 }
 
 #references .active {
   color: white;
 }
 
+#references .active:hover {
+  color: white;
+}
+
 .reference-detail {
   background-color: $color-bg-primary;
   border-radius: 0 $border-radius-primary $border-radius-primary $border-radius-primary;
+  box-shadow: -3px 3px 10px 0px rgba(0,0,0,0.28);
+  z-index: 0;
+  position: relative;
+  border-left: 5px solid $primary;
 }
 
 #references img {
