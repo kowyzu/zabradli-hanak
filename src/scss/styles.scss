@@ -421,4 +421,27 @@ color: $color-text;
   opacity: 1;
 }
 
+//
+// CONTACT FORM
+// ----------------------------------------------------
 
+#contact-form {
+  background-color: $color-bg-primary;
+}
+
+#contact-form svg {
+  color: $primary;
+}
+
+#contact-form .list-group-item {
+  background-color: $color-bg-primary;
+  border: none;
+  // align-self: center;
+}
+
+#contact-form .icon-helper {
+  color: $color-bg-primary;
+}
+.partner-link {
+  text-transform: uppercase;
+}

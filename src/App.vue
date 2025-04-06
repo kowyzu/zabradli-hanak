@@ -14,6 +14,8 @@ import ContactForm from './components/ContactForm.vue'
     <Process />
     <Gallery />
     <References />
-    <ContactForm />
   </main>
+  <footer>
+    <ContactForm />
+  </footer>
 </template>

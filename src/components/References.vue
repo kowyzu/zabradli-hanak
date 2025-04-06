@@ -49,7 +49,6 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
 
@@ -61,7 +60,6 @@
 import { useTemplateRef } from 'vue';
 import * as bootstrap from "bootstrap";
 import test_gallery_JSON from '../objects/test-reference-gallery.json'
-
 
 export default {
   data() {
@@ -86,13 +84,6 @@ export default {
       bsCollapseHide.hide();
     },
     activateTab(clickedTab) {
-      // if (clickedTab === 'second') {
-      //   this.isFirstTabActive = false;
-      //   this.isSecondTabActive = true;
-      // } else {
-      //   this.isFirstTabActive = true;
-      //   this.isSecondTabActive = false;
-      // }
       if (clickedTab === 'second') {
         this.secondTabStatus = 'active';
         this.firstTabStatus = 'non-active';
@@ -110,8 +101,5 @@ export default {
       this.activateTab(clickedTab)
     }
   }
-
 }
-
-
 </script>
