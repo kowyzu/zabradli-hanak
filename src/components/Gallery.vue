@@ -3,7 +3,7 @@
     <div class="container text-center galerry-container ">
       <div class="row gallery-tabs align-items-center">
         <div class="col text-center p-0 mt-3">
-          <ul class="nav nav-tabs justify-content-center">
+          <ul class="nav nav-tabs justify-content-md-center ps-4 ps-md-0">
             <li class="nav-item">
               <button @click="setCategory(this.categoryTypeAll)" class="nav-link"
                 :class="{ 'active': this.category === this.categoryTypeAll }" type="submit">Vše</button>

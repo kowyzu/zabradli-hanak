@@ -154,38 +154,13 @@ strong {
   }    
 }
 
-// @include media-breakpoint-down(xl) {
-//   .introduction-text {
-//     padding: 4rem !important;
-//   }
-// }
-
-
-
-
-
-
 .carousel-btn{
     margin-bottom: 3%;
 }
 
-//My custom svg - not used
-
-// .carousel-polygon {
-    
-// background-color: $color-bg-primary;
-// clip-path: polygon(0 92%, 0 100%, 100% 100%, 100% 0%, 96% 0, 85% 98%);
-//     width: 546px;
-//     height: 409px;
-// }
-
 .btn-contact-form:hover {
     color: $secondary !important;
 }
-
-// .btn-contact-form:active {
-//     background-color: pink;
-// }
 
 //
 // PROCESS
@@ -210,21 +185,12 @@ strong {
     width: 7rem;
     height: 7rem;
     margin: 0 auto;
-
     display: flex;
-      
-        
     flex-direction: column;
-      
-
-    justify-content: center;
-      
-    align-items: center;
-      
+    justify-content: center;      
+    align-items: center;      
     font-size: 3rem;
-
     box-shadow:$btn-box-shadow;
-
     color: $secondary;
 }
 
@@ -237,30 +203,6 @@ h5 {
   border-radius: $border-radius-secondary;
   box-shadow: $box-shadow-primary;
 }
-
-// .process-step-first-row {
-//     opacity: 0;
-//     // transform: translateY(20px);
-//     transition: opacity 0.5s ease, transform 0.5s ease;
-//   }
-
-  
-// .process-step-first-row.show {
-//     opacity: 1;
-//     // transform: translateY(0);
-// }
-
-
-
-// .process-step-second-row {
-//     opacity: 0;
-//     transition: opacity 0.5s ease, transform 0.5s ease;
-//   }
-
-// .process-step-second-row.show {
-//     opacity: 1;
-// }
-
 
 //
 // GALERRY
@@ -277,6 +219,64 @@ h5 {
         scroll-margin-top: 5rem;
     }    
   }
+
+#gallery .nav-tabs {
+  border-color: $primary;
+} 
+
+#gallery .nav-link:hover {
+  border-color: $primary-transparent;
+}
+
+#gallery .nav-link{
+  color: $color-text;
+}
+
+#gallery .nav-link:hover{
+  color: $primary;
+}
+
+#gallery .nav-link.active {
+  background-color: $primary;
+  border-color: $primary;
+  color: white;
+}
+
+////////////////////////////////////////////////
+///from references//
+#references .tab {
+  background-color:$color-bg-primary;
+  border-radius: $border-radius-secondary 0 0 $border-radius-secondary;  
+}
+
+#references .active-tab {
+  background-color: $primary;
+  border-top-left-radius: $border-radius-secondary;
+  border-bottom-left-radius: $border-radius-secondary;
+  box-shadow: $box-shadow-left;
+  z-index: 1;
+  position: relative;
+}
+
+#references .active-tab .btn {
+color: $color-text;
+}
+
+#references .nav-link {
+  color: $tertiary;
+}
+#references .nav-link:hover {
+  color: $primary;
+}
+
+#references .active {
+  color: white;
+}
+
+#references .active:hover {
+  color: white;
+}
+///////////////////////////
 
 #gallery img {
     border-radius: $border-radius-primary;
@@ -324,17 +324,7 @@ h5 {
     rgba(241, 239, 239, 0.8) 75%,
     rgba(241, 239, 239, 1) 100%
   );
-//   background: linear-gradient(
-//   to bottom,
-//   rgba(241, 239, 239, 0) 0%,
-//   rgba(241, 239, 239, 0) 15%,
-//   rgba(241, 239, 239, 0.4) 40%,
-//   rgba(241, 239, 239, 0.7) 70%,
-//   rgba(241, 239, 239, 0.9) 85%,
-//   rgba(241, 239, 239, 1) 100%
-// );
 }
-
 
 .centered {
     position: absolute;
@@ -353,7 +343,6 @@ h5 {
     display: none;
   }
   
-
   .icon-show-less {
     color: lighten($color: $tertiary, $amount: 15%);
   }
@@ -361,7 +350,6 @@ h5 {
   .btn-show-less, .btn-show-more {
     box-shadow: $btn-box-shadow;
   }
-
 
 //
 // REFERENCES
@@ -450,6 +438,7 @@ color: $color-text;
 #footer .icon-helper {
   color: $color-bg-primary;
 }
+
 .partner-link {
   text-transform: uppercase;
 }
