@@ -43,7 +43,7 @@
           <div v-for="(img, index) in getGalleryImgs()" :key="img.id + this.category"
             :class="['col', { hidden: index > 8 && isGalleryOpened === false }]">
             <div :class="{ 'show-more-container': isGalleryOpened === false }">
-              <img :src="'../imgs/galery-imgs/big/' + img.id + '.jpg'" class="img-fluid"
+              <img @click="showLightbox(index)" :src="'../imgs/galery-imgs/big/' + img.id + '.jpg'" class="img-fluid"
                 :class="{ 'show-more-img': index === 8 && isGalleryOpened === false }" alt="galerry img of rail">
               <div v-if="index === 8" class="centered show-more-text" :class="{ 'hidden': isGalleryOpened === true }">
                 <button @click="isGalleryOpened = true" class="btn btn-primary btn-lg btn-show-more"
@@ -64,13 +64,20 @@
       </div>
     </div>
   </section>
+  <vue-easy-lightbox :visible="visible"
+    :imgs="getGalleryImgs().map(img => '../imgs/galery-imgs/big/' + img.id + '.jpg')" :index="currentImgIndex"
+    @hide="visible = false" />
 </template>
 
 <script>
 import { useTemplateRef } from 'vue';
 import gallery_JSON from '../objects/gallery.json'
+import VueEasyLightbox from 'vue-easy-lightbox'
 
 export default {
+  components: {
+    VueEasyLightbox
+  },
   data() {
     return {
       galleryJson: gallery_JSON,
@@ -81,7 +88,9 @@ export default {
       categoryTypeStaircaseRail: 'staircase-rail',
       categoryTypeExterior: 'exterior',
       categoryTypeFrenchWindows: 'french-windows',
-      categoryTypeOther: 'other'
+      categoryTypeOther: 'other',
+      visible: false,
+      currentImgIndex: 0,
     }
   },
   methods: {
@@ -96,6 +105,10 @@ export default {
     setCategory(category) {
       this.category = category;
       this.isGalleryOpened = false;
+    },
+    showLightbox(index) {
+      this.currentImgIndex = index;
+      this.visible = true;
     }
   }
 }
