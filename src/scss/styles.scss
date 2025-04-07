@@ -112,6 +112,15 @@ strong {
     font-size: $font-size-bigger;
 }
 
+.navigation-toggler {
+  border-color: $primary;
+  transition: 0.15s ease-in-out;
+}
+
+.navigation-toggler:focus {
+  color: $primary-transparent;
+}
+
 .navbar-collapse {
     align-items: end;
 }
