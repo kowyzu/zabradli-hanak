@@ -2,7 +2,7 @@
   <section id="process" class="process">
     <div class="container-fluid text-center process-container mt-5 mb-5 pb-5 px-5">
       <div class="row process-header justify-content-center p-3 mb-4">
-        <div class="col-5 text-center p-3">
+        <div class="col-lg-5 text-center p-3">
           <div class="process-header-icon ">
             <a class="icon-link nav-link lead" href="#process-title">
               <i class="fa-solid fa-chevron-down"></i>
@@ -13,15 +13,11 @@
           <p class="lead">Vyrábíme zakázková schodiště, nerezová a hliníková zábradlí, skleněné výplně i dřevěná madla.
             Specializujeme se na precizní svařování MMA, MIG/MAG a TIG.</p>
         </div>
-        <!-- <div class="col-md-5 lead">
-          <p>Vyrábíme zakázková schodiště, nerezová a hliníková zábradlí, skleněné výplně i dřevěná madla.
-            Specializujeme se na precizní svařování MMA, MIG/MAG a TIG.</p>
-        </div> -->
       </div>
 
       <div
-        class="row row-cols-md-5 row-cols-1 align-items-center justify-content-between process-first-row m-md-4 p-md-4">
-        <div class="col process-step-first-row">
+        class="row row-cols-lg-5 row-cols-1 align-items-center justify-content-between process-first-row m-lg-4 p-lg-4">
+        <div class="col process-step-first-row mb-lg-0 mb-5 mx-lg-0">
           <div class="p-3">
             <div class="process-step-icon ">
               <i class="fa-solid fa-pen-to-square"></i>
@@ -30,7 +26,7 @@
             <p>Společně vymyslíme řešení na míru</p>
           </div>
         </div>
-        <div class="col process-step-first-row">
+        <div class="col process-step-first-row mb-lg-0 mb-5">
           <div class="p-3">
             <div class="process-step-icon">
               <i class="fa-solid fa-cubes"></i>
@@ -39,7 +35,7 @@
             <p>Doporučíme správný materiál a design</p>
           </div>
         </div>
-        <div class="col process-step-first-row ">
+        <div class="col process-step-first-row mb-lg-0 mb-5">
           <div class="p-3">
             <div class="process-step-icon">
               <i class="fa-solid fa-calculator"></i>
@@ -51,8 +47,8 @@
       </div>
 
       <div
-        class="row row-cols-md-5 row-cols-1 align-items-center justify-content-evenly process-second-row m-md-4 p-md-4">
-        <div class="col process-step-second-row">
+        class="row row-cols-lg-5 row-cols-1 align-items-center justify-content-evenly process-second-row m-lg-4 p-lg-4">
+        <div class="col process-step-second-row mb-lg-0 mb-5">
           <div class="p-3">
             <div class="process-step-icon">
               <i class="fa-solid fa-screwdriver-wrench"></i>
