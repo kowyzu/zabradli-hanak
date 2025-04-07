@@ -6,9 +6,9 @@ import logo from '../imgs/logo_zabradli_hanak.png'
   <header class="sticky-top">
     <nav class="navbar navbar-expand-lg shadow-sm"> <!--bg-body-tertiary-->
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <div class="navbar-brand">
           <img class="img-logo" :src="logo" alt="Logo Zábradlí Hanák">
-        </a>
+        </div>
 
         <button class="navbar-toggler navigation-toggler" type="button" data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -31,7 +31,7 @@ import logo from '../imgs/logo_zabradli_hanak.png'
               <a class="nav-link" href="#references">Reference</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Kontakt</a>
+              <a class="nav-link" href="#footer">Kontakt</a>
             </li>
           </ul>
         </div>

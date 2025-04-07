@@ -15,13 +15,13 @@
                   class="carousel-btn" aria-label="Slide 3"></button>
               </div>
               <div class="carousel-item active">
-                <img src="../imgs/introduction-imgs/4_crop.jpg" class="d-block w-100" alt="...">
+                <img src="../imgs/introduction-imgs/4_crop.jpg" class="d-block w-100" alt="img of rail">
               </div>
               <div class="carousel-item">
-                <img src="../imgs/introduction-imgs/9_crop.jpg" class="d-block w-100" alt="...">
+                <img src="../imgs/introduction-imgs/9_crop.jpg" class="d-block w-100" alt="img of rail">
               </div>
               <div class="carousel-item">
-                <img src="../imgs/introduction-imgs/10_crop.jpg" class="d-block w-100" alt="...">
+                <img src="../imgs/introduction-imgs/10_crop.jpg" class="d-block w-100" alt="img of rail">
               </div>
             </div>
           </div>
@@ -38,10 +38,9 @@
             přístup jsou pro nás
             samozřejmostí.
           </p>
-          <form action="#contact-form">
+          <form action="#footer">
             <button class="btn btn-primary btn-lg btn-contact-form" type="submit">Začněme vaši realizaci!</button>
           </form>
-          <!-- <a href="#" class="btn btn-primary btn-lg btn-request-quote">Začněme vaši realizaci!</a> -->
         </div>
       </div>
     </div>
