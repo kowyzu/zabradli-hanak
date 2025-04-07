@@ -49,6 +49,10 @@ $btn-box-shadow: 3px 4px 14px -3px rgba(0, 0, 0, 0.75);
 $border-radius-primary: 10px;
 $border-radius-secondary: 5px;
 
+$scroll-margin-bigger: 19.6rem;
+$scroll-margin-smaller: 5rem;
+
+
 //
 //BOOTSTRAP IMPORT
 // ----------------------------------------------------
@@ -90,11 +94,13 @@ a:hover {
     color: $primary !important;
 }
 
-
-
 strong {
   color: $primary;
   font-weight: bolder;
+}
+
+.toolbar-btn__resize {
+  display: none !important;
 }
 
 //
@@ -165,6 +171,15 @@ strong {
 //
 // PROCESS
 // ---------------------------------------------------
+#process {
+  scroll-margin-top: $scroll-margin-bigger;
+}
+
+@include media-breakpoint-up(xl) {
+  #process {
+      scroll-margin-top: $scroll-margin-smaller;
+  }    
+}
 
 .process p {
     margin: 0;
@@ -210,13 +225,12 @@ h5 {
 
 #gallery {
     background-color: $color-bg-primary;
-    scroll-margin-top: 8rem;
+    scroll-margin-top: $scroll-margin-bigger;
 }
 
 @include media-breakpoint-up(xl) {
     #gallery {
-        background-color: $color-bg-primary;
-        scroll-margin-top: 5rem;
+        scroll-margin-top: $scroll-margin-smaller;
     }    
   }
 
@@ -243,7 +257,7 @@ h5 {
 }
 
 #gallery img {
-    border-radius: $border-radius-primary;
+    border-radius: $border-radius-secondary;
     transition: .4s all ease-in-out;
     max-height: 315.47px;
     animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
@@ -254,12 +268,12 @@ h5 {
     cursor: pointer;
     transform: scale(.97);
 	filter: brightness(85%);
-    border-radius: $border-radius-primary;
+    border-radius: $border-radius-secondary;
 }
 
 .show-more-img {
     opacity: 0.2;
-    border-radius: $border-radius-primary;
+    border-radius: $border-radius-secondary;
     transition: none !important;
     animation: none !important;
 }
@@ -318,6 +332,16 @@ h5 {
 //
 // REFERENCES
 // ----------------------------------------------------
+#references {
+  scroll-margin-top: $scroll-margin-bigger;
+}
+
+@include media-breakpoint-up(xl) {
+  #references {
+      scroll-margin-top: $scroll-margin-smaller;
+  }    
+}
+
 
 #references .tab {
   background-color:$color-bg-primary;
@@ -362,7 +386,7 @@ color: $color-text;
 }
 
 #references img {
-  border-radius: $border-radius-primary;
+  border-radius: $border-radius-secondary;
   transition: .4s all ease-in-out;
   animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
   animation-duration: 1.5s;
@@ -387,6 +411,13 @@ color: $color-text;
 
 #footer {
   background-color: $color-bg-primary;
+  scroll-margin-top: $scroll-margin-bigger;
+}
+
+@include media-breakpoint-up(xl) {
+  #footer {
+      scroll-margin-top: $scroll-margin-smaller;
+  }    
 }
 
 #footer svg {

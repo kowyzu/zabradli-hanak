@@ -1,5 +1,5 @@
 <template>
-  <section id="references" class="p-md-5 p-2 text-center">
+  <section id="references" class="px-md-5 px-2 py-5 text-center">
     <h1 class="p-4">Vybrané reference</h1>
     <div class="container text-center">
       <div class="row row-cols-1">
@@ -28,8 +28,9 @@
                 asperiores omnis ex similique. Modi, quibusdam cupiditate corrupti dignissimos, porro delectus alias
                 commodi, excepturi vitae culpa suscipit possimus?</p>
               <div id="galerry-preview" class="row row-cols-md-3 row-cols-1 gy-3 gx-3">
-                <div v-for="(img) in testGalleryJson" :key="img.id" class="col">
-                  <img :src="'../imgs/galery-imgs/big/' + img.id + '.jpg'" class="img-fluid" alt="galerry img of rail">
+                <div v-for="(img, index) in testGalleryJson" :key="img.id" class="col">
+                  <img @click="showLightbox(index)" :src="'../imgs/galery-imgs/big/' + img.id + '.jpg'"
+                    class="img-fluid" alt="galerry img of rail">
                 </div>
               </div>
             </div>
@@ -43,32 +44,40 @@
                 in sapiente aut numquam cupiditate voluptatibus ea, tenetur blanditiis similique. Odit voluptas nihil
                 soluta non?</p>
               <div id="galerry-preview" class="row row-cols-md-3 row-cols-1 gy-3 gx-3">
-                <div v-for="(img) in testGalleryJson" :key="img.id" class="col">
-                  <img :src="'../imgs/galery-imgs/big/' + img.id + '.jpg'" class="img-fluid" alt="galerry img of rail">
+                <div v-for="(img, index) in testGalleryJson" :key="img.id" class="col">
+                  <img @click="showLightbox(index)" :src="'../imgs/galery-imgs/big/' + img.id + '.jpg'"
+                    class="img-fluid" alt="galerry img of rail">
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
     </div>
   </section>
+  <vue-easy-lightbox :visible="visible" :imgs="testGalleryJson.map(img => '../imgs/galery-imgs/big/' + img.id + '.jpg')"
+    :index="currentImgIndex" @hide="visible = false" :zoomDisabled="true" :rotateDisabled="true" :moveDisabled="true" />
 </template>
 
 <script>
 import { useTemplateRef } from 'vue';
 import * as bootstrap from "bootstrap";
 import test_gallery_JSON from '../objects/test-reference-gallery.json'
+import VueEasyLightbox from 'vue-easy-lightbox'
 
 export default {
+  components: {
+    VueEasyLightbox
+  },
   data() {
     return {
       testGalleryJson: test_gallery_JSON,
       isFirstTabActive: true,
       isSecondTabActive: false,
       firstTabStatus: 'active',
-      secondTabStatus: 'non-active'
+      secondTabStatus: 'non-active',
+      visible: false,
+      currentImgIndex: 0,
     }
   },
   methods: {
@@ -99,6 +108,10 @@ export default {
         this.collapseElement(this.$refs.collapseSecond, this.$refs.collapseFirst)
       }
       this.activateTab(clickedTab)
+    },
+    showLightbox(index) {
+      this.currentImgIndex = index;
+      this.visible = true;
     }
   }
 }

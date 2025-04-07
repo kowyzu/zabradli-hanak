@@ -15,8 +15,7 @@
         </div>
       </div>
 
-      <div
-        class="row row-cols-lg-5 row-cols-1 align-items-center justify-content-between process-first-row m-lg-4 p-lg-4">
+      <div class="row row-cols-lg-5 row-cols-1 justify-content-between process-first-row m-lg-4 p-lg-4">
         <div class="col process-step-first-row mb-lg-0 mb-5 mx-lg-0">
           <div class="p-3">
             <div class="process-step-icon ">
@@ -46,8 +45,7 @@
         </div>
       </div>
 
-      <div
-        class="row row-cols-lg-5 row-cols-1 align-items-center justify-content-evenly process-second-row m-lg-4 p-lg-4">
+      <div class="row row-cols-lg-5 row-cols-1 justify-content-evenly process-second-row m-lg-4 p-lg-4">
         <div class="col process-step-second-row mb-lg-0 mb-5">
           <div class="p-3">
             <div class="process-step-icon">

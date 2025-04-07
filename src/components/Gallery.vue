@@ -54,19 +54,19 @@
         </div>
         <div :class="{ 'hidden': isGalleryOpened === false }"
           class="sticky-bottom show-less-container align-items-start">
-          <button @click="isGalleryOpened = false"
+          <a href="#gallery" @click="isGalleryOpened = false"
             class="btn btn-primary btn-md btn-show-less sticky-bottom mb-3 mt-3 z-3"
             :class="{ 'hidden': isGalleryOpened === false }" type="submit">
             <i class="fa-solid fa-angle-up icon-show-less"></i> Sbalit <i
               class="fa-solid fa-angle-up icon-show-less"></i>
-          </button>
+          </a>
         </div>
       </div>
     </div>
   </section>
   <vue-easy-lightbox :visible="visible"
     :imgs="getGalleryImgs().map(img => '../imgs/galery-imgs/big/' + img.id + '.jpg')" :index="currentImgIndex"
-    @hide="visible = false" />
+    @hide="visible = false" :zoomDisabled="true" :rotateDisabled="true" :moveDisabled="true" />
 </template>
 
 <script>

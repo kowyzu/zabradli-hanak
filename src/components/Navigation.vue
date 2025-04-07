@@ -16,13 +16,14 @@ import logo from '../imgs/logo_zabradli_hanak.png'
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
+        <div @click="collapseElement($refs.collapseNavbar)" class="collapse navbar-collapse flex-grow-0"
+          id="navbarSupportedContent" ref="collapseNavbar">
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="#">Úvod</a> <!--mozno pouzit class "active"-->
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#process-title">Služby</a>
+              <a class="nav-link" aria-current="page" href="#process">Služby</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#gallery">Galerie</a>
@@ -48,3 +49,30 @@ import logo from '../imgs/logo_zabradli_hanak.png'
     </nav>
   </header>
 </template>
+
+<script>
+import { useTemplateRef } from 'vue';
+import * as bootstrap from "bootstrap";
+
+export default {
+  methods: {
+    collapseElement(elementToHide) {
+      const bsCollapseHide = new bootstrap.Collapse(elementToHide, {
+        toggle: false // Prevent auto toggle on init
+      });
+
+      // bsCollapse.show(); // Or .show() to expand
+      bsCollapseHide.hide();
+    }
+    // activateTab(clickedTab) {
+    //   if (clickedTab === 'second') {
+    //     this.secondTabStatus = 'active';
+    //     this.firstTabStatus = 'non-active';
+    //   } else {
+    //     this.secondTabStatus = 'non-active';
+    //     this.firstTabStatus = 'active';
+    //   }
+    // }
+  }
+}
+</script>

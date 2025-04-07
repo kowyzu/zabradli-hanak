@@ -3,12 +3,12 @@ import logoPartner from '../imgs/partner-logo/logo-alumit-normal.png'
 </script>
 
 <template>
-  <footer id="footer" class="p-md-5">
+  <footer id="footer">
     <div class="container">
-      <div class="row gx-5">
-        <div class="col-xl-5 mb-md-5 mb-lg-0">
+      <div class="row">
+        <div class="col-xl-5 pt-5 pb-lg-5 pb-0">
           <h3 class="mb-4">Napište nám</h3>
-          <form class="">
+          <form class="pe-lg-5">
             <div class="row mb-3 justify-content-center">
               <div class="col">
                 <div class="input-group">
@@ -42,7 +42,7 @@ import logoPartner from '../imgs/partner-logo/logo-alumit-normal.png'
             <button type="submit" class="btn btn-primary">Odeslat</button>
           </form>
         </div>
-        <div class="col-xl-7">
+        <div class="col-xl-7 pt-5 pb-5">
           <div class="row row-cols-md-2 row-cols-1">
             <div class="col mb-3">
               <h3 class="mb-4">Kontakt</h3>
