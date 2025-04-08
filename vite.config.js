@@ -18,4 +18,8 @@ export default {
   },
   plugins: [vue()],
   assetsInclude: ["**/*.jpg", "**/*.JPG", "**/*.png"],
+  build: {
+    outDir: "../dist",
+  },
+  base: "/zabradli-hanak/",
 };
