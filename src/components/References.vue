@@ -4,7 +4,7 @@
     <div class="container text-center">
       <div class="row row-cols-1">
         <div class="col-md-2 col-2">
-          <div class="row p-3 mb-3 tab" :class="{ 'active-tab': this.firstTabStatus === 'active' }">
+          <div class="row p-md-3 mb-3 tab" :class="{ 'active-tab': this.firstTabStatus === 'active' }">
             <nav class="nav flex-column">
               <button @click="handleTabClicked('first')" class="nav-link" :class="firstTabStatus" type="button"
                 aria-expanded="false" aria-controls="collapseReferenceFirst">
@@ -12,25 +12,26 @@
               </button>
             </nav>
           </div>
-          <div class="row p-3 mb-3 tab" :class="{ 'active-tab': this.secondTabStatus === 'active' }">
+          <div class="row p-md-3 mb-3 tab" :class="{ 'active-tab': this.secondTabStatus === 'active' }">
             <nav class="nav flex-column">
               <button @click="handleTabClicked('second')" class="nav-link" :class="secondTabStatus" type=" button"
                 aria-expanded="false" aria-controls="#collapseReferenceSecond"><span class="h3">2</span></button>
             </nav>
           </div>
-          <div class="row p-3 tab" :class="{ 'active-tab': this.thirdTabStatus === 'active' }">
+          <div class="row p-md-3 tab" :class="{ 'active-tab': this.thirdTabStatus === 'active' }">
             <nav class="nav flex-column">
               <button @click="handleTabClicked('third')" class="nav-link" :class="thirdTabStatus" type=" button"
                 aria-expanded="false" aria-controls="#collapseReferenceThird"><span class="h3">3</span></button>
             </nav>
           </div>
         </div>
-        <div class="col-md-10 col-10 reference-detail px-5 py-2 pb-4">
+        <div class="col-md-10 col-10 reference-detail px-md-5 py-2 pb-5">
           <div class="row text-start ">
             <div class="collapse show " id="collapseReferenceFirst" ref="collapseFirst">
               <h2 class="pt-3">Rodinný dům – interiérové schodišťové zábradlí</h2>
               <hr class="references-underline">
-              <p class="lead">V rodinném domě jsme realizovali nerezové zábradlí s vodorovnou výplní na schodišti ve
+              <p class="lead pb-2">V rodinném domě jsme realizovali nerezové zábradlí s vodorovnou výplní na schodišti
+                ve
                 dvou podlažích. Moderní řešení ladící s interiérem, kotvené přímo do stěny bez viditelných spojů.</p>
               <div id="galerry-preview" class="row row-cols-md-3 row-cols-1 gy-3 gx-3">
                 <div v-for="(img, index) in firstGalleryJson" :key="img.id" class="col">
@@ -42,10 +43,12 @@
           </div>
           <div class="row text-start">
             <div class="collapse" id="collapseReferenceSecond" ref="collapseSecond">
-              <h2 class="pt-3">Rodinný dům – zábradlí na balkon a schodiště</h2>
+              <h2 class="pt-3">Mateřská škola Tasov – zábradlí u vstupu a rampy</h2>
               <hr class="references-underline">
-              <p class="lead">U rodinného domu jsme instalovali nerezové zábradlí na balkon a venkovní schodiště.
-                Jednoduché a elegantní řešení s vodorovnou výplní ladí s fasádou a celkovým stylem domu.</p>
+              <p class="lead pb-2">U mateřské školy v Tasově jsme realizovali venkovní nerezové zábradlí u vstupní
+                rampy.
+                Zábradlí je navrženo s důrazem na bezpečnost a jednoduchost, aby ladilo s barevnou fasádou a plnilo svou
+                funkci v každodenním provozu školy.</p>
               <div id="galerry-preview" class="row row-cols-md-3 row-cols-1 gy-3 gx-3">
                 <div v-for="(img, index) in secondGalleryJson" :key="img.id" class="col">
                   <img @click="showLightbox(index, 'second')" :src="'../imgs/galery-imgs/big/' + img.id + '.jpg'"
@@ -56,11 +59,10 @@
           </div>
           <div class="row text-start">
             <div class="collapse" id="collapseReferenceThird" ref="collapseThird">
-              <h2 class="pt-3">Mateřská škola Tasov – zábradlí u vstupu a rampy</h2>
+              <h2 class="pt-3">Rodinný dům – zábradlí na balkon a schodiště</h2>
               <hr class="references-underline">
-              <p class="lead">U mateřské školy v Tasově jsme realizovali venkovní nerezové zábradlí u vstupní rampy.
-                Zábradlí je navrženo s důrazem na bezpečnost a jednoduchost, aby ladilo s barevnou fasádou a plnilo svou
-                funkci v každodenním provozu školy.</p>
+              <p class="lead pb-2">U rodinného domu jsme instalovali nerezové zábradlí na balkon a venkovní schodiště.
+                Jednoduché a elegantní řešení s vodorovnou výplní ladí s fasádou a celkovým stylem domu.</p>
               <div id="galerry-preview" class="row row-cols-md-3 row-cols-1 gy-3 gx-3">
                 <div v-for="(img, index) in thirdGalleryJson" :key="img.id" class="col">
                   <img @click="showLightbox(index, 'third')" :src="'../imgs/galery-imgs/big/' + img.id + '.jpg'"
