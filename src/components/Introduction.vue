@@ -1,7 +1,7 @@
 <script setup>
-import img4 from '../imgs/introduction-imgs/4_crop.jpg'
-import img9 from '../imgs/introduction-imgs/9_crop.jpg'
-import img10 from '../imgs/introduction-imgs/10_crop.jpg'
+import firstImg from '../imgs/introduction-imgs/first.jpg'
+import secondImg from '../imgs/introduction-imgs/second.jpg'
+import thirdImg from '../imgs/introduction-imgs/third.jpg'
 </script>
 
 <template>
@@ -21,13 +21,13 @@ import img10 from '../imgs/introduction-imgs/10_crop.jpg'
                   class="carousel-btn" aria-label="Slide 3"></button>
               </div>
               <div class="carousel-item active">
-                <img :src="img4" class="d-block w-100" alt="img of rail">
+                <img :src="firstImg" class="d-block w-100" alt="img of rail">
               </div>
               <div class="carousel-item">
-                <img :src="img9" class="d-block w-100" alt="img of rail">
+                <img :src="secondImg" class="d-block w-100" alt="img of rail">
               </div>
               <div class="carousel-item">
-                <img :src="img10" class="d-block w-100" alt="img of rail">
+                <img :src="thirdImg" class="d-block w-100" alt="img of rail">
               </div>
             </div>
           </div>
