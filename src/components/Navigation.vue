@@ -64,15 +64,6 @@ export default {
       // bsCollapse.show(); // Or .show() to expand
       bsCollapseHide.hide();
     }
-    // activateTab(clickedTab) {
-    //   if (clickedTab === 'second') {
-    //     this.secondTabStatus = 'active';
-    //     this.firstTabStatus = 'non-active';
-    //   } else {
-    //     this.secondTabStatus = 'non-active';
-    //     this.firstTabStatus = 'active';
-    //   }
-    // }
   }
 }
 </script>
