@@ -1,3 +1,9 @@
+<script setup>
+import img4 from '../imgs/introduction-imgs/4_crop.jpg'
+import img9 from '../imgs/introduction-imgs/9_crop.jpg'
+import img10 from '../imgs/introduction-imgs/10_crop.jpg'
+</script>
+
 <template>
   <section id="introduction">
     <div class="container-fluid introduction-container">
@@ -15,13 +21,13 @@
                   class="carousel-btn" aria-label="Slide 3"></button>
               </div>
               <div class="carousel-item active">
-                <img src="../imgs/introduction-imgs/4_crop.jpg" class="d-block w-100" alt="img of rail">
+                <img :src="img4" class="d-block w-100" alt="img of rail">
               </div>
               <div class="carousel-item">
-                <img src="../imgs/introduction-imgs/9_crop.jpg" class="d-block w-100" alt="img of rail">
+                <img :src="img9" class="d-block w-100" alt="img of rail">
               </div>
               <div class="carousel-item">
-                <img src="../imgs/introduction-imgs/10_crop.jpg" class="d-block w-100" alt="img of rail">
+                <img :src="img10" class="d-block w-100" alt="img of rail">
               </div>
             </div>
           </div>
