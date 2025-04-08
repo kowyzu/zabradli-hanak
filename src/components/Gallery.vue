@@ -43,7 +43,7 @@
           <div v-for="(img, index) in getGalleryImgs()" :key="img.id + this.category"
             :class="['col', { hidden: index > 8 && isGalleryOpened === false }]">
             <div :class="{ 'show-more-container': isGalleryOpened === false }">
-              <img @click="showLightbox(index)" :src="'../imgs/galery-imgs/big/' + img.id + '.jpg'" class="img-fluid"
+              <img @click="showLightbox(index)" :src="img.src" class="img-fluid"
                 :class="{ 'show-more-img': index === 8 && isGalleryOpened === false }" alt="galerry img of rail">
               <div v-if="index === 8" class="centered show-more-text" :class="{ 'hidden': isGalleryOpened === true }">
                 <button @click="isGalleryOpened = true" class="btn btn-primary btn-lg btn-show-more"
@@ -64,8 +64,7 @@
       </div>
     </div>
   </section>
-  <vue-easy-lightbox :visible="visible"
-    :imgs="getGalleryImgs().map(img => '../imgs/galery-imgs/big/' + img.id + '.jpg')" :index="currentImgIndex"
+  <vue-easy-lightbox :visible="visible" :imgs="getGalleryImgs().map(img => img.src)" :index="currentImgIndex"
     @hide="visible = false" :zoomDisabled="true" :rotateDisabled="true" :moveDisabled="true" />
 </template>
 
@@ -95,12 +94,15 @@ export default {
   },
   methods: {
     getGalleryImgs() {
+      let resolvedGallery = this.galleryJson.map(item => ({
+        ...item,
+        src: new URL(`../imgs/galery-imgs/big/${item.id + '.jpg'}`, import.meta.url).href
+      }))
       if (this.category === 'all') {
-        return this.galleryJson;
+        return resolvedGallery;
       }
-      console.log(this.galleryJson);
-      return this.galleryJson.filter((img) => img.category.includes(this.category));
-
+      console.log(resolvedGallery);
+      return resolvedGallery.filter((img) => img.category.includes(this.category));
     },
     setCategory(category) {
       this.category = category;

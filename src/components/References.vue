@@ -34,9 +34,8 @@
                 ve
                 dvou podlažích. Moderní řešení ladící s interiérem, kotvené přímo do stěny bez viditelných spojů.</p>
               <div id="galerry-preview" class="row row-cols-md-3 row-cols-1 gy-3 gx-3">
-                <div v-for="(img, index) in firstGalleryJson" :key="img.id" class="col">
-                  <img @click="showLightbox(index, 'first')" :src="'../imgs/galery-imgs/big/' + img.id + '.jpg'"
-                    class="img-fluid" alt="galerry img of rail">
+                <div v-for="(img, index) in getGalleryJson()" :key="img.id" class="col">
+                  <img @click="showLightbox(index)" :src="img.src" class="img-fluid" alt="galerry img of rail">
                 </div>
               </div>
             </div>
@@ -50,9 +49,8 @@
                 Zábradlí je navrženo s důrazem na bezpečnost a jednoduchost, aby ladilo s barevnou fasádou a plnilo svou
                 funkci v každodenním provozu školy.</p>
               <div id="galerry-preview" class="row row-cols-md-3 row-cols-1 gy-3 gx-3">
-                <div v-for="(img, index) in secondGalleryJson" :key="img.id" class="col">
-                  <img @click="showLightbox(index, 'second')" :src="'../imgs/galery-imgs/big/' + img.id + '.jpg'"
-                    class="img-fluid" alt="galerry img of rail">
+                <div v-for="(img, index) in getGalleryJson()" :key="img.id" class="col">
+                  <img @click="showLightbox(index)" :src="img.src" class="img-fluid" alt="galerry img of rail">
                 </div>
               </div>
             </div>
@@ -64,9 +62,8 @@
               <p class="lead pb-2">U rodinného domu jsme instalovali nerezové zábradlí na balkon a venkovní schodiště.
                 Jednoduché a elegantní řešení s vodorovnou výplní ladí s fasádou a celkovým stylem domu.</p>
               <div id="galerry-preview" class="row row-cols-md-3 row-cols-1 gy-3 gx-3">
-                <div v-for="(img, index) in thirdGalleryJson" :key="img.id" class="col">
-                  <img @click="showLightbox(index, 'third')" :src="'../imgs/galery-imgs/big/' + img.id + '.jpg'"
-                    class="img-fluid" alt="galerry img of rail">
+                <div v-for="(img, index) in getGalleryJson()" :key="img.id" class="col">
+                  <img @click="showLightbox(index)" :src="img.src" class="img-fluid" alt="galerry img of rail">
                 </div>
               </div>
             </div>
@@ -106,11 +103,8 @@ export default {
       thirdTabStatus: 'non-active',
       visible: false,
       currentImgIndex: 0,
-      currentGallery: null,
+      currentGallery: 'first',
     }
-  },
-  created() {
-    console.log(this.thirdGalleryJson);
   },
   methods: {
     collapseElement(elementToShow, elementsToHide) {
@@ -148,19 +142,35 @@ export default {
       } else if (clickedTab === 'third') {
         this.collapseElement(this.$refs.collapseThird, [this.$refs.collapseFirst, this.$refs.collapseSecond])
       }
+      this.currentGallery = clickedTab
       this.activateTab(clickedTab)
     },
-    showLightbox(index, galleryKey) {
+    showLightbox(index) {
       this.currentImgIndex = index;
-      this.currentGallery = galleryKey;
       this.visible = true;
     },
     getGalleryJson() {
+      let firstResolvedGallery = this.firstGalleryJson.map(item => ({
+        ...item,
+        src: new URL(`../imgs/galery-imgs/big/${item.id + '.jpg'}`, import.meta.url).href
+      }))
+      let secondResolvedGallery = this.secondGalleryJson.map(item => ({
+        ...item,
+        src: new URL(`../imgs/galery-imgs/big/${item.id + '.jpg'}`, import.meta.url).href
+      }))
+      let thirdResolvedGallery = this.thirdGalleryJson.map(item => ({
+        ...item,
+        src: new URL(`../imgs/galery-imgs/big/${item.id + '.jpg'}`, import.meta.url).href
+      }))
       if (this.currentGallery === 'second') {
-        return this.secondGalleryJson
-      } else if (this.currentGallery === 'third') {
-        return this.thirdGalleryJson
-      } return this.firstGalleryJson
+        return secondResolvedGallery
+      }
+
+      if (this.currentGallery === 'third') {
+        return thirdResolvedGallery
+      }
+
+      return firstResolvedGallery
     }
   }
 }

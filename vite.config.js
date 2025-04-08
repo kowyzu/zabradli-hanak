@@ -17,4 +17,5 @@ export default {
     hot: true,
   },
   plugins: [vue()],
+  assetsInclude: ["**/*.jpg", "**/*.JPG", "**/*.png"],
 };
