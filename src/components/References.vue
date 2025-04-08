@@ -72,8 +72,7 @@
       </div>
     </div>
   </section>
-  <vue-easy-lightbox :visible="visible"
-    :imgs="getGalleryJson().map(img => '../imgs/galery-imgs/big/' + img.id + '.jpg')" :index="currentImgIndex"
+  <vue-easy-lightbox :visible="visible" :imgs="getGalleryJson().map(img => img.src)" :index="currentImgIndex"
     @hide="visible = false" :zoomDisabled="true" :rotateDisabled="true" :moveDisabled="true" />
 </template>
 
