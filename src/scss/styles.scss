@@ -10,6 +10,7 @@ $primary-line:#a40c23a0;
 $secondary:#DEDEDE;
 $secondary-transparent:#dedede8e;
 $tertiary:#9c9898;
+$white: white;
 
 $font-size-base: 1rem;
 $font-size-bigger: 1.2rem;
@@ -259,7 +260,7 @@ h5 {
 #gallery .nav-link.active {
   background-color: $primary;
   border-color: $primary;
-  color: white;
+  color: $white;
 }
 
 #gallery img {
@@ -348,17 +349,24 @@ h5 {
   }    
 }
 
+@include media-breakpoint-up(lg) {
+  #references .tab {
+    border-radius: $border-radius-secondary 0 0 $border-radius-secondary; 
+  }
+  #references .active-tab {
+    border-top-left-radius: $border-radius-secondary;
+    border-bottom-left-radius: $border-radius-secondary;
+    box-shadow: $box-shadow-left;
+  }
+}
+
 
 #references .tab {
   background-color:$color-bg-primary;
-  border-radius: $border-radius-secondary 0 0 $border-radius-secondary;  
 }
 
 #references .active-tab {
   background-color: $primary;
-  border-top-left-radius: $border-radius-secondary;
-  border-bottom-left-radius: $border-radius-secondary;
-  box-shadow: $box-shadow-left;
   z-index: 1;
   position: relative;
 }
@@ -375,11 +383,11 @@ color: $color-text;
 }
 
 #references .active {
-  color: white;
+  color: $white;
 }
 
 #references .active:hover {
-  color: white;
+  color: $white;
 }
 
 .reference-detail {
@@ -409,6 +417,10 @@ color: $color-text;
   border-top: 5px solid $primary-transparent;
   border-radius: 5px;
   opacity: 1;
+}
+
+#references span {
+  font-weight: normal;
 }
 
 //

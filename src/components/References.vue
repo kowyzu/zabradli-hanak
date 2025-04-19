@@ -2,30 +2,57 @@
   <section id="references" class="px-md-5 px-2 py-5 text-center">
     <h1 class="p-4">Vybrané reference</h1>
     <div class="container text-center">
-      <div class="row row-cols-1">
-        <div class="col-md-2 col-2">
+      <div class="row row-cols-1 justify-content-center">
+        <div class="row d-lg-none p-0">
+          <div class="col p-md-3 tab" :class="{ 'active-tab': this.firstTabStatus === 'active' }">
+            <nav class="nav flex-column">
+              <button @click="handleTabClicked('first')" class="nav-link p-0" :class="firstTabStatus" type="button"
+                aria-expanded="false" aria-controls="collapseReferenceFirst">
+                <span class="h5">Rodinný dům – interiér</span>
+              </button>
+            </nav>
+          </div>
+          <div class="col p-md-3 tab" :class="{ 'active-tab': this.secondTabStatus === 'active' }">
+            <nav class="nav flex-column">
+              <button @click="handleTabClicked('second')" class="nav-link p-0" :class="secondTabStatus" type=" button"
+                aria-expanded="false" aria-controls="#collapseReferenceSecond"><span class="h5">Mateřská škola
+                  Tasov</span></button>
+            </nav>
+          </div>
+          <div class="col p-md-3 tab" :class="{ 'active-tab': this.thirdTabStatus === 'active' }">
+            <nav class="nav flex-column">
+              <button @click="handleTabClicked('third')" class="nav-link p-0" :class="thirdTabStatus" type=" button"
+                aria-expanded="false" aria-controls="#collapseReferenceThird"><span class="h5">Rodinný dům –
+                  exteriér</span></button>
+            </nav>
+          </div>
+        </div>
+        <!-- from md -->
+        <div class="col-md-2 col-2 d-none d-lg-block">
           <div class="row p-md-3 mb-3 tab" :class="{ 'active-tab': this.firstTabStatus === 'active' }">
             <nav class="nav flex-column">
-              <button @click="handleTabClicked('first')" class="nav-link" :class="firstTabStatus" type="button"
+              <button @click="handleTabClicked('first')" class="nav-link p-0" :class="firstTabStatus" type="button"
                 aria-expanded="false" aria-controls="collapseReferenceFirst">
-                <span class="h3">1</span>
+                <span class="h5">Rodinný dům – interiér</span>
               </button>
             </nav>
           </div>
           <div class="row p-md-3 mb-3 tab" :class="{ 'active-tab': this.secondTabStatus === 'active' }">
             <nav class="nav flex-column">
-              <button @click="handleTabClicked('second')" class="nav-link" :class="secondTabStatus" type=" button"
-                aria-expanded="false" aria-controls="#collapseReferenceSecond"><span class="h3">2</span></button>
+              <button @click="handleTabClicked('second')" class="nav-link p-0" :class="secondTabStatus" type=" button"
+                aria-expanded="false" aria-controls="#collapseReferenceSecond"><span class="h5">Mateřská škola
+                  Tasov</span></button>
             </nav>
           </div>
           <div class="row p-md-3 tab" :class="{ 'active-tab': this.thirdTabStatus === 'active' }">
             <nav class="nav flex-column">
-              <button @click="handleTabClicked('third')" class="nav-link" :class="thirdTabStatus" type=" button"
-                aria-expanded="false" aria-controls="#collapseReferenceThird"><span class="h3">3</span></button>
+              <button @click="handleTabClicked('third')" class="nav-link p-0" :class="thirdTabStatus" type=" button"
+                aria-expanded="false" aria-controls="#collapseReferenceThird"><span class="h5">Rodinný dům –
+                  exteriér</span></button>
             </nav>
           </div>
         </div>
-        <div class="col-md-10 col-10 reference-detail px-md-5 py-2 pb-5">
+        <div class="col-lg-10 reference-detail px-md-5 py-2 pb-5">
           <div class="row text-start ">
             <div class="collapse show " id="collapseReferenceFirst" ref="collapseFirst">
               <h2 class="pt-3">Rodinný dům – interiérové schodišťové zábradlí</h2>
