@@ -1,5 +1,6 @@
 <template>
   <section id="gallery" class="pt-5 pb-5">
+    <h1 class="p-3 text-center">Galerie</h1>
     <div class="container text-center galerry-container ">
       <div class="row gallery-tabs align-items-center">
         <div class="col text-center p-0 mt-3">
@@ -46,8 +47,8 @@
               <img @click="showLightbox(index)" :src="img.src" class="img-fluid"
                 :class="{ 'show-more-img': index === 8 && isGalleryOpened === false }" alt="galerry img of rail">
               <div v-if="index === 8" class="centered show-more-text" :class="{ 'hidden': isGalleryOpened === true }">
-                <button @click="isGalleryOpened = true" class="btn btn-primary btn-lg btn-show-more"
-                  type="submit">Zobrazit více</button>
+                <button @click="isGalleryOpened = true" class="btn btn-primary btn-show-more" type="submit">Zobrazit
+                  více</button>
               </div>
             </div>
           </div>

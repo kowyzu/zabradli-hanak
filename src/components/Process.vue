@@ -15,7 +15,56 @@
         </div>
       </div>
 
-      <div class="row row-cols-lg-5 row-cols-1 justify-content-between process-first-row m-lg-4 p-lg-4">
+      <div class="row row-cols-lg-3 row-cols-1 justify-content-center process-first-row m-lg-4 p-lg-4">
+        <div class="col process-step-first-row mb-5 mx-lg-0">
+          <div class="p-3">
+            <div class="process-step-icon mb-4">
+              <i class="fa-solid fa-pen-to-square"></i>
+            </div>
+            <h5 class="mt-2">1. Konzultace a plánování</h5>
+            <p class="mb-lg-5">Společně vymyslíme řešení na míru</p>
+          </div>
+        </div>
+        <div class="col process-step-first-row mb-lg-0 mb-5">
+          <div class="p-3">
+            <div class="process-step-icon mb-4">
+              <i class="fa-solid fa-cubes"></i>
+            </div>
+            <h5 class="mt-2">2. Materiál a návrh</h5>
+            <p class="mb-lg-5">Doporučíme správný materiál a design</p>
+          </div>
+        </div>
+        <div class="col process-step-first-row mb-lg-0 mb-5">
+          <div class="p-3">
+            <div class="process-step-icon mb-4">
+              <i class="fa-solid fa-calculator"></i>
+            </div>
+            <h5 class="mt-2">3. Cenová nabídka</h5>
+            <p class="mb-lg-5">Připravíme jasnou a férovou kalkulaci</p>
+          </div>
+        </div>
+        <div class="col process-step-second-row mb-lg-0 mb-5">
+          <div class="p-3">
+            <div class="process-step-icon mb-4">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+            </div>
+            <h5 class="mt-2">4. Precizní provedení</h5>
+            <p>Kvalitní a detailní řemeslná práce</p>
+          </div>
+        </div>
+        <div class="col process-step-second-row">
+          <div class="p-3">
+            <div class="process-step-icon mb-4">
+              <i class="fa-solid fa-clock"></i>
+            </div>
+            <h5 class="mt-2">5. Rychlá realizace</h5>
+            <p>Dokončíme zakázku v co nejkratším termínu</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="row row-cols-lg-5 row-cols-1 justify-content-between process-first-row m-lg-4 p-lg-4">
         <div class="col process-step-first-row mb-lg-0 mb-5 mx-lg-0">
           <div class="p-3">
             <div class="process-step-icon ">
@@ -64,8 +113,8 @@
             <p>Dokončíme zakázku v co nejkratším termínu</p>
           </div>
         </div>
-      </div>
-      <div id="waypoint"></div>
-    </div>
+      </div> -->
+    <!-- <div id="waypoint"></div> -->
+    <!-- </div> -->
   </section>
 </template>
