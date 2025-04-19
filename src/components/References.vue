@@ -1,29 +1,35 @@
 <template>
-  <section id="references" class="px-md-5 px-2 py-5 text-center">
+  <section id="references" class="px-md-5 px-lg-2 px-1 py-5 text-center">
     <h1 class="p-4">Vybrané reference</h1>
     <div class="container text-center">
       <div class="row row-cols-1 justify-content-center">
         <div class="row d-lg-none p-0">
-          <div class="col p-md-3 tab" :class="{ 'active-tab': this.firstTabStatus === 'active' }">
+          <div class="col me-1 tab py-3" :class="{ 'active-tab': this.firstTabStatus === 'active' }">
             <nav class="nav flex-column">
               <button @click="handleTabClicked('first')" class="nav-link p-0" :class="firstTabStatus" type="button"
                 aria-expanded="false" aria-controls="collapseReferenceFirst">
-                <span class="h5">Rodinný dům – interiér</span>
+                <span class="h5 d-none d-sm-block">Rodinný dům – interiér</span>
+                <span class="h5 d-block d-sm-none">Interiér</span>
               </button>
             </nav>
           </div>
-          <div class="col p-md-3 tab" :class="{ 'active-tab': this.secondTabStatus === 'active' }">
+          <div class="col me-1 tab py-3 d-flex align-items-center justify-content-center"
+            :class="{ 'active-tab': this.secondTabStatus === 'active' }">
             <nav class="nav flex-column">
               <button @click="handleTabClicked('second')" class="nav-link p-0" :class="secondTabStatus" type=" button"
-                aria-expanded="false" aria-controls="#collapseReferenceSecond"><span class="h5">Mateřská škola
-                  Tasov</span></button>
+                aria-expanded="false" aria-controls="#collapseReferenceSecond">
+                <span class="h5 d-none d-sm-block">Mateřská škola Tasov</span>
+                <span class="h5 d-block d-sm-none">Školka</span>
+              </button>
             </nav>
           </div>
-          <div class="col p-md-3 tab" :class="{ 'active-tab': this.thirdTabStatus === 'active' }">
+          <div class="col tab py-3" :class="{ 'active-tab': this.thirdTabStatus === 'active' }">
             <nav class="nav flex-column">
               <button @click="handleTabClicked('third')" class="nav-link p-0" :class="thirdTabStatus" type=" button"
-                aria-expanded="false" aria-controls="#collapseReferenceThird"><span class="h5">Rodinný dům –
-                  exteriér</span></button>
+                aria-expanded="false" aria-controls="#collapseReferenceThird">
+                <span class="h5 d-none d-sm-block">Rodinný dům – exteriér</span>
+                <span class="h5 d-block d-sm-none">Exteriér</span>
+              </button>
             </nav>
           </div>
         </div>
@@ -52,15 +58,15 @@
             </nav>
           </div>
         </div>
-        <div class="col-lg-10 reference-detail px-md-5 py-2 pb-5">
+        <div class="col-lg-10 reference-detail px-md-5 pt-5 pt-lg-3 pb-5">
           <div class="row text-start ">
             <div class="collapse show " id="collapseReferenceFirst" ref="collapseFirst">
-              <h2 class="pt-3">Rodinný dům – interiérové schodišťové zábradlí</h2>
+              <h2 class="py-3">Rodinný dům – interiérové schodišťové zábradlí</h2>
               <hr class="references-underline">
               <p class="lead pb-2">V rodinném domě jsme realizovali nerezové zábradlí s vodorovnou výplní na schodišti
                 ve
                 dvou podlažích. Moderní řešení ladící s interiérem, kotvené přímo do stěny bez viditelných spojů.</p>
-              <div id="galerry-preview" class="row row-cols-md-3 row-cols-1 gy-3 gx-3">
+              <div id="galerry-preview" class="row row-cols-md-3 row-cols-1 gy-3 gx-3 pb-3">
                 <div v-for="(img, index) in getGalleryJson()" :key="img.id" class="col">
                   <img @click="showLightbox(index)" :src="img.src" class="img-fluid" alt="galerry img of rail">
                 </div>
@@ -69,7 +75,7 @@
           </div>
           <div class="row text-start">
             <div class="collapse" id="collapseReferenceSecond" ref="collapseSecond">
-              <h2 class="pt-3">Mateřská škola Tasov – zábradlí u vstupu a rampy</h2>
+              <h2 class="py-3">Mateřská škola Tasov – zábradlí u vstupu a rampy</h2>
               <hr class="references-underline">
               <p class="lead pb-2">U mateřské školy v Tasově jsme realizovali venkovní nerezové zábradlí u vstupní
                 rampy.
@@ -84,7 +90,7 @@
           </div>
           <div class="row text-start">
             <div class="collapse" id="collapseReferenceThird" ref="collapseThird">
-              <h2 class="pt-3">Rodinný dům – zábradlí na balkon a schodiště</h2>
+              <h2 class="py-3">Rodinný dům – zábradlí na balkon a schodiště</h2>
               <hr class="references-underline">
               <p class="lead pb-2">U rodinného domu jsme instalovali nerezové zábradlí na balkon a venkovní schodiště.
                 Jednoduché a elegantní řešení s vodorovnou výplní ladí s fasádou a celkovým stylem domu.</p>

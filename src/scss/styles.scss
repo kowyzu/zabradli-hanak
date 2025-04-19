@@ -349,20 +349,9 @@ h5 {
   }    
 }
 
-@include media-breakpoint-up(lg) {
-  #references .tab {
-    border-radius: $border-radius-secondary 0 0 $border-radius-secondary; 
-  }
-  #references .active-tab {
-    border-top-left-radius: $border-radius-secondary;
-    border-bottom-left-radius: $border-radius-secondary;
-    box-shadow: $box-shadow-left;
-  }
-}
-
-
 #references .tab {
   background-color:$color-bg-primary;
+  border-radius:  $border-radius-secondary $border-radius-secondary 0 0 ; 
 }
 
 #references .active-tab {
@@ -390,13 +379,18 @@ color: $color-text;
   color: $white;
 }
 
+#references span {
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
 .reference-detail {
-  background-color: $color-bg-primary;
-  border-radius: 0 $border-radius-primary $border-radius-primary $border-radius-primary;
+  border-radius: 0 0 $border-radius-primary $border-radius-primary;
   box-shadow: -3px 3px 10px 0px rgba(0,0,0,0.28);
+  border-top: 5px solid $primary;
+  background-color: $color-bg-primary;
   z-index: 0;
   position: relative;
-  border-left: 5px solid $primary;
 }
 
 #references img {
@@ -419,10 +413,19 @@ color: $color-text;
   opacity: 1;
 }
 
-#references span {
-  font-weight: normal;
+@include media-breakpoint-up(lg) {
+  #references .tab {
+    border-radius: $border-radius-secondary 0 0 $border-radius-secondary; 
+  }
+  #references .active-tab {
+    box-shadow: $box-shadow-left;
+  }
+  .reference-detail {
+    border-radius: 0 $border-radius-primary $border-radius-primary $border-radius-primary;
+    border-left: 5px solid $primary;
+    border-top: none;
+  }  
 }
-
 //
 // CONTACT FORM
 // ----------------------------------------------------
