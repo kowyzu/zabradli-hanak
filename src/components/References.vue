@@ -5,7 +5,7 @@
       <div class="row row-cols-1 justify-content-center">
         <div class="row d-lg-none p-0">
           <div @click="handleTabClicked('first')"
-            class="col me-1 tab py-3 d-flex align-items-center justify-content-center"
+            class="col ms-1 ms-sm-0 me-1 tab py-3 d-flex align-items-center justify-content-center"
             :class="{ 'active-tab': this.firstTabStatus === 'active' }">
             <nav class="nav flex-column">
               <button class="nav-link p-0" :class="firstTabStatus" type="button" aria-expanded="false"
@@ -27,7 +27,7 @@
             </nav>
           </div>
           <div @click="handleTabClicked('third')"
-            class="col ms-1 tab py-3 d-flex align-items-center justify-content-center"
+            class="col me-1 me-sm-0 ms-1 tab py-3 d-flex align-items-center justify-content-center"
             :class="{ 'active-tab': this.thirdTabStatus === 'active' }">
             <nav class="nav flex-column">
               <button class="nav-link p-0" :class="thirdTabStatus" type=" button" aria-expanded="false"
