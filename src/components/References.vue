@@ -65,7 +65,7 @@
             </nav>
           </div>
         </div>
-        <div class="col-lg-10 reference-detail px-sm-5 pt-5 pt-lg-3 pb-5">
+        <div class="col-lg-10 reference-detail px-sm-5 pt-5 pt-lg-3 pb-5 mb-5">
           <div class="row text-start ">
             <div class="collapse show " id="collapseReferenceFirst" ref="collapseFirst">
               <h3 class="py-3">Rodinný dům – interiérové schodišťové zábradlí</h3>

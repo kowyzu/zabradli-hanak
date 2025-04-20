@@ -3,7 +3,7 @@ import logoPartner from '../imgs/partner-logo/logo-alumit-normal.png'
 </script>
 
 <template>
-  <footer id="footer" class="mt-5">
+  <footer id="footer" class="mt-5 py-5">
     <div class="container">
       <div class="row">
         <div class="col-xl-5 pt-5 pb-lg-5 pb-0">
@@ -35,7 +35,7 @@ import logoPartner from '../imgs/partner-logo/logo-alumit-normal.png'
             </div>
             <div class="row mb-3 justify-content-center">
               <div class="col">
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"
                   placeholder="Sdělte nám svou představu o ideálním zábradlí"></textarea>
               </div>
             </div>
