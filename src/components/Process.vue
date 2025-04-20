@@ -16,7 +16,7 @@
         </div>
       </div>
 
-      <div class="row row-cols-lg-3 row-cols-1 justify-content-center process-first-row m-lg-4 p-lg-4">
+      <div class="row row-cols-md-3 row-cols-1 justify-content-center process-first-row m-lg-4 p-lg-4">
         <div class="col process-step-first-row mb-5 mx-lg-0">
           <div class="p-3">
             <div class="process-step-icon mb-4">

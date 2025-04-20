@@ -3,7 +3,7 @@
     <h1 class="p-3 text-center">Galerie</h1>
     <div class="container text-center galerry-container ">
       <div class="row gallery-tabs align-items-center">
-        <div class="col text-center p-0 mt-3">
+        <div class="col p-0 mt-3">
           <ul class="nav nav-tabs justify-content-md-center ps-4 ps-md-0">
             <li class="nav-item">
               <button @click="setCategory(this.categoryTypeAll)" class="nav-link"
@@ -56,8 +56,7 @@
         <div :class="{ 'hidden': isGalleryOpened === false }"
           class="sticky-bottom show-less-container align-items-start">
           <a href="#gallery" @click="isGalleryOpened = false"
-            class="btn btn-primary btn-md btn-show-less sticky-bottom mb-3 mt-3 z-3"
-            :class="{ 'hidden': isGalleryOpened === false }" type="submit">
+            class="btn btn-primary btn-md btn-show-less sticky-bottom mb-3 mt-3 z-3" type="submit">
             <i class="fa-solid fa-angle-up icon-show-less"></i> Sbalit <i
               class="fa-solid fa-angle-up icon-show-less"></i>
           </a>
@@ -102,7 +101,6 @@ export default {
       if (this.category === 'all') {
         return resolvedGallery;
       }
-      console.log(resolvedGallery);
       return resolvedGallery.filter((img) => img.category.includes(this.category));
     },
     setCategory(category) {
@@ -115,6 +113,4 @@ export default {
     }
   }
 }
-
-
 </script>
