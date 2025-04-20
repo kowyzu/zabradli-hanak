@@ -3,7 +3,7 @@ import logoPartner from '../imgs/partner-logo/logo-alumit-normal.png'
 </script>
 
 <template>
-  <footer id="footer">
+  <footer id="footer" class="mt-5">
     <div class="container">
       <div class="row">
         <div class="col-xl-5 pt-5 pb-lg-5 pb-0">

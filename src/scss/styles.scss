@@ -87,6 +87,10 @@ h1, h2, h3 {
     }
 }
 
+.nav-link{
+ font-size: 20px !important;
+}
+
 .img-logo{
     width: 164px;
 }
@@ -194,7 +198,7 @@ strong {
 
 .process p {
     margin: 0;
-    font-size: large;
+    font-size: 20px;
 }
 
 .process-header-icon .icon-link .fa-chevron-down{
@@ -277,6 +281,10 @@ h5 {
   background-color: $primary;
   border-color: $primary;
   color: $white;
+}
+
+#gallery .btn:hover{
+  color: $secondary !important;
 }
 
 #gallery img {

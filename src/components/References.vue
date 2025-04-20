@@ -68,7 +68,7 @@
         <div class="col-lg-10 reference-detail px-sm-5 pt-5 pt-lg-3 pb-5">
           <div class="row text-start ">
             <div class="collapse show " id="collapseReferenceFirst" ref="collapseFirst">
-              <h2 class="py-3">Rodinný dům – interiérové schodišťové zábradlí</h2>
+              <h3 class="py-3">Rodinný dům – interiérové schodišťové zábradlí</h3>
               <hr class="references-underline">
               <p class="lead pb-2">V rodinném domě jsme realizovali nerezové zábradlí s vodorovnou výplní na schodišti
                 ve
@@ -82,7 +82,7 @@
           </div>
           <div class="row text-start">
             <div class="collapse" id="collapseReferenceSecond" ref="collapseSecond">
-              <h2 class="py-3">Mateřská škola Tasov – zábradlí u vstupu a rampy</h2>
+              <h3 class="py-3">Mateřská škola Tasov – zábradlí u vstupu a rampy</h3>
               <hr class="references-underline">
               <p class="lead pb-2">U mateřské školy v Tasově jsme realizovali venkovní nerezové zábradlí u vstupní
                 rampy.
@@ -97,7 +97,7 @@
           </div>
           <div class="row text-start">
             <div class="collapse" id="collapseReferenceThird" ref="collapseThird">
-              <h2 class="py-3">Rodinný dům – zábradlí na balkon a schodiště</h2>
+              <h3 class="py-3">Rodinný dům – zábradlí na balkon a schodiště</h3>
               <hr class="references-underline">
               <p class="lead pb-2">U rodinného domu jsme instalovali nerezové zábradlí na balkon a venkovní schodiště.
                 Jednoduché a elegantní řešení s vodorovnou výplní ladí s fasádou a celkovým stylem domu.</p>

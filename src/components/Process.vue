@@ -8,7 +8,7 @@
               <i class="fa-solid fa-chevron-down"></i>
             </a>
           </div>
-          <h3 id="process-title" class="text-center mt-2 p-2 align-middle">Od nápadu k realizaci...</h3>
+          <h1 id="process-title" class="text-center mt-2 p-2 align-middle">Od nápadu k realizaci...</h1>
           <!-- TEXT TO BE UPDATED - in mobile need to display above! -->
           <p class="lead">Vyrábíme zakázková schodiště, nerezová a hliníková zábradlí, skleněné výplně i dřevěná madla.
             Specializujeme se na precizní svařování MMA, MIG/MAG a TIG.</p>
