@@ -199,6 +199,18 @@ strong {
 
 .process-header-icon .icon-link .fa-chevron-down{
   height: 3rem;
+  transition: color 0.2s ease;
+  transition: .4s all ease-in-out;
+  // animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 1.5s;
+  padding: 1rem;
+}
+
+.process-header-icon .icon-link .fa-chevron-down:hover {
+  // color: greenyellow;
+  transform: scale(1.1);
+
+
 }
 
 #process-title {
