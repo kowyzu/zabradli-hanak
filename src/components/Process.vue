@@ -1,8 +1,8 @@
 <template>
   <section id="process" class="process">
-    <div class="container-fluid text-center process-container mt-5 mb-5 pb-5 px-5">
+    <div class="container-fluid text-center process-container mt-5 mb-5 pb-5 px-md-5">
       <div class="row process-header justify-content-center p-3 mb-4">
-        <div class="col-lg-5 text-center p-3">
+        <div class="col-xxl-5 col-md-8 col-12 text-center p-3">
           <div class="process-header-icon ">
             <a class="icon-link nav-link lead" href="#process-title">
               <i class="fa-solid fa-chevron-down"></i>
@@ -10,7 +10,8 @@
           </div>
           <h1 id="process-title" class="text-center mt-2 p-2 align-middle">Od nápadu k realizaci...</h1>
           <!-- TEXT TO BE UPDATED - in mobile need to display above! -->
-          <p class="lead">Vyrábíme zakázková schodiště, nerezová a hliníková zábradlí, skleněné výplně i dřevěná madla.
+          <p class="lead px-md-5">Vyrábíme zakázková schodiště, nerezová a hliníková zábradlí, skleněné výplně i
+            dřevěná madla.
             Specializujeme se na precizní svařování MMA, MIG/MAG a TIG.</p>
         </div>
       </div>

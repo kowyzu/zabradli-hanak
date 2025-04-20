@@ -471,6 +471,12 @@ color: $color-text;
   opacity: 1;
 }
 
+@include media-breakpoint-down(sm) {
+  .reference-detail {
+    border-radius: 0;
+  } 
+}
+
 @include media-breakpoint-down(md) {
   .reference-detail {
     box-shadow: none;

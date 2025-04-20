@@ -1,5 +1,5 @@
 <template>
-  <section id="references" class="px-lg-5 px-lg-2 py-5 text-center">
+  <section id="references" class="px-lg-5 px-lg-2 py-sm-5 pt-5 text-center">
     <h1 class="p-4">Vybrané reference</h1>
     <div class="container text-center">
       <div class="row row-cols-1 justify-content-center">
@@ -65,7 +65,7 @@
             </nav>
           </div>
         </div>
-        <div class="col-lg-10 reference-detail px-sm-5 pt-5 pt-lg-3 pb-5 mb-5">
+        <div class="col-lg-10 reference-detail px-sm-5 pt-5 pt-lg-3 pb-5 mb-sm-5">
           <div class="row text-start ">
             <div class="collapse show " id="collapseReferenceFirst" ref="collapseFirst">
               <h3 class="py-3">Rodinný dům – interiérové schodišťové zábradlí</h3>
