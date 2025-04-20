@@ -371,12 +371,16 @@ h5 {
   transition: .4s all ease-in-out;
   max-height: 315.47px;
   animation-duration: 1.5s;
+  position: relative;
+  top: 7px;
+	transition: .3s top ease-in-out;
 }
 
 #references .active-tab {
   background-color: $primary;
   z-index: 1;
   position: relative;
+  top: 0
 }
 
 #references .active-tab .btn {
@@ -393,6 +397,7 @@ color: $color-text;
 
 #references .tab:hover {
   cursor: pointer;
+  top: 0; 
 }
 
 #references .tab:hover .nav-link{
@@ -450,9 +455,17 @@ color: $color-text;
 @include media-breakpoint-up(lg) {
   #references .tab {
     border-radius: $border-radius-secondary 0 0 $border-radius-secondary; 
+    top: 0;
+    left: 7px;
+    transition: .3s left ease-in-out;
   }
+  #references .tab:hover {
+    left: 0; 
+  }
+  
   #references .active-tab {
     box-shadow: $box-shadow-left;
+    left: 0;
   }
   .reference-detail {
     border-radius: 0 $border-radius-primary $border-radius-primary $border-radius-primary;
