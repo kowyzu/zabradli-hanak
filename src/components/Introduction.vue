@@ -39,7 +39,7 @@ import thirdImg from '../imgs/introduction-imgs/third.jpg'
             Zakázková výroba schodišť a zábradlí
           </h1>
           <!-- text to update -->
-          <p class="lead mb-xl-3">
+          <p class="mb-xl-3">
             Specializujeme se na <strong>nerez, hliník a sklo</strong>. Precizní řemeslné zpracování a individuální
             přístup jsou pro nás
             samozřejmostí.

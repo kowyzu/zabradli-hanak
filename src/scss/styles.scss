@@ -12,8 +12,8 @@ $secondary-transparent:#dedede8e;
 $tertiary:#9c9898;
 $white: white;
 
-$font-size-base: 1rem;
-$font-size-bigger: 1.2rem;
+$font-size-primary: 1.2rem;
+$font-size-smaller: 1rem;
 
 $font-family-sans: "Montserrat", sans-serif;
 $font-family-serif: "Roboto Slab","Big Caslon", Georgia, serif;
@@ -77,6 +77,7 @@ body {
     font: {
         family: $font-family-sans;
         weight: normal;
+        size: $font-size-primary;
     }
 }
 
@@ -87,8 +88,16 @@ h1, h2, h3 {
     }
 }
 
+h5 {
+  font-size: $font-size-primary;
+}
+
+.btn {
+  font-size: $font-size-primary;
+}
+
 .nav-link{
- font-size: 20px !important;
+ font-size: $font-size-primary;
 }
 
 .img-logo{
@@ -129,10 +138,6 @@ strong {
     color: $primary;
 }
 
-.nav-link {
-    font-size: $font-size-bigger;
-}
-
 .navigation-toggler {
   border-color: $primary;
   transition: 0.15s ease-in-out;
@@ -140,6 +145,10 @@ strong {
 
 .navigation-toggler:focus {
   color: $primary-transparent;
+}
+
+.navbar li {
+  font-size: $font-size-smaller;
 }
 
 .navbar-collapse {
@@ -157,6 +166,10 @@ strong {
 // ----------------------------------------------------
 #introduction {
     background-color: $color-bg-primary;
+}
+
+#introduction p{
+  font-weight: 300;
 }
 
 #introduction img{
@@ -198,7 +211,7 @@ strong {
 
 .process p {
     margin: 0;
-    font-size: 20px;
+    font-size: $font-size-primary;
 }
 
 .process-header-icon .icon-link .fa-chevron-down{
@@ -281,6 +294,10 @@ h5 {
   background-color: $primary;
   border-color: $primary;
   color: $white;
+}
+
+#gallery .btn {
+  font-size: $font-size-smaller;
 }
 
 #gallery .btn:hover{

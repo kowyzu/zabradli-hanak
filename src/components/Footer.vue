@@ -46,7 +46,7 @@ import logoPartner from '../imgs/partner-logo/logo-alumit-normal.png'
           <div class="row row-cols-md-2 row-cols-1">
             <div class="col mb-3">
               <h3 class="mb-4">Kontakt</h3>
-              <ul class="list-unstyled lead">
+              <ul class="list-unstyled">
                 <li><strong>Marek Hanák</strong></li>
                 <li>Kozojídky 142</li>
                 <li class="mb-4">696 63 Kozojídky</li>

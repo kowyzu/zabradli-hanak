@@ -70,7 +70,7 @@
             <div class="collapse show " id="collapseReferenceFirst" ref="collapseFirst">
               <h3 class="py-3">Rodinný dům – interiérové schodišťové zábradlí</h3>
               <hr class="references-underline">
-              <p class="lead pb-2">V rodinném domě jsme realizovali nerezové zábradlí s vodorovnou výplní na schodišti
+              <p class="pb-2">V rodinném domě jsme realizovali nerezové zábradlí s vodorovnou výplní na schodišti
                 ve
                 dvou podlažích. Moderní řešení ladící s interiérem, kotvené přímo do stěny bez viditelných spojů.</p>
               <div id="galerry-preview" class="row row-cols-md-3 row-cols-1 gy-3 gx-3 pb-3">
@@ -84,7 +84,7 @@
             <div class="collapse" id="collapseReferenceSecond" ref="collapseSecond">
               <h3 class="py-3">Mateřská škola Tasov – zábradlí u vstupu a rampy</h3>
               <hr class="references-underline">
-              <p class="lead pb-2">U mateřské školy v Tasově jsme realizovali venkovní nerezové zábradlí u vstupní
+              <p class="pb-2">U mateřské školy v Tasově jsme realizovali venkovní nerezové zábradlí u vstupní
                 rampy.
                 Zábradlí je navrženo s důrazem na bezpečnost a jednoduchost, aby ladilo s barevnou fasádou a plnilo svou
                 funkci v každodenním provozu školy.</p>
@@ -99,7 +99,7 @@
             <div class="collapse" id="collapseReferenceThird" ref="collapseThird">
               <h3 class="py-3">Rodinný dům – zábradlí na balkon a schodiště</h3>
               <hr class="references-underline">
-              <p class="lead pb-2">U rodinného domu jsme instalovali nerezové zábradlí na balkon a venkovní schodiště.
+              <p class="pb-2">U rodinného domu jsme instalovali nerezové zábradlí na balkon a venkovní schodiště.
                 Jednoduché a elegantní řešení s vodorovnou výplní ladí s fasádou a celkovým stylem domu.</p>
               <div id="galerry-preview" class="row row-cols-md-3 row-cols-1 gy-3 gx-3">
                 <div v-for="(img, index) in getGalleryJson()" :key="img.id" class="col">
