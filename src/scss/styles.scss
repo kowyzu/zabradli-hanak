@@ -92,10 +92,6 @@ h5 {
   font-size: $font-size-primary;
 }
 
-.btn {
-  font-size: $font-size-primary;
-}
-
 .nav-link{
  font-size: $font-size-primary;
 }
@@ -190,6 +186,10 @@ strong {
 
 .carousel-btn{
     margin-bottom: 3%;
+}
+
+#introduction .btn {
+  font-size: $font-size-primary;
 }
 
 .btn-contact-form:hover {
@@ -294,10 +294,6 @@ h5 {
   background-color: $primary;
   border-color: $primary;
   color: $white;
-}
-
-#gallery .btn {
-  font-size: $font-size-smaller;
 }
 
 #gallery .btn:hover{

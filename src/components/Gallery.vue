@@ -41,8 +41,7 @@
 
       <div>
         <div id="galerry-preview" class="row row-cols-md-3 row-cols-1 gy-3 gx-3 mt-1 mb-2">
-          <div v-for="(img, index) in getGalleryImgs()" :key="img.id + this.category"
-            :class="['col', { hidden: index > 8 && isGalleryOpened === false }]">
+          <div v-for="(img, index) in getGalleryImgs()" :key="img.id + this.category" class="col">
             <div :class="{ 'show-more-container': isGalleryOpened === false }">
               <img @click="showLightbox(index)" :src="img.src" class="img-fluid"
                 :class="{ 'show-more-img': index === 8 && isGalleryOpened === false }" alt="galerry img of rail">
@@ -93,16 +92,30 @@ export default {
     }
   },
   methods: {
+    // Get imgs to show in gallery based on different conditions
     getGalleryImgs() {
       let resolvedGallery = this.galleryJson.map(item => ({
         ...item,
         src: new URL(`../imgs/galery-imgs/big/${item.id + '.jpg'}`, import.meta.url).href
       }))
+      // Filter gallery by category
+      let resolvedGalleryFilteredByCategory = resolvedGallery.filter((img) => img.category.includes(this.category))
+      // Handle different conditions
       if (this.category === 'all') {
-        return resolvedGallery;
+        if (this.isGalleryOpened === false) {
+          return resolvedGallery.slice(0, 9);
+        } else {
+          return resolvedGallery;
+        }
+      } else {
+        if (this.isGalleryOpened === false) {
+          return resolvedGalleryFilteredByCategory.slice(0, 9);
+        } else {
+          return resolvedGalleryFilteredByCategory;
+        }
       }
-      return resolvedGallery.filter((img) => img.category.includes(this.category));
     },
+    // Set current category displayed in gallery
     setCategory(category) {
       this.category = category;
       this.isGalleryOpened = false;
