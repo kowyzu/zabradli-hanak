@@ -1,32 +1,37 @@
 <template>
-  <section id="references" class="px-md-5 px-lg-2 px-1 py-5 text-center">
+  <section id="references" class="px-lg-5 px-lg-2 py-5 text-center">
     <h1 class="p-4">Vybrané reference</h1>
     <div class="container text-center">
       <div class="row row-cols-1 justify-content-center">
         <div class="row d-lg-none p-0">
-          <div class="col me-1 tab py-3" :class="{ 'active-tab': this.firstTabStatus === 'active' }">
+          <div @click="handleTabClicked('first')"
+            class="col me-1 tab py-3 d-flex align-items-center justify-content-center"
+            :class="{ 'active-tab': this.firstTabStatus === 'active' }">
             <nav class="nav flex-column">
-              <button @click="handleTabClicked('first')" class="nav-link p-0" :class="firstTabStatus" type="button"
-                aria-expanded="false" aria-controls="collapseReferenceFirst">
+              <button class="nav-link p-0" :class="firstTabStatus" type="button" aria-expanded="false"
+                aria-controls="collapseReferenceFirst">
                 <span class="h5 d-none d-sm-block">Rodinný dům – interiér</span>
                 <span class="h5 d-block d-sm-none">Interiér</span>
               </button>
             </nav>
           </div>
-          <div class="col me-1 tab py-3 d-flex align-items-center justify-content-center"
+          <div @click="handleTabClicked('second')"
+            class="col me-1 ms-1 tab py-3 d-flex align-items-center justify-content-center"
             :class="{ 'active-tab': this.secondTabStatus === 'active' }">
             <nav class="nav flex-column">
-              <button @click="handleTabClicked('second')" class="nav-link p-0" :class="secondTabStatus" type=" button"
-                aria-expanded="false" aria-controls="#collapseReferenceSecond">
+              <button class="nav-link p-0" :class="secondTabStatus" type=" button" aria-expanded="false"
+                aria-controls="#collapseReferenceSecond">
                 <span class="h5 d-none d-sm-block">Mateřská škola Tasov</span>
                 <span class="h5 d-block d-sm-none">Školka</span>
               </button>
             </nav>
           </div>
-          <div class="col tab py-3" :class="{ 'active-tab': this.thirdTabStatus === 'active' }">
+          <div @click="handleTabClicked('third')"
+            class="col ms-1 tab py-3 d-flex align-items-center justify-content-center"
+            :class="{ 'active-tab': this.thirdTabStatus === 'active' }">
             <nav class="nav flex-column">
-              <button @click="handleTabClicked('third')" class="nav-link p-0" :class="thirdTabStatus" type=" button"
-                aria-expanded="false" aria-controls="#collapseReferenceThird">
+              <button class="nav-link p-0" :class="thirdTabStatus" type=" button" aria-expanded="false"
+                aria-controls="#collapseReferenceThird">
                 <span class="h5 d-none d-sm-block">Rodinný dům – exteriér</span>
                 <span class="h5 d-block d-sm-none">Exteriér</span>
               </button>
@@ -35,30 +40,32 @@
         </div>
         <!-- from md -->
         <div class="col-md-2 col-2 d-none d-lg-block">
-          <div class="row p-md-3 mb-3 tab" :class="{ 'active-tab': this.firstTabStatus === 'active' }">
+          <div class="row mb-3 tab" :class="{ 'active-tab': this.firstTabStatus === 'active' }">
             <nav class="nav flex-column">
-              <button @click="handleTabClicked('first')" class="nav-link p-0" :class="firstTabStatus" type="button"
-                aria-expanded="false" aria-controls="collapseReferenceFirst">
+              <button @click="handleTabClicked('first')" class="nav-link p-0 p-md-3" :class="firstTabStatus"
+                type="button" aria-expanded="false" aria-controls="collapseReferenceFirst">
                 <span class="h5">Rodinný dům – interiér</span>
               </button>
             </nav>
           </div>
-          <div class="row p-md-3 mb-3 tab" :class="{ 'active-tab': this.secondTabStatus === 'active' }">
+          <div class="row mb-3 tab" :class="{ 'active-tab': this.secondTabStatus === 'active' }">
             <nav class="nav flex-column">
-              <button @click="handleTabClicked('second')" class="nav-link p-0" :class="secondTabStatus" type=" button"
-                aria-expanded="false" aria-controls="#collapseReferenceSecond"><span class="h5">Mateřská škola
+              <button @click="handleTabClicked('second')" class="nav-link p-0 p-md-3" :class="secondTabStatus"
+                type=" button" aria-expanded="false" aria-controls="#collapseReferenceSecond"><span class="h5">Mateřská
+                  škola
                   Tasov</span></button>
             </nav>
           </div>
-          <div class="row p-md-3 tab" :class="{ 'active-tab': this.thirdTabStatus === 'active' }">
+          <div class="row tab" :class="{ 'active-tab': this.thirdTabStatus === 'active' }">
             <nav class="nav flex-column">
-              <button @click="handleTabClicked('third')" class="nav-link p-0" :class="thirdTabStatus" type=" button"
-                aria-expanded="false" aria-controls="#collapseReferenceThird"><span class="h5">Rodinný dům –
+              <button @click="handleTabClicked('third')" class="nav-link p-0 p-md-3" :class="thirdTabStatus"
+                type=" button" aria-expanded="false" aria-controls="#collapseReferenceThird"><span class="h5">Rodinný
+                  dům –
                   exteriér</span></button>
             </nav>
           </div>
         </div>
-        <div class="col-lg-10 reference-detail px-md-5 pt-5 pt-lg-3 pb-5">
+        <div class="col-lg-10 reference-detail px-sm-5 pt-5 pt-lg-3 pb-5">
           <div class="row text-start ">
             <div class="collapse show " id="collapseReferenceFirst" ref="collapseFirst">
               <h2 class="py-3">Rodinný dům – interiérové schodišťové zábradlí</h2>
