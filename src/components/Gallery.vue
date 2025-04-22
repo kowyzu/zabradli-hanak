@@ -32,7 +32,6 @@
             <li class="nav-item">
               <button @click="setCategory(this.categoryTypeOther)" class="nav-link"
                 :class="{ 'active': this.category === this.categoryTypeOther }" type="submit">Ostatní</button>
-              <!-- <a class="nav-link" href="#">Ostatní</a> -->
             </li>
           </ul>
         </div>
@@ -41,11 +40,12 @@
 
       <div>
         <div id="galerry-preview" class="row row-cols-md-3 row-cols-1 gy-3 gx-3 mt-1 mb-2">
-          <div v-for="(img, index) in getGalleryImgs()" :key="img.id + this.category" class="col">
+          <div v-for="(img, index) in getGalleryImgsToDisplay()" :key="img.id + this.category" class="col">
             <div :class="{ 'show-more-container': isGalleryOpened === false }">
               <img @click="showLightbox(index)" :src="img.src" class="img-fluid"
-                :class="{ 'show-more-img': index === 8 && isGalleryOpened === false }" alt="galerry img of rail">
-              <div v-if="index === 8" class="centered show-more-text" :class="{ 'hidden': isGalleryOpened === true }">
+                :class="{ 'show-more-img': isShowMoreTriggerSlot(index) }" alt="galerry img of rail">
+              <div v-if="isShowMoreTriggerSlot(index)" class="centered show-more-text"
+                :class="{ 'hidden': isGalleryOpened === true }">
                 <button @click="isGalleryOpened = true" class="btn btn-primary btn-show-more" type="submit">Zobrazit
                   více</button>
               </div>
@@ -63,7 +63,7 @@
       </div>
     </div>
   </section>
-  <vue-easy-lightbox :visible="visible" :imgs="getGalleryImgs().map(img => img.src)" :index="currentImgIndex"
+  <vue-easy-lightbox :visible="visible" :imgs="getGalleryImgsToDisplay().map(img => img.src)" :index="currentImgIndex"
     @hide="visible = false" :zoomDisabled="true" :rotateDisabled="true" :moveDisabled="true" />
 </template>
 
@@ -79,6 +79,7 @@ export default {
   data() {
     return {
       galleryJson: gallery_JSON,
+      actualGalleryLength: 53,
       category: 'all',
       isGalleryOpened: false,
       categoryTypeAll: 'all',
@@ -92,15 +93,43 @@ export default {
     }
   },
   methods: {
-    // Get imgs to show in gallery based on different conditions
-    getGalleryImgs() {
-      let resolvedGallery = this.galleryJson.map(item => ({
+    // Set current category displayed in gallery
+    setCategory(category) {
+      this.category = category;
+      this.isGalleryOpened = false;
+    },
+
+    // Resolve raw gallery data by adding a usable 'src' path to each image
+    resolveGallery(galleryToResolve) {
+      let resolvedGallery = galleryToResolve.map(item => ({
         ...item,
         src: new URL(`../imgs/galery-imgs/big/${item.id + '.jpg'}`, import.meta.url).href
       }))
-      // Filter gallery by category
-      let resolvedGalleryFilteredByCategory = resolvedGallery.filter((img) => img.category.includes(this.category))
-      // Handle different conditions
+
+      return resolvedGallery
+    },
+
+    // Filter gallery imgs according to selected category
+    filterGalleryImgs(galleryArray) {
+      if (this.category === 'all') {
+        return galleryArray
+      }
+      let galleryFilteredByCategory = galleryArray.filter((img) => img.category.includes(this.category));
+      return galleryFilteredByCategory
+    },
+
+    // Update gallery length according to selected category
+    getGalleryLength(galerryArray) {
+      let galleryArrayLength = galerryArray.length
+      this.actualGalleryLength = galleryArrayLength
+    },
+
+    // Get imgs to show in gallery based on different conditions
+    getGalleryImgsToDisplay() {
+      let resolvedGallery = this.resolveGallery(this.galleryJson)
+      let filteredGallery = this.filterGalleryImgs(resolvedGallery)
+      this.getGalleryLength(filteredGallery)
+
       if (this.category === 'all') {
         if (this.isGalleryOpened === false) {
           return resolvedGallery.slice(0, 9);
@@ -109,17 +138,19 @@ export default {
         }
       } else {
         if (this.isGalleryOpened === false) {
-          return resolvedGalleryFilteredByCategory.slice(0, 9);
+          return filteredGallery.slice(0, 9);
         } else {
-          return resolvedGalleryFilteredByCategory;
+          return filteredGallery;
         }
       }
     },
-    // Set current category displayed in gallery
-    setCategory(category) {
-      this.category = category;
-      this.isGalleryOpened = false;
+
+    // Condition for show more img and text
+    isShowMoreTriggerSlot(index) {
+      return index === 8 && this.actualGalleryLength > 9 && this.isGalleryOpened === false
     },
+
+    // Show vue easy lightbox 
     showLightbox(index) {
       this.currentImgIndex = index;
       this.visible = true;
