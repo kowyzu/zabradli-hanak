@@ -54,7 +54,7 @@
         </div>
         <div :class="{ 'hidden': isGalleryOpened === false }"
           class="sticky-bottom show-less-container align-items-start">
-          <a href="#gallery" @click="isGalleryOpened = false"
+          <a href="#galerry-preview" @click="isGalleryOpened = false"
             class="btn btn-primary btn-md btn-show-less sticky-bottom mb-3 mt-3 z-3" type="submit">
             <i class="fa-solid fa-angle-up icon-show-less"></i> Sbalit <i
               class="fa-solid fa-angle-up icon-show-less"></i>

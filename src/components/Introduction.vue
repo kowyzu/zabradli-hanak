@@ -9,16 +9,16 @@ import thirdImg from '../imgs/introduction-imgs/third.jpg'
     <div class="container-fluid introduction-container">
       <div class="row justify-content-md-left align-items-xl-center">
         <div class="col-xl-7 introduction-carousel p-0">
-          <div id="carouselIntroduction" class="carousel slide shape-mask">
+          <div id="carouselIntroduction" class="carousel slide shape-mask carousel-fade">
             <!--data-bs-ride="carousel" -->
             <div class="carousel-inner">
-              <div class="carousel-indicators">
+              <div class="carousel-indicators justify-content-start ms-3 mb-2">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                  class="active carousel-btn" aria-current="true" aria-label="Slide 1"></button>
+                  class="active carousel-btn carousel-btn-circle" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                  class="carousel-btn" aria-label="Slide 2"></button>
+                  class="carousel-btn carousel-btn-circle" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                  class="carousel-btn" aria-label="Slide 3"></button>
+                  class="carousel-btn carousel-btn-circle" aria-label="Slide 3"></button>
               </div>
               <div class="carousel-item active">
                 <img :src="firstImg" class="d-block w-100" alt="img of rail">

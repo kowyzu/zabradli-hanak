@@ -73,7 +73,7 @@
               <p class="pb-2">V rodinném domě jsme realizovali nerezové zábradlí s vodorovnou výplní na schodišti
                 ve
                 dvou podlažích. Moderní řešení ladící s interiérem, kotvené přímo do stěny bez viditelných spojů.</p>
-              <div id="galerry-preview" class="row row-cols-md-3 row-cols-1 gy-3 gx-3 pb-3">
+              <div id="galerry-preview" class="row row-cols-xl-3 row-cols-md-2 row-cols-1 gy-3 gx-3 pb-3">
                 <div v-for="(img, index) in getGalleryJson()" :key="img.id" class="col">
                   <img @click="showLightbox(index)" :src="img.src" class="img-fluid" alt="galerry img of rail">
                 </div>
@@ -88,7 +88,7 @@
                 rampy.
                 Zábradlí je navrženo s důrazem na bezpečnost a jednoduchost, aby ladilo s barevnou fasádou a plnilo svou
                 funkci v každodenním provozu školy.</p>
-              <div id="galerry-preview" class="row row-cols-md-3 row-cols-1 gy-3 gx-3">
+              <div id="galerry-preview" class="row row-cols-xl-3 row-cols-md-2 row-cols-1 gy-3 gx-3">
                 <div v-for="(img, index) in getGalleryJson()" :key="img.id" class="col">
                   <img @click="showLightbox(index)" :src="img.src" class="img-fluid" alt="galerry img of rail">
                 </div>
@@ -101,7 +101,7 @@
               <hr class="references-underline">
               <p class="pb-2">U rodinného domu jsme instalovali nerezové zábradlí na balkon a venkovní schodiště.
                 Jednoduché a elegantní řešení s vodorovnou výplní ladí s fasádou a celkovým stylem domu.</p>
-              <div id="galerry-preview" class="row row-cols-md-3 row-cols-1 gy-3 gx-3">
+              <div id="galerry-preview" class="row row-cols-xl-3 row-cols-md-2 row-cols-1 gy-3 gx-3">
                 <div v-for="(img, index) in getGalleryJson()" :key="img.id" class="col">
                   <img @click="showLightbox(index)" :src="img.src" class="img-fluid" alt="galerry img of rail">
                 </div>

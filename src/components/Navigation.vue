@@ -4,11 +4,11 @@ import logo from '../imgs/logo_zabradli_hanak.png'
 
 <template>
   <header class="sticky-top">
-    <nav class="navbar navbar-expand-lg shadow-sm"> <!--bg-body-tertiary-->
+    <nav class="navbar navbar-expand-lg shadow-sm">
       <div class="container-fluid">
-        <div class="navbar-brand">
+        <a class="navbar-brand" href="#">
           <img class="img-logo" :src="logo" alt="Logo Zábradlí Hanák">
-        </div>
+        </a>
 
         <button class="navbar-toggler navigation-toggler" type="button" data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
