@@ -4,7 +4,7 @@ import Introduction from './components/Introduction.vue'
 import Process from './components/Process.vue'
 import Gallery from './components/Gallery.vue'
 import References from './components/References.vue'
-import FooterSection from './components/Footer.vue'
+import FooterSection from './components/footer/Footer.vue'
 </script>
 
 <template>
