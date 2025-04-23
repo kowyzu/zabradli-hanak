@@ -1,10 +1,10 @@
 <template>
-  <form class="pe-lg-5">
+  <form action="http://localhost:8080/index.php" method="POST" class="pe-lg-5">
     <div class="row mb-3 justify-content-center">
       <div class="col">
         <div class="input-group">
           <div class="input-group-text"><i class="fa-solid fa-user fa-fw"></i></div>
-          <input type="text" class="form-control" id="inputName" placeholder="Jméno">
+          <input type="text" class="form-control" id="inputName" name="name" placeholder="Jméno">
         </div>
       </div>
     </div>
