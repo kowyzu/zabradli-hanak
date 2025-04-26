@@ -1,10 +1,10 @@
 <template>
-  <form action="http://localhost:8080/index.php" method="POST" class="pe-lg-5">
+  <form @submit="(event) => validateForm(event)" method="POST" class="pe-lg-5">
     <div class="row mb-3 justify-content-center">
       <div class="col">
         <div class="input-group">
           <div class="input-group-text"><i class="fa-solid fa-user fa-fw"></i></div>
-          <input type="text" class="form-control" id="inputName" name="name" placeholder="Jméno">
+          <input v-model.trim="name" type="text" class="form-control" id="inputName" name="name" placeholder="Jméno">
         </div>
       </div>
     </div>
@@ -35,4 +35,19 @@
 </template>
 
 <script>
+export default {
+  data() {
+    return {
+      name: '',
+      phoneNumber: '',
+
+    }
+  },
+  methods: {
+    validateForm(event) {
+      event.preventDefault()
+      console.log("hello");
+    }
+  }
+}
 </script>
