@@ -5,7 +5,7 @@
         <div class="col-xxl-5 col-md-8 col-12 text-center p-3">
           <div class="process-header-icon ">
             <a class="icon-link nav-link lead" href="#process-title">
-              <i class="fa-solid fa-chevron-down"></i>
+              <i class="fa-solid fa-chevron-down drag-arrow-animation"></i>
             </a>
           </div>
           <h1 id="process-title" class="text-center mt-2 p-2 align-middle">Od nápadu k realizaci...</h1>
@@ -64,58 +64,11 @@
         </div>
       </div>
     </div>
-
-    <!-- <div class="row row-cols-lg-5 row-cols-1 justify-content-between process-first-row m-lg-4 p-lg-4">
-        <div class="col process-step-first-row mb-lg-0 mb-5 mx-lg-0">
-          <div class="p-3">
-            <div class="process-step-icon ">
-              <i class="fa-solid fa-pen-to-square"></i>
-            </div>
-            <h5 class="mt-2">1. Konzultace a plánování</h5>
-            <p>Společně vymyslíme řešení na míru</p>
-          </div>
-        </div>
-        <div class="col process-step-first-row mb-lg-0 mb-5">
-          <div class="p-3">
-            <div class="process-step-icon">
-              <i class="fa-solid fa-cubes"></i>
-            </div>
-            <h5 class="mt-2">2. Materiál a návrh</h5>
-            <p>Doporučíme správný materiál a design</p>
-          </div>
-        </div>
-        <div class="col process-step-first-row mb-lg-0 mb-5">
-          <div class="p-3">
-            <div class="process-step-icon">
-              <i class="fa-solid fa-calculator"></i>
-            </div>
-            <h5 class="mt-2">3. Cenová nabídka</h5>
-            <p>Připravíme jasnou a férovou kalkulaci</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="row row-cols-lg-5 row-cols-1 justify-content-evenly process-second-row m-lg-4 p-lg-4">
-        <div class="col process-step-second-row mb-lg-0 mb-5">
-          <div class="p-3">
-            <div class="process-step-icon">
-              <i class="fa-solid fa-screwdriver-wrench"></i>
-            </div>
-            <h5 class="mt-2">4. Precizní provedení</h5>
-            <p>Kvalitní a detailní řemeslná práce</p>
-          </div>
-        </div>
-        <div class="col process-step-second-row">
-          <div class="p-3">
-            <div class="process-step-icon">
-              <i class="fa-solid fa-clock"></i>
-            </div>
-            <h5 class="mt-2">5. Rychlá realizace</h5>
-            <p>Dokončíme zakázku v co nejkratším termínu</p>
-          </div>
-        </div>
-      </div> -->
-    <!-- <div id="waypoint"></div> -->
-    <!-- </div> -->
   </section>
 </template>
+
+<script>
+import 'animate.css';
+
+
+</script>

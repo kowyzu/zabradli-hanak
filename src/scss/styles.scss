@@ -222,21 +222,21 @@ strong {
     font-size: $font-size-primary;
 }
 
-.process-header-icon .icon-link .fa-chevron-down{
+.process-header-icon .icon-link .fa-chevron-down {
   height: 3rem;
-  transition: color 0.2s ease;
-  transition: .4s all ease-in-out;
-  // animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
-  animation-duration: 1.5s;
   padding: 1rem;
+  transition: color 0.3s ease; 
+  animation: dragDown ease-in-out infinite; 
+  animation-duration: 3s; 
 }
 
-.process-header-icon .icon-link .fa-chevron-down:hover {
-  // color: greenyellow;
-  transform: scale(1.1);
-
-
+@keyframes dragDown {
+  0% { transform: translateY(0); }
+  20% { transform: translateY(10px); } 
+  40% { transform: translateY(0); }   
+  100% { transform: translateY(0); }   
 }
+
 
 #process-title {
   scroll-margin-top: 7rem;
