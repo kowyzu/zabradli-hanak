@@ -2,7 +2,7 @@
   <div>
     <div class="input-group">
       <div class="input-group-text"><i class="fa-solid fa-envelope fa-fw"></i></div>
-      <input ref="mailInput" type="email" :class="['form-control', { 'form-error-input': error }]" :id="id"
+      <input ref="emailInput" type="email" :class="['form-control', { 'form-error-input': error }]" :id="id"
         :placeholder="placeholder" :value="modelValue" @input="updateValue" @change="validate">
     </div>
     <div v-if="error" class="form-error-msg">
@@ -38,7 +38,7 @@ export default {
       if (!this.modelValue.trim()) {
         return this.handleError('Zadejte svůj e-mail.')
       }
-      if (this.$refs.mailInput.checkValidity() === false) {
+      if (this.$refs.emailInput.checkValidity() === false) {
         return this.handleError('Neplatná e-mailová adresa. Zadejte e-mail ve formátu: example@domena.cz')
       }
       this.error = null;

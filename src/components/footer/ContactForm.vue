@@ -7,12 +7,12 @@
     </div>
     <div class="row mb-3 justify-content-center">
       <div class="col">
-        <TelInput ref="telInput" id="tel" placeholder="Telefonní číslo" v-model.trim="phoneNumber" />
+        <PhoneInput ref="phoneInput" id="phone" placeholder="Telefonní číslo" v-model.trim="phoneNumber" />
       </div>
     </div>
     <div class="row mb-3 justify-content-center">
       <div class="col">
-        <MailInput ref="mailInput" id="email" placeholder="E-mail" v-model.trim="mail" />
+        <EmailInput ref="emailInput" id="email" placeholder="E-mail" v-model.trim="email" />
       </div>
     </div>
     <div class="row mb-3 justify-content-center">
@@ -30,55 +30,59 @@
 
 <script>
 import NameInput from '../form/NameInput.vue';
-import TelInput from '../form/TelInput.vue';
-import MailInput from '../form/MailInput.vue';
+import PhoneInput from '../form/PhoneInput.vue';
+import EmailInput from '../form/EmailInput.vue';
 import MessageTextArea from '../form/MessageTextArea.vue';
 
 export default {
   components: {
     NameInput,
-    TelInput,
-    MailInput,
+    PhoneInput,
+    EmailInput,
     MessageTextArea,
   },
   data() {
     return {
       name: '',
       phoneNumber: '',
-      mail: '',
+      email: '',
       message: '',
       error: null,
     }
   },
   methods: {
-    validateForm() {
+    isFormValid() {
       let isNameValid = this.$refs.nameInput.validate();
-      let isPhoneValid = this.$refs.telInput.validate();
-      let isMailValid = this.$refs.mailInput.validate();
+      let isPhoneValid = this.$refs.phoneInput.validate();
+      let isEmailValid = this.$refs.emailInput.validate();
       let isMessageValid = this.$refs.messageTextArea.validate();
 
       console.log("jmeno " + isNameValid);
       console.log("phone " + isPhoneValid);
-      console.log("mail " + isMailValid);
+      console.log("email " + isEmailValid);
       console.log("Message " + isMessageValid);
 
 
-      if (!isNameValid || !isPhoneValid || !isMailValid || !isMessageValid) {
-        return
+      if (!isNameValid || !isPhoneValid || !isEmailValid || !isMessageValid) {
+        return false;
       }
 
       this.error = null;
+      return true;
     },
     extractData() {
       let formFilledData = {
         "name": this.name,
         "phoneNumber": this.phoneNumber,
-        "mail": this.mail,
+        "email": this.email,
         "message": this.message
       }
+      return formFilledData
     },
     handleFormSubmit() {
-      this.validateForm();
+      if (!this.isFormValid()) {
+        return;
+      };
       let data = this.extractData();
       console.log(data);
     }
