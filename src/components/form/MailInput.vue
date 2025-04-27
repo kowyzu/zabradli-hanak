@@ -3,7 +3,7 @@
     <div class="input-group">
       <div class="input-group-text"><i class="fa-solid fa-envelope fa-fw"></i></div>
       <input ref="mailInput" type="email" :class="['form-control', { 'form-error-input': error }]" :id="id"
-        :placeholder="placeholder" :value="modelValue" @input="updateValue" @blur="validate">
+        :placeholder="placeholder" :value="modelValue" @input="updateValue" @change="validate">
     </div>
     <div v-if="error" class="form-error-msg">
       {{ error }}
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { } from 'vue'
+import { handleError } from 'vue'
 
 export default {
   props: {
@@ -22,23 +22,27 @@ export default {
   },
   data() {
     return {
-      error: '',
+      error: null,
     };
   },
   methods: {
     updateValue(event) {
       this.$emit('update:modelValue', event.target.value);
     },
+    handleError(errorDescription) {
+      this.error = errorDescription;
+      this.$emit('error', this.error);
+      return false;
+    },
     validate() {
       if (!this.modelValue.trim()) {
-        this.error = 'Zadejte svůj e-mail.';
-        return false;
+        return this.handleError('Zadejte svůj e-mail.')
       }
       if (this.$refs.mailInput.checkValidity() === false) {
-        this.error = 'Neplatná e-mailová adresa. Zadejte e-mail ve formátu: example@domena.cz';
-        return false;
+        return this.handleError('Neplatná e-mailová adresa. Zadejte e-mail ve formátu: example@domena.cz')
       }
-      this.error = '';
+      this.error = null;
+      this.$emit('error', null);
       return true;
     },
   },

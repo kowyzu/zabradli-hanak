@@ -3,7 +3,7 @@
     <div class="input-group">
       <div class="input-group-text"><i class="fa-solid fa-phone fa-fw"></i></div>
       <input type="tel" :class="['form-control', { 'form-error-input': error }]" :id="id" name="name"
-        :placeholder="placeholder" :value="formattedValue" @input="onInput" @blur="validate">
+        :placeholder="placeholder" :value="formattedValue" @input="onInput" @change="validate">
     </div>
     <div v-if="error" class="form-error-msg">
       {{ error }}
@@ -20,7 +20,7 @@ export default {
   },
   data() {
     return {
-      error: '',
+      error: null,
     };
   },
   computed: {
@@ -47,6 +47,7 @@ export default {
     },
     handleError(errorDescription) {
       this.error = errorDescription;
+      this.$emit('error', this.error);
       return false;
     },
     validate() {
@@ -62,7 +63,8 @@ export default {
       if (trimmedValueOnlyNumbers.length < 9) {
         return this.handleError('Telefonní číslo musí mít alespoň 9 číslic.');
       }
-      this.error = '';
+      this.error = null;
+      this.$emit('error', null);
       return true;
     },
   },

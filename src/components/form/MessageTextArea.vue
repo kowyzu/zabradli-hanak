@@ -1,7 +1,7 @@
 <template>
   <div>
     <textarea :class="['form-control', { 'form-error-input': error }]" :id="id" rows="4" :placeholder="placeholder"
-      :value="modelValue" @input="updateValue" @blur="validate"></textarea>
+      :value="modelValue" @input="updateValue" @change="validate"></textarea>
     <div v-if="error" class="form-error-msg">
       {{ error }}
     </div>
@@ -17,7 +17,7 @@ export default {
   },
   data() {
     return {
-      error: '',
+      error: null,
     };
   },
   methods: {
@@ -27,9 +27,11 @@ export default {
     validate() {
       if (!this.modelValue.trim()) {
         this.error = 'Zadejte zprávu.';
+        this.$emit('error', this.error);
         return false;
       }
-      this.error = '';
+      this.error = null;
+      this.$emit('error', null);
       return true;
     },
   },

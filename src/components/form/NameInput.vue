@@ -3,7 +3,7 @@
     <div class="input-group">
       <div class="input-group-text"><i class="fa-solid fa-user fa-fw"></i></div>
       <input type="text" :class="['form-control', { 'form-error-input': error }]" :id="id" name="name"
-        :placeholder="placeholder" :value="modelValue" @input="updateValue" @blur="validate">
+        :placeholder="placeholder" :value="modelValue" @input="updateValue" @change="validate">
     </div>
     <div v-if="error" class="form-error-msg">
       Zadejte své jméno.
@@ -20,7 +20,7 @@ export default {
   },
   data() {
     return {
-      error: '',
+      error: null,
     };
   },
   methods: {
@@ -30,9 +30,11 @@ export default {
     validate() {
       if (!this.modelValue.trim()) {
         this.error = 'Name is required.';
+        this.$emit('error', this.error);
         return false;
       }
-      this.error = '';
+      this.error = null;
+      this.$emit('error', null);
       return true;
     },
   },
