@@ -2,18 +2,12 @@
   <form @submit="(event) => validateForm(event)" method="POST" class="pe-lg-5">
     <div class="row mb-3 justify-content-center">
       <div class="col">
-        <div class="input-group">
-          <div class="input-group-text"><i class="fa-solid fa-user fa-fw"></i></div>
-          <input v-model.trim="name" type="text" class="form-control" id="inputName" name="name" placeholder="Jméno">
-        </div>
+        <NameInput ref="nameInput" id="name" placeholder="Jméno" v-model.trim="name" />
       </div>
     </div>
     <div class="row mb-3 justify-content-center">
       <div class="col">
-        <div class="input-group">
-          <div class="input-group-text"><i class="fa-solid fa-phone fa-fw"></i></div>
-          <input type="tel" class="form-control" id="inputTel" placeholder="Telefonní číslo">
-        </div>
+        <TelInput ref="telInput" id="tel" placeholder="Telefonní číslo" v-model.trim="phoneNumber" />
       </div>
     </div>
     <div class="row mb-3 justify-content-center">
@@ -35,7 +29,14 @@
 </template>
 
 <script>
+import NameInput from '../form/NameInput.vue';
+import TelInput from '../form/TelInput.vue';
+
 export default {
+  components: {
+    NameInput,
+    TelInput,
+  },
   data() {
     return {
       name: '',

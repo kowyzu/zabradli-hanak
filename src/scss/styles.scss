@@ -11,9 +11,11 @@ $secondary:#DEDEDE;
 $secondary-transparent:#dedede8e;
 $tertiary:#9c9898;
 $white: white;
+$color-error: #dc3545;
 
 $font-size-primary: 1.2rem;
 $font-size-smaller: 1rem;
+$font-size-error: 0.875rem;
 
 $font-family-sans: "Montserrat", sans-serif;
 $font-family-serif: "Roboto Slab","Big Caslon", Georgia, serif;
@@ -261,12 +263,6 @@ h5 {
     font-weight: 600;
 }
 
-// .process-step-first-row, .process-step-second-row {
-//   background: $color-bg-gradient-ligher;
-//   border-radius: $border-radius-secondary;
-//   box-shadow: $box-shadow-primary;
-// }
-
 //
 // GALERRY
 // ----------------------------------------------------
@@ -511,7 +507,7 @@ color: $color-text;
   }  
 }
 //
-// CONTACT FORM
+// FOOTER
 // ----------------------------------------------------
 
 #footer {
@@ -541,4 +537,14 @@ color: $color-text;
 
 .partner-link {
   text-transform: uppercase;
+}
+
+.form-error-msg{
+  color: $color-error;
+  font-size: $font-size-error;
+  margin-top: 0.25rem;
+}
+
+.form-error-input{
+  border-color: $color-error;
 }
