@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import { handleError } from 'vue';
+
 export default {
   props: {
     id: String,
@@ -45,21 +47,22 @@ export default {
       const rawValue = event.target.value.replace(/[^\d+]/g, ''); // only numbers + sign
       this.$emit('update:modelValue', rawValue);
     },
+    handleError(errorDescription) {
+      this.error = errorDescription;
+      return false;
+    },
     validate() {
       let trimmedValue = this.modelValue.trim();
       let trimmedValueOnlyNumbers = trimmedValue.replace('+', '');
 
       if (!trimmedValue) {
-        this.error = 'Zadejte své telefonní číslo.';
-        return false;
+        return this.handleError('Zadejte své telefonní číslo.');
       }
       if (trimmedValueOnlyNumbers.length > 12) {
-        this.error = 'Telefonní číslo nesmí mít více než 12 číslic.';
-        return false;
+        return this.handleError('Telefonní číslo nesmí mít více než 12 číslic.');
       }
       if (trimmedValueOnlyNumbers.length < 9) {
-        this.error = 'Telefonní číslo musí mít alespoň 9 číslic.';
-        return false;
+        return this.handleError('Telefonní číslo musí mít alespoň 9 číslic.');
       }
       this.error = '';
       return true;
