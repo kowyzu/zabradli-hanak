@@ -12,8 +12,6 @@
 </template>
 
 <script>
-import { handleError } from 'vue';
-
 export default {
   props: {
     id: String,

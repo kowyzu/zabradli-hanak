@@ -1,12 +1,9 @@
 <template>
   <div>
-    <div class="input-group">
-      <div class="input-group-text"><i class="fa-solid fa-user fa-fw"></i></div>
-      <input type="text" :class="['form-control', { 'form-error-input': error }]" :id="id" name="name"
-        :placeholder="placeholder" :value="modelValue" @input="updateValue" @blur="validate">
-    </div>
+    <textarea :class="['form-control', { 'form-error-input': error }]" :id="id" rows="4" :placeholder="placeholder"
+      :value="modelValue" @input="updateValue" @blur="validate"></textarea>
     <div v-if="error" class="form-error-msg">
-      Zadejte své jméno.
+      {{ error }}
     </div>
   </div>
 </template>
@@ -29,7 +26,7 @@ export default {
     },
     validate() {
       if (!this.modelValue.trim()) {
-        this.error = 'Name is required.';
+        this.error = 'Zadejte zprávu.';
         return false;
       }
       this.error = '';

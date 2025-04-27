@@ -12,16 +12,15 @@
     </div>
     <div class="row mb-3 justify-content-center">
       <div class="col">
-        <div class="input-group">
-          <div class="input-group-text"><i class="fa-solid fa-envelope fa-fw"></i></div>
-          <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-        </div>
+        <MailInput ref="mailInput" id="email" placeholder="E-mail" v-model.trim="mail" />
       </div>
     </div>
     <div class="row mb-3 justify-content-center">
       <div class="col">
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"
-          placeholder="Sdělte nám svou představu o ideálním zábradlí"></textarea>
+        <!-- <textarea class="form-control" id="message" rows="4"
+          placeholder="Sdělte nám svou představu o ideálním zábradlí"></textarea> -->
+        <MessageTextArea ref="messageTextArea" id="message" placeholder="Sdělte nám svou představu o ideálním zábradlí"
+          v-model.trim="message" />
       </div>
     </div>
     <button type="submit" class="btn btn-primary">Odeslat</button>
@@ -31,17 +30,22 @@
 <script>
 import NameInput from '../form/NameInput.vue';
 import TelInput from '../form/TelInput.vue';
+import MailInput from '../form/MailInput.vue';
+import MessageTextArea from '../form/MessageTextArea.vue';
 
 export default {
   components: {
     NameInput,
     TelInput,
+    MailInput,
+    MessageTextArea,
   },
   data() {
     return {
       name: '',
       phoneNumber: '',
-
+      mail: '',
+      message: '',
     }
   },
   methods: {
