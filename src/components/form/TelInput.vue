@@ -6,7 +6,7 @@
         :placeholder="placeholder" :value="formattedValue" @input="onInput" @blur="validate">
     </div>
     <div v-if="error" class="form-error-msg">
-      Zadejte své telefonní číslo.
+      {{ error }}
     </div>
   </div>
 </template>
@@ -25,24 +25,40 @@ export default {
   },
   computed: {
     formattedValue() {
-      const digits = this.modelValue.replace(/\D/g, '');
-      return digits.replace(/(\d{3})(\d{3})(\d{3,})?/, (match, p1, p2, p3) => {
-        return p3 ? `${p1} ${p2} ${p3}` : `${p1} ${p2}`;
-      }).trim();
+      let digits = this.modelValue.replace(/[^\d+]/g, '');
+
+      if (digits.startsWith('+') || digits.length > 6) {
+        // Format the number with the country code (e.g., +420)
+        return digits.replace(/(\+?\d{3})(\d{3})(\d{3})(\d{3})?/, (match, p1, p2, p3, p4) => {
+          return p4 ? `${p1} ${p2} ${p3} ${p4}` : `${p1} ${p2} ${p3}`;
+        }).trim();
+      } else {
+        // If no '+' is present, just format as a local number
+        return digits.replace(/(\d{3})(\d{3})(\d{3})?/, (match, p1, p2, p3) => {
+          return p3 ? `${p1} ${p2} ${p3}` : `${p1} ${p2}`;
+        }).trim();
+      }
     }
   },
   methods: {
     onInput(event) {
-      const rawValue = event.target.value.replace(/\D/g, ''); // only numbers
+      const rawValue = event.target.value.replace(/[^\d+]/g, ''); // only numbers + sign
       this.$emit('update:modelValue', rawValue);
     },
-    updateValue(event) {
-      console.log(event.target.value);
-      this.$emit('update:modelValue', event.target.value);
-    },
     validate() {
-      if (!this.modelValue.trim()) {
-        this.error = 'Tel is required.';
+      let trimmedValue = this.modelValue.trim();
+      let trimmedValueOnlyNumbers = trimmedValue.replace('+', '');
+
+      if (!trimmedValue) {
+        this.error = 'Zadejte své telefonní číslo.';
+        return false;
+      }
+      if (trimmedValueOnlyNumbers.length > 12) {
+        this.error = 'Telefonní číslo nesmí mít více než 12 číslic.';
+        return false;
+      }
+      if (trimmedValueOnlyNumbers.length < 9) {
+        this.error = 'Telefonní číslo musí mít alespoň 9 číslic.';
         return false;
       }
       this.error = '';
