@@ -12,10 +12,11 @@ $secondary-transparent:#dedede8e;
 $tertiary:#9c9898;
 $white: white;
 $color-error: #dc3545;
+$color-success: #198574;
 
 $font-size-primary: 1.2rem;
 $font-size-smaller: 1rem;
-$font-size-error: 0.875rem;
+$font-size-message: 0.875rem;
 
 $font-family-sans: "Montserrat", sans-serif;
 $font-family-serif: "Roboto Slab","Big Caslon", Georgia, serif;
@@ -539,10 +540,19 @@ color: $color-text;
   text-transform: uppercase;
 }
 
+// Contact form
+
+.form-msg{
+  font-size: $font-size-message;
+  margin-top: 0.25rem;
+}
+
 .form-error-msg{
   color: $color-error;
-  font-size: $font-size-error;
-  margin-top: 0.25rem;
+}
+
+.form-success-msg{
+  color: $color-success;
 }
 
 .form-error-input{

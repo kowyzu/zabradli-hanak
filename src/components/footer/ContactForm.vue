@@ -22,13 +22,30 @@
       </div>
     </div>
     <button type="submit" class="btn btn-primary">Odeslat</button>
-    <div v-if="error" class="form-error-msg">
+    <!-- <div v-if="error" class="form-msg form-error-msg">
       {{ error }}
     </div>
+    <div v-if="success" class="form-msg form-success-msg">
+      {{ success }}
+    </div> -->
   </form>
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="success-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" ref="toastSuccess">
+      <div class="toast-header">
+        <img src="..." class="rounded me-2" alt="...">
+        <strong class="me-auto">Bootstrap</strong>
+        <small>11 mins ago</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div v-if="success" class="toast-body form-msg form-success-msg">
+        {{ success }}
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
+import * as bootstrap from "bootstrap";
 import NameInput from '../form/NameInput.vue';
 import PhoneInput from '../form/PhoneInput.vue';
 import EmailInput from '../form/EmailInput.vue';
@@ -48,6 +65,7 @@ export default {
       email: '',
       message: '',
       error: null,
+      success: null,
     }
   },
   methods: {
@@ -79,12 +97,41 @@ export default {
       }
       return formFilledData
     },
+    postData(formData) {
+      fetch('http://localhost:8080/index.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: JSON.stringify(formData),
+      })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Success:', data);
+          if (data.success) {
+            this.error = null;
+            this.success = 'Formulář byl úspěšně odeslán.';
+            this.displayToast();
+          } else {
+            this.error = data.message
+          }
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+          this.error = 'Nepodařilo se odeslat formulář.';
+        });
+
+    },
     handleFormSubmit() {
       if (!this.isFormValid()) {
         return;
       };
-      let data = this.extractData();
-      console.log(data);
+      let formData = this.extractData();
+      this.postData(formData);
+    },
+    displayToast() {
+      const toastBootstrap = bootstrap.Toast.getOrCreateInstance(this.$refs.toastSuccess);
+      toastBootstrap.show();
     }
   }
 }

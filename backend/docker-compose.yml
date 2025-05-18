@@ -1,7 +1,7 @@
 services:
   web:
     container_name: zabradli_hanak_php
-    image: php:8.3-apache
+    build: .
     ports:
       - "8080:80"
     volumes:
