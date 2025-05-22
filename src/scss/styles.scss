@@ -542,17 +542,10 @@ color: $color-text;
 
 // Contact form
 
-.form-msg{
+.form-error-msg{
   font-size: $font-size-message;
   margin-top: 0.25rem;
-}
-
-.form-error-msg{
   color: $color-error;
-}
-
-.form-success-msg{
-  color: $color-success;
 }
 
 .form-error-input{

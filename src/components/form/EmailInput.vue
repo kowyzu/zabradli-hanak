@@ -35,9 +35,9 @@ export default {
       return false;
     },
     validate() {
-      if (!this.modelValue.trim()) {
-        return this.handleError('Zadejte svůj e-mail.')
-      }
+      // if (!this.modelValue.trim()) {
+      //   return this.handleError('Zadejte svůj e-mail.')
+      // }
       if (this.$refs.emailInput.checkValidity() === false) {
         return this.handleError('Neplatná e-mailová adresa. Zadejte e-mail ve formátu: example@domena.cz')
       }

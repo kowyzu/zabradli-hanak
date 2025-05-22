@@ -1,7 +1,7 @@
 <script setup>
-import firstImg from '../imgs/introduction-imgs/first.jpg'
-import secondImg from '../imgs/introduction-imgs/second.jpg'
-import thirdImg from '../imgs/introduction-imgs/third.jpg'
+import firstImg from '../imgs/introduction-imgs/first.jpeg'
+import secondImg from '../imgs/introduction-imgs/second.jpeg'
+import thirdImg from '../imgs/introduction-imgs/third.jpeg'
 </script>
 
 <template>
@@ -12,7 +12,7 @@ import thirdImg from '../imgs/introduction-imgs/third.jpg'
           <div id="carouselIntroduction" class="carousel slide shape-mask carousel-fade">
             <!--data-bs-ride="carousel" -->
             <div class="carousel-inner">
-              <div class="carousel-indicators justify-content-start ms-3 mb-2">
+              <div class="carousel-indicators justify-content-start ms-3 mb-3">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
                   class="active carousel-btn carousel-btn-circle" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"

@@ -54,13 +54,13 @@ export default {
       let trimmedValue = this.modelValue.trim();
       let trimmedValueOnlyNumbers = trimmedValue.replace('+', '');
 
-      if (!trimmedValue) {
-        return this.handleError('Zadejte své telefonní číslo.');
-      }
+      // if (!trimmedValue) {
+      //   return this.handleError('Zadejte své telefonní číslo.');
+      // }
       if (trimmedValueOnlyNumbers.length > 12) {
         return this.handleError('Telefonní číslo nesmí mít více než 12 číslic.');
       }
-      if (trimmedValueOnlyNumbers.length < 9) {
+      if (trimmedValueOnlyNumbers.length >= 1 && trimmedValueOnlyNumbers.length < 9) {
         return this.handleError('Telefonní číslo musí mít alespoň 9 číslic.');
       }
       this.error = null;
