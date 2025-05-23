@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import * as bootstrap from "bootstrap";
+// import * as bootstrap from "bootstrap";
 import NameInput from '../form/NameInput.vue';
 import PhoneInput from '../form/PhoneInput.vue';
 import EmailInput from '../form/EmailInput.vue';
