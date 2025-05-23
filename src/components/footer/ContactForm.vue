@@ -34,7 +34,7 @@
   <div class="toast-container position-fixed bottom-0 end-0 p-3">
     <div id="success-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" ref="toastSuccess">
       <div class="toast-header">
-        <img src="..." class="rounded me-2" alt="...">
+        <!-- <img src="..." class="rounded me-2" alt="..."> -->
         <strong class="me-auto">Bootstrap</strong>
         <small>11 mins ago</small>
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
@@ -47,7 +47,6 @@
 </template>
 
 <script>
-// import * as bootstrap from "bootstrap";
 import NameInput from '../form/NameInput.vue';
 import PhoneInput from '../form/PhoneInput.vue';
 import EmailInput from '../form/EmailInput.vue';
