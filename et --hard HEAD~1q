@@ -1,0 +1,587 @@
+[33mcommit c0a8b3560c69f02e35cadbea206b27db4ef88dc0[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sat May 24 17:18:58 2025 +0200
+
+    feat: contact form validation and toas finalized
+
+[33mcommit 210adb4d2173044155c4364a3d049d6cc6095942[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Fri May 23 23:56:34 2025 +0200
+
+    refactor: toast img not in use
+
+[33mcommit 2ebf4c51f0db5c1271d18a29a0239d240de114ad[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Fri May 23 23:52:55 2025 +0200
+
+    refactor: import Bootstrap deleted in ContactForm
+
+[33mcommit 3448c2236193b3b21b77d727c59d87384a8eedcb[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Thu May 22 19:44:03 2025 +0200
+
+    feat: change introduction carousel photos and form validation logic change - either mail or phone is required
+
+[33mcommit 5fbbf0600659fbe728e30e375cc62d72a5b857e0[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun May 18 19:10:53 2025 +0200
+
+    feat: mail send after form submit and toast messages display
+
+[33mcommit b35eeb9f68055b735d3e2ae2008e957b76f65f98[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun Apr 27 21:48:58 2025 +0200
+
+    fix: contact form
+
+[33mcommit d6b31684f6a8552f47f6069ca64ae9b0dd155de4[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun Apr 27 19:35:17 2025 +0200
+
+    feat: contact form update
+
+[33mcommit 173b473211d1ecf4767dc0bfe114360e42e6d4fa[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun Apr 27 16:26:07 2025 +0200
+
+    feat: complete form validation
+
+[33mcommit bd0edd50c93aa46033cb6742abd36d37ca56aeca[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun Apr 27 12:21:20 2025 +0200
+
+    feat: TelInput refactor
+
+[33mcommit 64f735269c14ccbda8224fcfcded09818d350ff8[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun Apr 27 12:00:58 2025 +0200
+
+    feat: TeliInput validation complete
+
+[33mcommit 686560bbc8a51e4fcb1a4b1b5e58988fdc000fcc[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun Apr 27 11:18:42 2025 +0200
+
+    feat: form validation handle in separate components
+
+[33mcommit 06041a50d610f5d3b77d314a9bc37f03390936c5[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sat Apr 26 15:27:25 2025 +0200
+
+    feat: contact form validate start
+
+[33mcommit d75e68b495fe157b5053d1fba22c4008a627795f[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sat Apr 26 13:53:12 2025 +0200
+
+    feat: process arrow animation
+
+[33mcommit a7dcc8057b57107d8c4fddfe7684c426b059fbd9[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Wed Apr 23 23:30:28 2025 +0200
+
+    feat: start setup mail sending when contact form is submitted
+
+[33mcommit 3a926e9d4cf01c200e42f1bac0a5527e865725d2[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Wed Apr 23 23:06:23 2025 +0200
+
+    feat: connect contact form to PHP backend
+
+[33mcommit d6bb79268a8be67868262140c93f649f4c3de1da[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Wed Apr 23 22:16:29 2025 +0200
+
+    refactor: split contact form into its own ContactForm.vue component
+
+[33mcommit d2e90ae33303564159f60b91d4b3dfaa3f08d3aa[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Tue Apr 22 22:53:32 2025 +0200
+
+    feat: style carousel and navbar details
+
+[33mcommit f6ac375285f3cdb03595b2fa7d04189e8849d84e[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Tue Apr 22 21:19:00 2025 +0200
+
+    refactor: split display logic into smaller methods, add show-more condition in gallery
+
+[33mcommit c38d5df5681ace3b19c71cf9ce9f3562eb16d237[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun Apr 20 15:51:52 2025 +0200
+
+    feat: style footer padding
+
+[33mcommit fbd984479dd6962d56f4806951f511534854a43c[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun Apr 20 15:50:02 2025 +0200
+
+    refactor: gallery imgs display
+
+[33mcommit a6bf99bcedc82df444cfedb9e810e50a2642b4c3[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun Apr 20 15:03:12 2025 +0200
+
+    feat: style
+
+[33mcommit 5ba6815a844763ac27d26ab34af424b0ace02aee[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun Apr 20 14:27:58 2025 +0200
+
+    feat: style sm references and footer
+
+[33mcommit e9693469672bbae9fe47ce3cf3994393f643b933[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun Apr 20 13:59:18 2025 +0200
+
+    feat: style paddings and margins
+
+[33mcommit c823c05af7de78838951d0fb5944b18dff35c8d3[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun Apr 20 13:53:30 2025 +0200
+
+    feat: tab references xs style
+
+[33mcommit 86823991f6cb3b8485d8eb193323a5220c0ad989[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun Apr 20 13:50:30 2025 +0200
+
+    feat: style font
+
+[33mcommit c1b0c0306bf712fd30235ee84721346cb2b887fe[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun Apr 20 13:25:42 2025 +0200
+
+    feat: font size unification
+
+[33mcommit 293b142dbf9b8ac3ff65a9c21fb1b70fd4067e79[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun Apr 20 11:45:56 2025 +0200
+
+    feat: style references tabs transition
+
+[33mcommit 93b5fd879cd5c7422ffd31a5f54cac4741d0cd5d[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun Apr 20 11:22:17 2025 +0200
+
+    feat: style process arrow icon transition
+
+[33mcommit 40cb2562e38fa4889f45e1a1c7eff7d93e130603[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun Apr 20 11:11:09 2025 +0200
+
+    feat: style references tabs
+
+[33mcommit 19121ceaf1b98ef6b8f35a6fc39315e1bd6b5e3e[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sat Apr 19 15:56:18 2025 +0200
+
+    feat: style references
+
+[33mcommit d954d53bf1d9e708e000966ded7d357159be193e[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sat Apr 19 14:58:49 2025 +0200
+
+    feat: update references layout
+
+[33mcommit a6201c3d36de2a149ff764446cf46c433996f799[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sat Apr 19 13:31:48 2025 +0200
+
+    feat: style update gallery and process
+
+[33mcommit 466add900f309ba367d9660e4df17483ae76d77e[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Mon Apr 14 22:47:46 2025 +0200
+
+    feat: introduce php backend
+
+[33mcommit a72b38ae02320f1ecc909c05e8f75416c1e1c5d6[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Tue Apr 8 23:04:07 2025 +0200
+
+    fix: invalid path lightbox references
+
+[33mcommit db5e770a1845615e19a316332ca30aca98dd2265[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Tue Apr 8 22:42:22 2025 +0200
+
+    fix: clean up carousel imgs
+
+[33mcommit cd438b3d0209a6d42dd24a92b9d7d541f49353e8[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Tue Apr 8 22:28:42 2025 +0200
+
+    fix: invalid img paths in introduction
+
+[33mcommit 539e27603c6249f7c54ba772a50aeb9ebd4782d8[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Tue Apr 8 22:20:04 2025 +0200
+
+    ci: set up github pages deployment
+
+[33mcommit 9bc3a538b8c9df86ea7c9cc7b945eff52f79604e[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Tue Apr 8 21:59:18 2025 +0200
+
+    fix: import gallery and references imgs
+
+[33mcommit 1239860951905018d8499069fd11e7a2740f12ac[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Tue Apr 8 21:07:07 2025 +0200
+
+    feat: references responsive style
+
+[33mcommit 530792f6f08a074ae24672c2a658e6e380660ea0[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Tue Apr 8 20:57:39 2025 +0200
+
+    feat: relevant references add
+
+[33mcommit a5b4d6b26c838abdf5957193ef05e553afa82f75[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Tue Apr 8 17:52:49 2025 +0200
+
+    feat: vue-easy-lightbox style
+
+[33mcommit f4a48d1e8072499fed5d05d6e491ff1ca54f8911[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Mon Apr 7 22:20:25 2025 +0200
+
+    feat: style whole app
+
+[33mcommit 9f3b2cd772abc92785f5a7cdd90e77adec8bd843[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Mon Apr 7 19:16:43 2025 +0200
+
+    feat: Gallery vue-easy-lightbox add
+
+[33mcommit 739c94d756215013cb9b0e446dd46052b968b208[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Mon Apr 7 13:55:06 2025 +0200
+
+    feat: update page links
+
+[33mcommit e1c472374257e15c08fa880f5fe5acc8db1e6650[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Mon Apr 7 13:46:44 2025 +0200
+
+    feat: Gallery tabs style update
+
+[33mcommit 324b2bca151f9178b3b2e9a443390fc8e7fa8145[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Mon Apr 7 10:19:38 2025 +0200
+
+    feat: navigation toggler style
+
+[33mcommit cb5fdcd8d6329003ff54fe372d4c3187b64cf3f9[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Mon Apr 7 09:49:22 2025 +0200
+
+    feat: responsive Process style update
+
+[33mcommit c12b044dddd107c7cdd9a57fab73782ea748f076[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun Apr 6 22:05:35 2025 +0200
+
+    feat: complete navbar
+
+[33mcommit 41349f5430aa6cc95331eca115f21bb890ea9973[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun Apr 6 21:39:10 2025 +0200
+
+    feat: complete footer
+
+[33mcommit 2e1eaadf8ce9b6b8f324b4d4e53ad075c28ac5d5[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun Apr 6 20:06:04 2025 +0200
+
+    feat: style footer
+
+[33mcommit 7239e91a3000cfa1f74fb176c0770f121d790f08[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun Apr 6 19:47:22 2025 +0200
+
+    feat: introduce contatct form and contacts
+
+[33mcommit 77f648b4410d2f541a01207140ca0aa4c5f79409[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun Apr 6 14:03:45 2025 +0200
+
+    feat: style References
+
+[33mcommit 4ee0194de250d2caf0e33fd97780b744e546f98a[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun Apr 6 12:24:58 2025 +0200
+
+    feat: references collapse handle and style
+
+[33mcommit 6c8ab3bfe586f7eef29589718c82fbba36a70d5c[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sat Apr 5 23:32:26 2025 +0200
+
+    feat: References style tabs
+
+[33mcommit 8f39726f0dfcc8e859288e5b7abc6f7def7d18f4[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sat Apr 5 22:46:35 2025 +0200
+
+    feat: change of style References tabs
+
+[33mcommit 680912fea7b0050bbdba4678b33b6f5e490ffb60[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sat Apr 5 21:27:27 2025 +0200
+
+    feat: references style
+
+[33mcommit 2946caab03b7fa3ca4f2b636637645c042efa22d[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sat Apr 5 20:50:30 2025 +0200
+
+    feat: basic References layout
+
+[33mcommit 3f4bee085c0c0bb023a5e9e711629d27c642d5aa[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sat Apr 5 13:46:55 2025 +0200
+
+    feat: start aligning References section
+
+[33mcommit a46574a8720577cbedcb8ec2b199e4e21b1fb2f2[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sat Apr 5 12:30:11 2025 +0200
+
+    feat: process style
+
+[33mcommit 5a6ddffe29f6769b84416287e74e4a5fb0863e13[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sat Apr 5 11:35:53 2025 +0200
+
+    feat: process style
+
+[33mcommit 8a5bec93ccc2e9c2b61eeaba001ea88c9b0448b8[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Thu Apr 3 22:37:04 2025 +0200
+
+    feat: new style of process section
+
+[33mcommit fe43ac385f9233c69ab934eef447e13ed64b67a8[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Thu Apr 3 22:03:25 2025 +0200
+
+    feat: Introduction style
+
+[33mcommit 8c744f538bde5989b8f468357068998b090184bd[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Thu Apr 3 18:47:32 2025 +0200
+
+    feat: style Introduction
+
+[33mcommit 6ed814d6861ad12147a2531264078024f1b1ba57[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Thu Apr 3 18:29:57 2025 +0200
+
+    feat: style update
+
+[33mcommit 52086e31ca01477cd66e77833bac3fd9f314f9a7[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Tue Apr 1 20:09:04 2025 +0200
+
+    feat: style gallery btn
+
+[33mcommit 45e5bd6b3e84c0b5593445e426b4a3567745fc4f[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Tue Apr 1 19:54:09 2025 +0200
+
+    feat: fix of style
+
+[33mcommit 830916766ee558caa68deb1969464abd78855aea[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Mon Mar 31 21:01:19 2025 +0200
+
+    feat: gallery filter complete
+
+[33mcommit b0e86815f37fc338f696a4784036360653bda3d5[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Mon Mar 31 19:33:39 2025 +0200
+
+    feat: gallery filter setup
+
+[33mcommit 8b2423ffcbae265057b0a86a746c0ff9676346ce[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Mon Mar 31 18:46:19 2025 +0200
+
+    feat: display and hide gallery set up
+
+[33mcommit 59c0e5e06e9648cdc8572971dc0e664dab544f01[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Thu Mar 27 20:16:36 2025 +0100
+
+    feat: continue gallery display
+
+[33mcommit 61149aea49c2cff1f240391331415b2e3d124187[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Wed Mar 26 22:47:31 2025 +0100
+
+    feat: continue gallery display
+
+[33mcommit b86e4cb9e68bab55b9af0e1f94b8e14e7354772b[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Tue Mar 25 23:12:30 2025 +0100
+
+    feat: update gallery img display
+
+[33mcommit af80a68f7af270dffc30b06709dca639b21e5d39[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Tue Mar 25 22:16:29 2025 +0100
+
+    feat: update gallery.json
+
+[33mcommit 4348997032c58dc197c2b4d4914d57ecfdc756b4[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Tue Mar 25 21:38:08 2025 +0100
+
+    feat: initialize element generation with Vue
+
+[33mcommit 31a0fc774a5eca6d680f00864666b24b17e55e17[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Tue Mar 25 20:55:10 2025 +0100
+
+    feat: introduce vue gallery
+
+[33mcommit 4d902ada569eb80cce1ef04cf140f1ea40935788[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Mon Mar 24 23:34:21 2025 +0100
+
+    refactor: introduce vue.js
+
+[33mcommit abfe980bdce0721d824416dc8175d3c523b12591[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun Mar 23 15:26:49 2025 +0100
+
+    style: html epmty rows deleted
+
+[33mcommit 3fc19836449aa928f16ec0f5407cb692517a9121[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun Mar 23 15:14:21 2025 +0100
+
+    feat: js of show gallery
+
+[33mcommit dddacbbf176002260e6ed955cf51c1cfe6d666f6[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun Mar 23 13:23:47 2025 +0100
+
+    feat: show-less button
+
+[33mcommit 811343be4efb41e4a5f193c37d1233616d475ce3[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun Mar 23 13:08:34 2025 +0100
+
+    feat: gallery imgs added
+
+[33mcommit 97e80d4c1d41413aa4953d1952c173ee43e20cd2[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun Mar 23 11:24:33 2025 +0100
+
+    feat: gallery hover animation
+
+[33mcommit 1f9bea6e8f761ae4699e26fc589ba53ed11401d6[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun Mar 23 11:01:55 2025 +0100
+
+    feat: gallery show-more prepared
+
+[33mcommit 38caeaf4a307c59254f14915e7f9c3f624c4b375[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sat Mar 22 20:19:54 2025 +0100
+
+    feat: start gallery section
+
+[33mcommit fdd51f66ae83282bbbda9a236c8adb36e68390e7[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sat Mar 22 17:53:36 2025 +0100
+
+    feat: icons process step updated; progress added
+
+[33mcommit 0a71b7b1aa7d0e37f634c1ff01a6610a34af1ef0[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sat Mar 22 11:34:47 2025 +0100
+
+    feat: process steps reorder
+
+[33mcommit 17201cac0da5c9588ffc3566c77af3d60be8493a[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Fri Mar 21 21:50:25 2025 +0100
+
+    feat: continue draft for process xl
+
+[33mcommit ea113f32cadf47769117178e2a37c9a63c9df839[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Fri Mar 21 21:31:55 2025 +0100
+
+    feat: draft process steps xl
+
+[33mcommit afdad1bffb7aff3c60cefadbd199166921263c94[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Fri Mar 21 21:20:45 2025 +0100
+
+    feat: process steps add
+
+[33mcommit c1d5767d14cbd2e6ebdea9ddad450f2e344f48c8[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Tue Mar 18 21:25:22 2025 +0100
+
+    feat: start section process
+
+[33mcommit d953968c25455aba6e76603a95979fc0662e27d4[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Mon Mar 17 21:21:38 2025 +0100
+
+    feat: basic schedule section services
+
+[33mcommit 8fc2ac1d00f156c92cada1a391b10474c1fb5813[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Mon Mar 17 21:20:55 2025 +0100
+
+    feat: star section services
+
+[33mcommit 5b074697acf1a1aeaec41c70737eaca8efe045d4[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun Mar 16 21:47:54 2025 +0100
+
+    fix: add id to carousel
+
+[33mcommit 6c5283ff5bb25b317ff72322f3e7a161d06e60f4[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun Mar 16 20:10:48 2025 +0100
+
+    feat: intro text styling
+
+[33mcommit f7c5cba68df4858923f5619d398da54c348b85a3[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun Mar 16 17:12:15 2025 +0100
+
+    feat: start introduction text section design
+
+[33mcommit 95679975e550dc8d2e21f33b0585c66a9604bd31[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sun Mar 16 16:29:18 2025 +0100
+
+    feat: finish carousel style
+
+[33mcommit 3a0dc1d86b3d8806bdae85f4062bb6d001948a0f[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Sat Mar 15 11:28:44 2025 +0100
+
+    feat: carousel styling
+
+[33mcommit bd44b512fcc2941bbe87390a97e0adfbf9127260[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Fri Mar 14 23:26:24 2025 +0100
+
+    feat: introduction text add and style
+
+[33mcommit c1e7bd2162669526df7ba431d34ab567c64f522e[m
+Author: kowyzu <kowyzu@gmail.com>
+Date:   Fri Mar 14 23:10:57 2025 +0100
+
+    feat: introduction styling

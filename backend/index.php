@@ -59,20 +59,12 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-//Custom variables
-$username = 'formular@zabradlihanak.cz';
-$password = 'UUFJEuTdC976fAHQZJvib_';
-$SMTPServer = 'smtp.websupport.cz';
-$portNumber = '465';
-$security = 'SSL/TLS';
 
 //Load Composer's autoloader (created by composer, not included with PHPMailer)
 require 'vendor/autoload.php';
 
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
-
-
 
 
 try {
@@ -96,18 +88,19 @@ try {
   $mail->Body = $data['message'];
   $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
-  // $mail->send();
+  $mail->send();
   echo json_encode([
     'success' => true,
     'message' => 'Formulář byl úspěšně odeslán.'
   ]);
 } catch (Exception $e) {
-  http_response_code(400); // Bad request
+  http_response_code(400);
   echo json_encode([
     'success' => false,
     'message' => 'Chyba: Data nejsou validní.',
     'debug' => $e->getMessage()
   ]);
+
 }
 
 
