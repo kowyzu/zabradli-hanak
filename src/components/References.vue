@@ -193,15 +193,15 @@ export default {
     getGalleryJson() {
       let firstResolvedGallery = this.firstGalleryJson.map(item => ({
         ...item,
-        src: new URL(`../imgs/galery-imgs/${item.id + '.webp'}`, import.meta.url).href
+        src: new URL(`../imgs/galery-imgs/${item.id + '.jpg'}`, import.meta.url).href
       }))
       let secondResolvedGallery = this.secondGalleryJson.map(item => ({
         ...item,
-        src: new URL(`../imgs/galery-imgs/${item.id + '.webp'}`, import.meta.url).href
+        src: new URL(`../imgs/galery-imgs/${item.id + '.jpg'}`, import.meta.url).href
       }))
       let thirdResolvedGallery = this.thirdGalleryJson.map(item => ({
         ...item,
-        src: new URL(`../imgs/galery-imgs/${item.id + '.webp'}`, import.meta.url).href
+        src: new URL(`../imgs/galery-imgs/${item.id + '.jpg'}`, import.meta.url).href
       }))
       if (this.currentGallery === 'second') {
         return secondResolvedGallery
