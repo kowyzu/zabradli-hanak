@@ -12,6 +12,18 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
 header("Content-Type: application/json; charset=UTF-8");
 
+// Include Composer's autoloader
+require __DIR__ . '/vendor/autoload.php';
+
+
+// Environmental variables
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+$username = $_ENV['USERNAME'];
+$password = $_ENV['PASSWORD'];
+$SMTPServer = $_ENV['SMTP_SERVER'];
+$portNumber = $_ENV['PORT_NUMBER'];
 
 // Read JSON input from body
 $rawInput = file_get_contents("php://input");
@@ -22,7 +34,7 @@ $email = $data['email'] ?? '';
 $message = $data['message'] ?? '';
 $phone = $data['phoneNumber'] ?? '';
 
-if (!$name || !$email || !$message) {
+if (!$name || !$message || (!$email && !$phone)) {
   http_response_code(422); // Unprocessable Entity
   echo json_encode([
     'success' => false,
