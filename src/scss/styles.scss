@@ -55,6 +55,7 @@ $border-radius-secondary: 5px;
 
 $scroll-margin-bigger: 19.508rem;
 $scroll-margin-smaller: 5.509rem;
+$scroll-margin-gallery: 30rem;
 
 
 //
@@ -325,6 +326,10 @@ h5 {
     border-radius: $border-radius-secondary;
     transition: none !important;
     animation: none !important;
+}
+
+#show-more-btn {
+  scroll-margin-top: $scroll-margin-gallery;
 }
 
 .show-more-img:hover {

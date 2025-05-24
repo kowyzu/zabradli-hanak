@@ -4,7 +4,7 @@
     <div class="container text-center galerry-container ">
       <div class="row gallery-tabs align-items-center">
         <div class="col p-0 mt-3">
-          <ul class="nav nav-tabs justify-content-md-center ps-4 ps-md-0">
+          <ul id="gallery-start" class="nav nav-tabs justify-content-md-center ps-4 ps-md-0">
             <li class="nav-item">
               <button @click="setCategory(this.categoryTypeAll)" class="nav-link"
                 :class="{ 'active': this.category === this.categoryTypeAll }" type="submit">Vše</button>
@@ -30,6 +30,19 @@
                 francouzská okna</button>
             </li>
             <li class="nav-item">
+              <button @click="setCategory(this.categoryTypeBalconyRail)" class="nav-link"
+                :class="{ 'active': this.category === this.categoryTypeBalconyRail }" type="submit">Balkónová
+                zábradlí</button>
+            </li>
+            <li class="nav-item">
+              <button @click="setCategory(this.categoryTypeFence)" class="nav-link"
+                :class="{ 'active': this.category === this.categoryTypeFence }" type="submit">Ploty</button>
+            </li>
+            <li class="nav-item">
+              <button @click="setCategory(this.categoryTypeGate)" class="nav-link"
+                :class="{ 'active': this.category === this.categoryTypeGate }" type="submit">Brány/branky</button>
+            </li>
+            <li class="nav-item">
               <button @click="setCategory(this.categoryTypeOther)" class="nav-link"
                 :class="{ 'active': this.category === this.categoryTypeOther }" type="submit">Ostatní</button>
             </li>
@@ -46,7 +59,8 @@
                 :class="{ 'show-more-img': isShowMoreTriggerSlot(index) }" alt="galerry img of rail">
               <div v-if="isShowMoreTriggerSlot(index)" class="centered show-more-text"
                 :class="{ 'hidden': isGalleryOpened === true }">
-                <button @click="isGalleryOpened = true" class="btn btn-primary btn-show-more" type="submit">Zobrazit
+                <button id="show-more-btn" @click="isGalleryOpened = true" class="btn btn-primary btn-show-more"
+                  type="submit">Zobrazit
                   více</button>
               </div>
             </div>
@@ -54,7 +68,7 @@
         </div>
         <div :class="{ 'hidden': isGalleryOpened === false }"
           class="sticky-bottom show-less-container align-items-start">
-          <a href="#galerry-preview" @click="isGalleryOpened = false"
+          <a href="#show-more-btn" @click="isGalleryOpened = false"
             class="btn btn-primary btn-md btn-show-less sticky-bottom mb-3 mt-3 z-3" type="submit">
             <i class="fa-solid fa-angle-up icon-show-less"></i> Sbalit <i
               class="fa-solid fa-angle-up icon-show-less"></i>
@@ -86,6 +100,9 @@ export default {
       categoryTypeStaircaseRail: 'staircase-rail',
       categoryTypeExterior: 'exterior',
       categoryTypeFrenchWindows: 'french-windows',
+      categoryTypeBalconyRail: 'balcony-rail',
+      categoryTypeGate: 'gate',
+      categoryTypeFence: 'fence',
       categoryTypeOther: 'other',
       visible: false,
       currentImgIndex: 0,
@@ -102,7 +119,7 @@ export default {
     resolveGallery(galleryToResolve) {
       let resolvedGallery = galleryToResolve.map(item => ({
         ...item,
-        src: new URL(`../imgs/galery-imgs/big/${item.id + '.jpg'}`, import.meta.url).href
+        src: new URL(`../imgs/galery-imgs/${item.id + '.jpg'}`, import.meta.url).href
       }))
 
       return resolvedGallery

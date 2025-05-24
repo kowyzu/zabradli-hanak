@@ -1,267 +1,67 @@
 [
-  {
-    "id": 147,
-    "category": ["interior", "staircase-rail"],
-    "hidden": false
-  },
-  {
-    "id": 103,
-    "category": ["interior", "staircase-rail"],
-    "hidden": false
-  },
-  {
-    "id": 117,
-    "category": ["exterior"],
-    "hidden": false
-  },
-  {
-    "id": 146,
-    "category": ["interior", "staircase-rail"],
-    "hidden": false
-  },
-  {
-    "id": 124,
-    "category": ["interior", "staircase-rail"],
-    "hidden": false
-  },
-  {
-    "id": 151,
-    "category": ["exterior", "staircase-rail"],
-    "hidden": false
-  },
-  {
-    "id": 137,
-    "category": ["interior", "staircase-rail"],
-    "hidden": false
-  },
-  {
-    "id": 149,
-    "category": ["interior", "staircase-rail"],
-    "hidden": false
-  },
-  {
-    "id": 131,
-    "category": ["exterior", "other"],
-    "hidden": true
-  },
-  {
-    "id": 130,
-    "category": ["interior", "staircase-rail"],
-    "hidden": true
-  },
-  {
-    "id": 94,
-    "category": ["exterior", "french-windows"],
-    "hidden": true
-  },
-  {
-    "id": 105,
-    "category": ["interior", "staircase-rail"],
-    "hidden": true
-  },
-  {
-    "id": 115,
-    "category": ["interior", "staircase-rail"],
-    "hidden": true
-  },
-  {
-    "id": 154,
-    "category": ["interior", "staircase-rail"],
-    "hidden": true
-  },
-  {
-    "id": 150,
-    "category": ["interior", "staircase-rail"],
-    "hidden": true
-  },
-  {
-    "id": 134,
-    "category": ["exterior", "french-windows"],
-    "hidden": true
-  },
-  {
-    "id": 141,
-    "category": ["interior", "staircase-rail"],
-    "hidden": true
-  },
-  {
-    "id": 98,
-    "category": ["exterior"],
-    "hidden": true
-  },
-  {
-    "id": 125,
-    "category": ["interior", "staircase-rail"],
-    "hidden": true
-  },
-  {
-    "id": 95,
-    "category": ["exterior"],
-    "hidden": true
-  },
-  {
-    "id": 102,
-    "category": ["interior", "staircase-rail"],
-    "hidden": true
-  },
-  {
-    "id": 111,
-    "category": ["interior", "staircase-rail"],
-    "hidden": true
-  },
-  {
-    "id": 96,
-    "category": ["exterior", "french-windows"],
-    "hidden": true
-  },
-  {
-    "id": 97,
-    "category": ["exterior", "french-windows"],
-    "hidden": true
-  },
-  {
-    "id": 99,
-    "category": ["other"],
-    "hidden": true
-  },
-  {
-    "id": 100,
-    "category": ["interior"],
-    "hidden": true
-  },
-  {
-    "id": 104,
-    "category": ["interior", "staircase-rail"],
-    "hidden": true
-  },
-  {
-    "id": 106,
-    "category": ["interior", "staircase-rail"],
-    "hidden": true
-  },
-  {
-    "id": 113,
-    "category": ["interior", "staircase-rail"],
-    "hidden": true
-  },
-  {
-    "id": 114,
-    "category": ["interior", "staircase-rail"],
-    "hidden": true
-  },
-  {
-    "id": 118,
-    "category": ["exterior", "staircase-rail"],
-    "hidden": true
-  },
-  {
-    "id": 119,
-    "category": ["exterior", "other"],
-    "hidden": true
-  },
-  {
-    "id": 120,
-    "category": ["exterior", "staircase-rail"],
-    "hidden": true
-  },
-  {
-    "id": 121,
-    "category": ["exterior"],
-    "hidden": true
-  },
-  {
-    "id": 122,
-    "category": ["exterior", "staircase-rail"],
-    "hidden": true
-  },
-  {
-    "id": 123,
-    "category": ["interior", "staircase-rail"],
-    "hidden": true
-  },
-  {
-    "id": 126,
-    "category": ["exterior", "other"],
-    "hidden": true
-  },
-  {
-    "id": 127,
-    "category": ["exterior", "staircase-rail"],
-    "hidden": true
-  },
-  {
-    "id": 128,
-    "category": ["exterior", "staircase-rail"],
-    "hidden": true
-  },
-  {
-    "id": 129,
-    "category": ["exterior", "other"],
-    "hidden": true
-  },
-  {
-    "id": 133,
-    "category": ["exterior", "other"],
-    "hidden": true
-  },
-  {
-    "id": 139,
-    "category": ["interior", "staircase-rail"],
-    "hidden": true
-  },
-  {
-    "id": 142,
-    "category": ["interior", "staircase-rail"],
-    "hidden": true
-  },
-  {
-    "id": 152,
-    "category": ["exterior", "other"],
-    "hidden": true
-  },
-  {
-    "id": 153,
-    "category": ["interior", "staircase-rail"],
-    "hidden": true
-  },
-  {
-    "id": 110,
-    "category": ["exterior", "other"],
-    "hidden": true
-  },
-  {
-    "id": 116,
-    "category": ["interior", "staircase-rail"],
-    "hidden": true
-  },
-  {
-    "id": 132,
-    "category": ["interior", "staircase-rail"],
-    "hidden": true
-  },
-  {
-    "id": 135,
-    "category": ["interior", "staircase-rail"],
-    "hidden": true
-  },
-  {
-    "id": 140,
-    "category": ["interior", "staircase-rail"],
-    "hidden": true
-  },
-  {
-    "id": 144,
-    "category": ["interior", "staircase-rail"],
-    "hidden": true
-  },
-  {
-    "id": 145,
-    "category": ["interior", "staircase-rail"],
-    "hidden": true
-  },
-  {
-    "id": 148,
-    "category": ["interior", "other"],
-    "hidden": true
-  }
+  { "id": 41, "category": ["interior", "staircase-rail"] },
+  { "id": 16, "category": ["gate"] },
+  { "id": 3, "category": ["interior", "staircase-rail"] },
+  { "id": 5, "category": ["interior", "staircase-rail"] },
+  { "id": 10, "category": ["fence"] }, 
+  { "id": 11, "category": ["exterior", "balcony-rail"] },
+  { "id": 12, "category": ["exterior", "balcony-rail"] },
+  { "id": 13, "category": ["exterior", "balcony-rail"] },
+  { "id": 17, "category": ["fence"] },
+  { "id": 18, "category": ["fence"] },
+  { "id": 1, "category": ["interior", "other"] },
+  { "id": 7, "category": ["interior", "staircase-rail"] },
+  { "id": 22, "category": ["exterior", "staircase-rail"] },
+  { "id": 23, "category": ["exterior", "balcony-rail"] },
+  { "id": 25, "category": ["exterior", "staircase-rail"] },
+  { "id": 26, "category": ["interior", "staircase-rail"] },
+  { "id": 28, "category": ["interior", "staircase-rail"] },
+  { "id": 29, "category": ["interior", "staircase-rail"] },
+  { "id": 30, "category": ["exterior", "balcony-rail"] },
+  { "id": 31, "category": ["exterior", "french-windows"] },
+  { "id": 32, "category": ["interior", "staircase-rail"] },
+  { "id": 33, "category": ["exterior", "balcony-rail"] },
+  { "id": 34, "category": ["interior", "staircase-rail"] },
+  { "id": 35, "category": ["interior", "staircase-rail"] },
+  { "id": 37, "category": ["exterior", "balcony-rail"] },
+  { "id": 38, "category": ["gate"] },
+  { "id": 39, "category": ["exterior", "balcony-rail"] },
+  { "id": 40, "category": ["interior", "staircase-rail"] }, 
+  { "id": 42, "category": ["interior", "staircase-rail"] },
+  { "id": 43, "category": ["other"] },
+  { "id": 44, "category": ["other"] },
+  { "id": 45, "category": ["other"] },
+  { "id": 46, "category": ["other"] },
+  { "id": 47, "category": ["exterior", "staircase-rail"] },
+  { "id": 50, "category": ["exterior", "french-windows"] },
+  { "id": 51, "category": ["exterior", "french-windows"] },
+  { "id": 52, "category": ["exterior", "balcony-rail"] },
+  { "id": 53, "category": ["exterior", "french-windows"] },
+  { "id": 55, "category": ["gate", "fence"] },
+  { "id": 56, "category": ["fence"] },
+  { "id": 58, "category": ["exterior", "french-windows"] }, 
+  { "id": 60, "category": ["exterior", "french-windows"] },
+  { "id": 61, "category": ["exterior", "french-windows"] },
+  { "id": 62, "category": ["interior", "staircase-rail"] },
+  { "id": 63, "category": ["exterior", "french-windows"] },
+  { "id": 64, "category": ["exterior", "balcony-rail"] },
+  { "id": 65, "category": ["interior", "staircase-rail"] },
+  { "id": 2, "category": ["interior", "staircase-rail"] },
+  { "id": 14, "category": ["interior", "staircase-rail"] },
+  { "id": 15, "category": ["interior", "staircase-rail"] },
+  { "id": 4, "category": ["interior", "staircase-rail"] },
+  { "id": 6, "category": ["interior", "staircase-rail"] },
+  { "id": 8, "category": ["interior", "staircase-rail"] },
+  { "id": 9, "category": ["gate"] },
+  { "id": 19, "category": ["exterior", "balcony-rail"] },
+  { "id": 20, "category": ["interior", "staircase-rail"] },
+  { "id": 21, "category": ["exterior", "staircase-rail"] },
+  { "id": 24, "category": ["interior", "staircase-rail"] },
+  { "id": 27, "category": ["interior", "staircase-rail"] },
+  { "id": 36, "category": ["gate"] },
+  { "id": 48, "category": ["interior", "staircase-rail"] },
+  { "id": 49, "category": ["exterior", "staircase-rail"] },
+  { "id": 54, "category": ["exterior", "staircase-rail"] },
+  { "id": 57, "category": ["interior", "staircase-rail"] },
+  { "id": 59, "category": ["other"] }
 ]
