@@ -21,8 +21,8 @@
             <nav class="nav flex-column">
               <button class="nav-link p-0" :class="secondTabStatus" type=" button" aria-expanded="false"
                 aria-controls="#collapseReferenceSecond">
-                <span class="h5 d-none d-sm-block">Mateřská škola Tasov</span>
-                <span class="h5 d-block d-sm-none">Školka</span>
+                <span class="h5 d-none d-sm-block">Ocelový nápis</span>
+                <span class="h5 d-block d-sm-none">Nápis</span>
               </button>
             </nav>
           </div>
@@ -51,9 +51,8 @@
           <div class="row mb-3 tab" :class="{ 'active-tab': this.secondTabStatus === 'active' }">
             <nav class="nav flex-column">
               <button @click="handleTabClicked('second')" class="nav-link p-0 p-md-3" :class="secondTabStatus"
-                type=" button" aria-expanded="false" aria-controls="#collapseReferenceSecond"><span class="h5">Mateřská
-                  škola
-                  Tasov</span></button>
+                type=" button" aria-expanded="false" aria-controls="#collapseReferenceSecond"><span class="h5">Ocelový
+                  nápis</span></button>
             </nav>
           </div>
           <div class="row tab" :class="{ 'active-tab': this.thirdTabStatus === 'active' }">
@@ -70,9 +69,9 @@
             <div class="collapse show " id="collapseReferenceFirst" ref="collapseFirst">
               <h3 class="py-3">Rodinný dům – interiérové schodišťové zábradlí</h3>
               <hr class="references-underline">
-              <p class="pb-2">V rodinném domě jsme realizovali nerezové zábradlí s vodorovnou výplní na schodišti
-                ve
-                dvou podlažích. Moderní řešení ladící s interiérem, kotvené přímo do stěny bez viditelných spojů.</p>
+              <p class="pb-2">V podkroví rodinného domu jsme instalovali nerezové zábradlí s výplní z mléčného skla.
+                Systém sloupků s kotvením do podlahy a madlem po celé délce zajišťuje bezpečnost i elegantní vzhled.
+                Výplně z matného skla dodávají prostoru soukromí a ladí s moderním interiérem.</p>
               <div id="galerry-preview" class="row row-cols-xl-3 row-cols-md-2 row-cols-1 gy-3 gx-3 pb-3">
                 <div v-for="(img, index) in getGalleryJson()" :key="img.id" class="col">
                   <img @click="showLightbox(index)" :src="img.src" class="img-fluid" alt="galerry img of rail">
@@ -82,12 +81,11 @@
           </div>
           <div class="row text-start">
             <div class="collapse" id="collapseReferenceSecond" ref="collapseSecond">
-              <h3 class="py-3">Mateřská škola Tasov – zábradlí u vstupu a rampy</h3>
+              <h3 class="py-3">Veselí nad Moravou – ocelový nápis na nábřeží</h3>
               <hr class="references-underline">
-              <p class="pb-2">U mateřské školy v Tasově jsme realizovali venkovní nerezové zábradlí u vstupní
-                rampy.
-                Zábradlí je navrženo s důrazem na bezpečnost a jednoduchost, aby ladilo s barevnou fasádou a plnilo svou
-                funkci v každodenním provozu školy.</p>
+              <p class="pb-2">Na břehu Baťova kanálu ve Veselí nad Moravou jsme realizovali prostorový nápis z lakované
+                oceli. Masivní písmo v moderním designu je ukotveno na betonovém základu a slouží jako
+                výrazný orientační a vizuální prvek. </p>
               <div id="galerry-preview" class="row row-cols-xl-3 row-cols-md-2 row-cols-1 gy-3 gx-3">
                 <div v-for="(img, index) in getGalleryJson()" :key="img.id" class="col">
                   <img @click="showLightbox(index)" :src="img.src" class="img-fluid" alt="galerry img of rail">
@@ -97,10 +95,12 @@
           </div>
           <div class="row text-start">
             <div class="collapse" id="collapseReferenceThird" ref="collapseThird">
-              <h3 class="py-3">Rodinný dům – zábradlí na balkon a schodiště</h3>
+              <h3 class="py-3">Rodinný dům – oplocení s hliníkovou výplní</h3>
               <hr class="references-underline">
-              <p class="pb-2">U rodinného domu jsme instalovali nerezové zábradlí na balkon a venkovní schodiště.
-                Jednoduché a elegantní řešení s vodorovnou výplní ladí s fasádou a celkovým stylem domu.</p>
+              <p class="pb-2">Pro rodinný dům ve městě jsme vyrobili a namontovali moderní plot s hliníkovou lamelovou
+                výplní v hnědé barvě. Součástí byla dvoukřídlá brána pro vjezd, branka pro pěší a boční části plotu,
+                které jsme umístili mezi betonové sloupky s kamenným obkladem. Výsledek působí elegantně a zároveň
+                poskytuje dostatek soukromí.</p>
               <div id="galerry-preview" class="row row-cols-xl-3 row-cols-md-2 row-cols-1 gy-3 gx-3">
                 <div v-for="(img, index) in getGalleryJson()" :key="img.id" class="col">
                   <img @click="showLightbox(index)" :src="img.src" class="img-fluid" alt="galerry img of rail">
@@ -161,6 +161,8 @@ export default {
       bsCollapse.show(); // Or .show() to expand
 
     },
+
+    // Set status of clicked tab to active
     activateTab(clickedTab) {
       this.firstTabStatus = 'non-active';
       this.secondTabStatus = 'non-active';
@@ -191,15 +193,15 @@ export default {
     getGalleryJson() {
       let firstResolvedGallery = this.firstGalleryJson.map(item => ({
         ...item,
-        src: new URL(`../imgs/galery-imgs/big/${item.id + '.jpg'}`, import.meta.url).href
+        src: new URL(`../imgs/galery-imgs/${item.id + '.jpg'}`, import.meta.url).href
       }))
       let secondResolvedGallery = this.secondGalleryJson.map(item => ({
         ...item,
-        src: new URL(`../imgs/galery-imgs/big/${item.id + '.jpg'}`, import.meta.url).href
+        src: new URL(`../imgs/galery-imgs/${item.id + '.jpg'}`, import.meta.url).href
       }))
       let thirdResolvedGallery = this.thirdGalleryJson.map(item => ({
         ...item,
-        src: new URL(`../imgs/galery-imgs/big/${item.id + '.jpg'}`, import.meta.url).href
+        src: new URL(`../imgs/galery-imgs/${item.id + '.jpg'}`, import.meta.url).href
       }))
       if (this.currentGallery === 'second') {
         return secondResolvedGallery
