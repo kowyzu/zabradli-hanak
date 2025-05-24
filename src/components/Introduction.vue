@@ -1,7 +1,7 @@
 <script setup>
-import firstImg from '../imgs/introduction-imgs/first.jpeg'
-import secondImg from '../imgs/introduction-imgs/second.jpeg'
-import thirdImg from '../imgs/introduction-imgs/third.jpeg'
+import firstImg from '../imgs/introduction-imgs/first.webp'
+import secondImg from '../imgs/introduction-imgs/second.webp'
+import thirdImg from '../imgs/introduction-imgs/third.webp'
 </script>
 
 <template>

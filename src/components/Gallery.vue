@@ -119,7 +119,7 @@ export default {
     resolveGallery(galleryToResolve) {
       let resolvedGallery = galleryToResolve.map(item => ({
         ...item,
-        src: new URL(`../imgs/galery-imgs/${item.id + '.jpg'}`, import.meta.url).href
+        src: new URL(`../imgs/galery-imgs/${item.id + '.webp'}`, import.meta.url).href
       }))
 
       return resolvedGallery
