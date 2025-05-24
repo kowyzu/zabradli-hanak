@@ -42,7 +42,7 @@ export default {
   },
   methods: {
     onInput(event) {
-      const rawValue = event.target.value.replace(/[^\d+]/g, ''); // only numbers + sign
+      const rawValue = event.target.value.replace(/^(\+)?|[^\d]/g, (match, plus) => plus ? '+' : ''); // only numbers + sign
       this.$emit('update:modelValue', rawValue);
     },
     handleError(errorDescription) {
@@ -52,15 +52,15 @@ export default {
     },
     validate() {
       let trimmedValue = this.modelValue.trim();
-      let trimmedValueOnlyNumbers = trimmedValue.replace('+', '');
+      let trimmedValueNoPlusSign = trimmedValue.replace('+', '');
 
-      // if (!trimmedValue) {
-      //   return this.handleError('Zadejte své telefonní číslo.');
-      // }
-      if (trimmedValueOnlyNumbers.length > 12) {
+      if (/[a-zA-Z]/.test(trimmedValueNoPlusSign)) {
+        return this.handleError('Telefonní číslo nesmí obsahovat písmena.');
+      }
+      if (trimmedValueNoPlusSign.length > 12) {
         return this.handleError('Telefonní číslo nesmí mít více než 12 číslic.');
       }
-      if (trimmedValueOnlyNumbers.length >= 1 && trimmedValueOnlyNumbers.length < 9) {
+      if (trimmedValueNoPlusSign.length >= 1 && trimmedValueNoPlusSign.length < 9) {
         return this.handleError('Telefonní číslo musí mít alespoň 9 číslic.');
       }
       this.error = null;

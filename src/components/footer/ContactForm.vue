@@ -17,29 +17,27 @@
       </div>
     </div>
     <div class="row mb-3 justify-content-center">
+      <div v-if="phoneError !== '' && emailError !== ''" class="form-error-msg">
+        Zadejte prosím e-mail nebo telefon.
+      </div>
+    </div>
+    <div class="row mb-3 justify-content-center">
       <div class="col">
         <MessageTextArea ref="messageTextArea" id="message" placeholder="Sdělte nám svou představu o ideálním zábradlí"
           v-model.trim="message" />
       </div>
     </div>
     <button type="submit" class="btn btn-primary">Odeslat</button>
-    <!-- <div v-if="error" class="form-msg form-error-msg">
-      {{ error }}
-    </div>
-    <div v-if="success" class="form-msg form-success-msg">
-      {{ success }}
-    </div> -->
   </form>
-  <!-- TODO: make toast reactive according to success/error status (collor of toas...) -->
+
   <div class="toast-container position-fixed bottom-0 end-0 p-3">
-    <div id="success-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" ref="toastSuccess">
+    <div id="success-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" ref="toast">
       <div class="toast-header">
-        <!-- <img src="..." class="rounded me-2" alt="..."> -->
-        <strong class="me-auto">Bootstrap</strong>
-        <small>11 mins ago</small>
+        <strong v-if="error" class="me-auto toast-error"><i class="fa-solid fa-triangle-exclamation"></i></strong>
+        <strong v-if="!error" class="me-auto toast-success"><i class="fa-solid fa-check"></i></strong>
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
-      <div v-if="success" class="toast-body form-msg form-success-msg">
+      <div class="toast-body form-msg form-success-msg">
         {{ statusMessage }}
       </div>
     </div>
@@ -47,6 +45,7 @@
 </template>
 
 <script>
+import * as bootstrap from "bootstrap";
 import NameInput from '../form/NameInput.vue';
 import PhoneInput from '../form/PhoneInput.vue';
 import EmailInput from '../form/EmailInput.vue';
@@ -84,32 +83,29 @@ export default {
     // Validate form inputs via specific validation methods from form conponents
     isFormValid() {
 
-      //either mail or phonNumber is required
-      if (!this.email.trim() && !this.phoneNumber.trim()) {
-        this.error = 'Zadejte prosím e-mail nebo telefon.';
-        this.displayToast(error);
-        return false;
-      }
-
       let isNameValid = this.$refs.nameInput.validate();
       let isPhoneValid = this.$refs.phoneInput.validate();
       let isEmailValid = this.$refs.emailInput.validate();
       let isMessageValid = this.$refs.messageTextArea.validate();
 
-
-      // console.log("jmeno is valid?" + isNameValid + " error: " + this.error);
-      // console.log("phone is valid?" + isPhoneValid + " error: " + this.error);
-      // console.log("email is valid?" + isEmailValid + " error: " + this.phoneError);
-      // console.log("Message is valid?" + isMessageValid + " error: " + this.error);
-
-
       if (!isNameValid || !isPhoneValid || !isEmailValid || !isMessageValid) {
-        this.error = 'Zkontrolujte prosím zadané údaje';
-        this.displayToast(error);
+        this.error = true;
+        this.statusMessage = 'Zkontrolujte prosím zadané údaje';
+        this.displayToast();
+        return false;
+      }
+
+      // Either mail or phonNumber is required
+      if (!this.email.trim() && !this.phoneNumber.trim()) {
+        this.error = true;
+        this.statusMessage = 'Zadejte prosím e-mail nebo telefon.';
+        this.displayToast();
         return false;
       }
 
       this.error = null;
+      this.phoneError = '';
+      this.emailError = '';
       return true;
     },
 
@@ -135,20 +131,20 @@ export default {
       })
         .then(response => response.json())
         .then(data => {
-          console.log('Success:', data);
           if (data.success) {
             this.error = null;
-            this.success = 'Formulář byl úspěšně odeslán.';
-            this.displayToast(success);
+            this.statusMessage = 'Formulář byl úspěšně odeslán. Brzy se ozveme.';
+            this.displayToast();
             this.cleanForm();
           } else {
             this.error = data.message
+            this.statusMessage = 'Nepodařilo se odeslat formulář. Zkuste to prosím znovu.';
+            this.displayToast();
           }
         })
         .catch((error) => {
-          console.error('Error:', error);
-          this.error = 'Nepodařilo se odeslat formulář.';
-          this.displayToast(error);
+          this.statusMessage = 'Nepodařilo se odeslat formulář. Zkuste to prosím znovu.';
+          this.displayToast();
         });
 
     },
@@ -156,7 +152,6 @@ export default {
     // After form submitting validate data, prepare object with filled data and post to index.php
     handleFormSubmit() {
       if (!this.isFormValid()) {
-        console.log(this.error);
         return;
       };
       let formData = this.extractData();
@@ -164,9 +159,8 @@ export default {
     },
 
     // Display toast with statusMessage
-    displayToast(status) {
-
-      const toastBootstrap = bootstrap.Toast.getOrCreateInstance(this.$refs.toastSuccess);
+    displayToast() {
+      const toastBootstrap = bootstrap.Toast.getOrCreateInstance(this.$refs.toast);
       toastBootstrap.show();
     },
 

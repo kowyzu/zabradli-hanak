@@ -551,3 +551,11 @@ color: $color-text;
 .form-error-input{
   border-color: $color-error;
 }
+
+.toast-success svg {
+  color: $color-success !important;
+}
+
+.toast-error svg{
+  color: $color-error !important;
+}
