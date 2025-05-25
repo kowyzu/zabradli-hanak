@@ -88,7 +88,7 @@ try {
   $mail->Body = $data['message'];
   $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
-  $mail->send();
+  // $mail->send();
   echo json_encode([
     'success' => true,
     'message' => 'Formulář byl úspěšně odeslán.'

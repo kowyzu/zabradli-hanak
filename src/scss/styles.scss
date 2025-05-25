@@ -174,12 +174,12 @@ strong {
   font-weight: 300;
 }
 
-#introduction img{
-    max-height: 500px;
-}
+// #introduction img{
+//     max-height: 500px;
+// }
 
-// show masks only from lg breakpoint
-@include media-breakpoint-up(lg) {
+// show masks only from md breakpoint
+@include media-breakpoint-up(md) {
   .shape-mask {
   //first wariant
   clip-path: polygon(0 0, 100% 0%, 90% 75%, 50% 99%, 0 75%);
@@ -554,6 +554,10 @@ color: $color-text;
 }
 
 .form-error-input{
+  border-color: $color-error;
+}
+
+.form-error-missing input {
   border-color: $color-error;
 }
 

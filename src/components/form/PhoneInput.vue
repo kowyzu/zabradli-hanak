@@ -2,11 +2,12 @@
   <div>
     <div class="input-group">
       <div class="input-group-text"><i class="fa-solid fa-phone fa-fw"></i></div>
-      <input type="tel" :class="['form-control', { 'form-error-input': error }]" :id="id" name="name"
-        :placeholder="placeholder" :value="formattedValue" @input="onInput" @change="validate">
+      <!-- , { 'form-error-input': error } -->
+      <input type="tel" :class="['form-control']" :id="id" name="name" :placeholder="placeholder"
+        :value="formattedValue" @input="onInput" @change="validate">
     </div>
-    <div v-if="error" class="form-error-msg">
-      {{ error }}
+    <div v-if="errorMsg" class="form-error-msg">
+      {{ errorMsg }}
     </div>
   </div>
 </template>
@@ -21,6 +22,7 @@ export default {
   data() {
     return {
       error: null,
+      errorMsg: '',
     };
   },
   computed: {
@@ -45,23 +47,33 @@ export default {
       const rawValue = event.target.value.replace(/^(\+)?|[^\d]/g, (match, plus) => plus ? '+' : ''); // only numbers + sign
       this.$emit('update:modelValue', rawValue);
     },
-    handleError(errorDescription) {
-      this.error = errorDescription;
+    handleError(errorDescription, type, displayErrorMsg = true) {
+      // specify error and emit to ContactForm.vue
+      this.error = { description: errorDescription, errorType: type };
       this.$emit('error', this.error);
+
+      // display error under input element if it is wanted
+      if (displayErrorMsg) {
+        this.errorMsg = errorDescription;
+      }
+
       return false;
     },
     validate() {
       let trimmedValue = this.modelValue.trim();
       let trimmedValueNoPlusSign = trimmedValue.replace('+', '');
 
+      if (!trimmedValue) {
+        return this.handleError('Zadejte své telefonní číslo.', 'missing', false);
+      }
       if (/[a-zA-Z]/.test(trimmedValueNoPlusSign)) {
-        return this.handleError('Telefonní číslo nesmí obsahovat písmena.');
+        return this.handleError('Telefonní číslo nesmí obsahovat písmena.', 'invalid');
       }
       if (trimmedValueNoPlusSign.length > 12) {
-        return this.handleError('Telefonní číslo nesmí mít více než 12 číslic.');
+        return this.handleError('Telefonní číslo nesmí mít více než 12 číslic.', 'invalid');
       }
       if (trimmedValueNoPlusSign.length >= 1 && trimmedValueNoPlusSign.length < 9) {
-        return this.handleError('Telefonní číslo musí mít alespoň 9 číslic.');
+        return this.handleError('Telefonní číslo musí mít alespoň 9 číslic.', 'invalid');
       }
       this.error = null;
       this.$emit('error', null);

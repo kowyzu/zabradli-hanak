@@ -7,13 +7,14 @@
     </div>
     <div class="row mb-3 justify-content-center">
       <div class="col">
-        <PhoneInput ref="phoneInput" id="phone" placeholder="Telefonní číslo" v-model.trim="phoneNumber"
-          @error="handlePhoneError" />
+        <PhoneInput :class="{ 'form-error-missing': phoneError }" ref="phoneInput" id="phone"
+          placeholder="Telefonní číslo" v-model.trim="phoneNumber" @error="handlePhoneError" />
       </div>
     </div>
     <div class="row mb-3 justify-content-center">
       <div class="col">
-        <EmailInput ref="emailInput" id="email" placeholder="E-mail" v-model.trim="email" @error="handleEmailError" />
+        <EmailInput :class="{ 'form-error-missing': emailError }" ref="emailInput" id="email" placeholder="E-mail"
+          v-model.trim="email" @error="handleEmailError" />
       </div>
     </div>
     <div class="row mb-3 justify-content-center">
@@ -69,15 +70,16 @@ export default {
       statusMessage: '',
       phoneError: '',
       emailError: '',
+      phonerOrEmailMissing: null,
     }
   },
   methods: {
     // Handle errors emmited from EmailInput.vue and PhoneInput.vue components
-    handlePhoneError(msg) {
-      this.phoneError = msg;
+    handlePhoneError(errorDetails) {
+      this.phoneError = errorDetails;
     },
-    handleEmailError(msg) {
-      this.emailError = msg;
+    handleEmailError(errorDetails) {
+      this.emailError = errorDetails;
     },
 
     // Validate form inputs via specific validation methods from form conponents
@@ -88,22 +90,28 @@ export default {
       let isEmailValid = this.$refs.emailInput.validate();
       let isMessageValid = this.$refs.messageTextArea.validate();
 
+      console.log(this.phoneError.errorType);
+      console.log(this.emailError.errorType);
+
       if (!isNameValid || !isPhoneValid || !isEmailValid || !isMessageValid) {
         this.error = true;
         this.statusMessage = 'Zkontrolujte prosím zadané údaje';
+        // this.phonerOrEmailMissing = true;
         this.displayToast();
         return false;
       }
 
       // Either mail or phonNumber is required
-      if (!this.email.trim() && !this.phoneNumber.trim()) {
+      if (this.phoneError.errorType === missing && this.emailError.errorType === missing) {
         this.error = true;
+        this.phonerOrEmailMissing = true;
         this.statusMessage = 'Zadejte prosím e-mail nebo telefon.';
         this.displayToast();
         return false;
       }
 
       this.error = null;
+      this.phonerOrEmailMissing = false;
       this.phoneError = '';
       this.emailError = '';
       return true;
@@ -133,6 +141,7 @@ export default {
         .then(data => {
           if (data.success) {
             this.error = null;
+            this.phonerOrEmailMissing = null;
             this.statusMessage = 'Formulář byl úspěšně odeslán. Brzy se ozveme.';
             this.displayToast();
             this.cleanForm();

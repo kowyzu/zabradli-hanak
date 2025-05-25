@@ -2,11 +2,12 @@
   <div>
     <div class="input-group">
       <div class="input-group-text"><i class="fa-solid fa-envelope fa-fw"></i></div>
-      <input ref="emailInput" type="email" :class="['form-control', { 'form-error-input': error }]" :id="id"
-        :placeholder="placeholder" :value="modelValue" @input="updateValue" @change="validate">
+      <!-- , { 'form-error-input': error } -->
+      <input ref="emailInput" type="email" :class="['form-control']" :id="id" :placeholder="placeholder"
+        :value="modelValue" @input="updateValue" @change="validate">
     </div>
-    <div v-if="error" class="form-error-msg">
-      {{ error }}
+    <div v-if="errorMsg" class="form-error-msg">
+      {{ errorMsg }}
     </div>
   </div>
 </template>
@@ -23,20 +24,31 @@ export default {
   data() {
     return {
       error: null,
+      errorMsg: '',
     };
   },
   methods: {
     updateValue(event) {
       this.$emit('update:modelValue', event.target.value);
     },
-    handleError(errorDescription) {
-      this.error = errorDescription;
+    handleError(errorDescription, type, displayErrorMsg = true) {
+      // specify error and emit to ContactForm.vue
+      this.error = { description: errorDescription, errorType: type };
       this.$emit('error', this.error);
+
+      // display error under input element if it is wanted
+      if (displayErrorMsg) {
+        this.errorMsg = errorDescription;
+      }
+
       return false;
     },
     validate() {
+      if (!this.modelValue.trim()) {
+        return this.handleError('Zadejte svůj e-mail.', 'missing', false);
+      }
       if (this.$refs.emailInput.checkValidity() === false) {
-        return this.handleError('Neplatná e-mailová adresa. Zadejte e-mail ve formátu: example@domena.cz')
+        return this.handleError('Neplatná e-mailová adresa. Zadejte e-mail ve formátu: example@domena.cz', 'invalid')
       }
       this.error = null;
       this.$emit('error', null);

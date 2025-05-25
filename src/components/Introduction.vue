@@ -1,14 +1,14 @@
 <script setup>
-import firstImg from '../imgs/introduction-imgs/first.webp'
-import secondImg from '../imgs/introduction-imgs/second.webp'
-import thirdImg from '../imgs/introduction-imgs/third.webp'
+import firstImg from '../imgs/introduction-imgs/first.jpg'
+import secondImg from '../imgs/introduction-imgs/second.jpg'
+import thirdImg from '../imgs/introduction-imgs/third.jpg'
 </script>
 
 <template>
   <section id="introduction">
     <div class="container-fluid introduction-container">
       <div class="row justify-content-md-left align-items-xl-center">
-        <div class="col-xl-7 introduction-carousel p-0">
+        <div class="col-md-7 introduction-carousel p-0">
           <div id="carouselIntroduction" class="carousel slide shape-mask carousel-fade">
             <!--data-bs-ride="carousel" -->
             <div class="carousel-inner">
@@ -33,7 +33,7 @@ import thirdImg from '../imgs/introduction-imgs/third.webp'
           </div>
         </div>
 
-        <div class="col-xl-5 offset-xxl-1 col-xxl-3 introduction-text p-xl-4 p-5">
+        <div class="col-md-5 offset-xxl-1 col-xxl-3 introduction-text p-xl-4 p-5">
           <!-- text to update? -->
           <h1 class="mb-xxl-3 mb-xl-2">
             Zakázková výroba schodišť a zábradlí
