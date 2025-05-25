@@ -33,7 +33,7 @@ import thirdImg from '../imgs/introduction-imgs/third.jpg'
           </div>
         </div>
 
-        <div class="col-md-5 offset-xxl-1 col-xxl-3 introduction-text p-xl-4 p-5">
+        <div class="col-md-5 offset-xxl-1 col-xxl-3 introduction-text p-xl-4 p-3">
           <!-- text to update? -->
           <h1 class="mb-xxl-3 mb-xl-2">
             Zakázková výroba schodišť a zábradlí

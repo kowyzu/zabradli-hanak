@@ -8,7 +8,8 @@
     <div class="row mb-3 justify-content-center">
       <div class="col">
         <PhoneInput :class="{ 'form-error-missing': phoneError }" ref="phoneInput" id="phone"
-          placeholder="Telefonní číslo" v-model.trim="phoneNumber" @error="handlePhoneError" />
+          placeholder="Telefonní číslo" v-model.trim="phoneNumber" @error="handlePhoneError"
+          @input="requirePhoneOrEmail" />
       </div>
     </div>
     <div class="row mb-3 justify-content-center">
@@ -18,7 +19,7 @@
       </div>
     </div>
     <div class="row mb-3 justify-content-center">
-      <div v-if="phoneError !== '' && emailError !== ''" class="form-error-msg">
+      <div v-if="phonerOrEmailMissing" class="form-error-msg">
         Zadejte prosím e-mail nebo telefon.
       </div>
     </div>
@@ -75,11 +76,11 @@ export default {
   },
   methods: {
     // Handle errors emmited from EmailInput.vue and PhoneInput.vue components
-    handlePhoneError(errorDetails) {
-      this.phoneError = errorDetails;
+    handlePhoneError(msg) {
+      this.phoneError = msg;
     },
-    handleEmailError(errorDetails) {
-      this.emailError = errorDetails;
+    handleEmailError(msg) {
+      this.emailError = msg;
     },
 
     // Validate form inputs via specific validation methods from form conponents
@@ -90,25 +91,18 @@ export default {
       let isEmailValid = this.$refs.emailInput.validate();
       let isMessageValid = this.$refs.messageTextArea.validate();
 
-      console.log(this.phoneError.errorType);
-      console.log(this.emailError.errorType);
-
-      if (!isNameValid || !isPhoneValid || !isEmailValid || !isMessageValid) {
+      if (!isNameValid || !isMessageValid || (!isPhoneValid && !isEmailValid)) {
+        // Either mail or phonNumber is required
+        if (this.phoneError.errorType === 'missing' && this.emailError.errorType === 'missing') {
+          this.error = true;
+          this.phonerOrEmailMissing = true;
+          return false;
+        }
         this.error = true;
-        this.statusMessage = 'Zkontrolujte prosím zadané údaje';
-        // this.phonerOrEmailMissing = true;
         this.displayToast();
         return false;
       }
 
-      // Either mail or phonNumber is required
-      if (this.phoneError.errorType === missing && this.emailError.errorType === missing) {
-        this.error = true;
-        this.phonerOrEmailMissing = true;
-        this.statusMessage = 'Zadejte prosím e-mail nebo telefon.';
-        this.displayToast();
-        return false;
-      }
 
       this.error = null;
       this.phonerOrEmailMissing = false;
