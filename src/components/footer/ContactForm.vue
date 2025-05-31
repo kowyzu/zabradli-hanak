@@ -158,12 +158,13 @@ export default {
             this.displayToast();
             this.cleanForm();
           } else {
-            this.error = data.message
-            this.statusMessage = 'Nepodařilo se odeslat formulář. Zkuste to prosím znovu.';
+            this.error = true
+            this.statusMessage = data.message
             this.displayToast();
           }
         })
         .catch((error) => {
+          this.error = true
           this.statusMessage = 'Nepodařilo se odeslat formulář. Zkuste to prosím znovu.';
           this.displayToast();
         });

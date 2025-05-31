@@ -2,7 +2,6 @@
   <div>
     <div class="input-group">
       <div class="input-group-text"><i class="fa-solid fa-phone fa-fw"></i></div>
-      <!-- , { 'form-error-input': error } -->
       <input type="tel" :class="['form-control']" :id="id" name="name" :placeholder="placeholder"
         :value="formattedValue" @input="onInput" @change="validate">
     </div>
@@ -48,11 +47,11 @@ export default {
       this.$emit('update:modelValue', rawValue);
     },
     handleError(errorDescription, type, displayErrorMsg = true) {
-      // specify error and emit to ContactForm.vue
+      // Specify error and emit to ContactForm.vue
       this.error = { description: errorDescription, errorType: type };
       this.$emit('error', this.error);
 
-      // display error under input element if it is wanted
+      // Display error under input element if it is wanted
       if (displayErrorMsg) {
         this.errorMsg = errorDescription;
       }

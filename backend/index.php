@@ -1,4 +1,45 @@
 <?php
+/////////////////
+// FUNCTIONS
+/////////////////
+
+// Sanitize input from user
+function clean($input): string
+{
+  $input = trim($input);
+  $input = strip_tags($input);
+
+  return $input;
+}
+;
+
+// Validate e-mail
+function validateEmail($input): bool
+{
+  if (filter_var($input, FILTER_VALIDATE_EMAIL)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// Validate phone
+function validatePhone($input): bool
+{
+  if (str_contains($input, '/[^\d+]/g')) {
+    return false;
+  }
+  $digits = preg_replace('/\D/', '', $input);
+  if (strlen($digits) > 12 || strlen($digits) < 9) {
+    return false;
+  }
+  return true;
+}
+
+/////////////////
+// MAIN PROGRAMM
+////////////////
+
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
   header("Access-Control-Allow-Origin: *");
   header("Access-Control-Allow-Headers: Content-Type");
@@ -11,6 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
 header("Content-Type: application/json; charset=UTF-8");
+
 
 // Include Composer's autoloader
 require __DIR__ . '/vendor/autoload.php';
@@ -35,10 +77,25 @@ $message = $data['message'] ?? '';
 $phone = $data['phoneNumber'] ?? '';
 
 if (!$name || !$message || (!$email && !$phone)) {
-  http_response_code(422); // Unprocessable Entity
   echo json_encode([
     'success' => false,
-    'message' => 'Chyba: Některé povinné údaje chybí.',
+    'message' => 'Některé povinné údaje chybí.',
+  ]);
+  exit;
+}
+
+if ($email && !validateEmail($email)) {
+  echo json_encode([
+    'success' => false,
+    'message' => 'Zkontrolujte prosím zadaný e-mail.',
+  ]);
+  exit;
+}
+
+if ($phone && !validatePhone($phone)) {
+  echo json_encode([
+    'success' => false,
+    'message' => 'Zkontrolujte prosím zadané telefonní číslo.',
   ]);
   exit;
 }
@@ -52,23 +109,24 @@ if (!is_array($data)) {
   exit;
 }
 
+// Data validation and sanitization
 
-//Import PHPMailer classes into the global namespace
-//These must be at the top of your script, not inside a function
+
+// Import PHPMailer classes into the global namespace
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 
-//Load Composer's autoloader (created by composer, not included with PHPMailer)
+// Load Composer's autoloader
 require 'vendor/autoload.php';
 
-//Create an instance; passing `true` enables exceptions
+// Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
 
 try {
-  //Server settings
+  // Server settings
   $mail->SMTPDebug = SMTP::DEBUG_OFF;                      //Enable verbose debug output
   $mail->isSMTP();                                            //Send using SMTP
   $mail->Host = $SMTPServer;                     //Set the SMTP server to send through
@@ -78,11 +136,11 @@ try {
   $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
   $mail->Port = $portNumber;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
-  //Recipients
+  // Recipients
   $mail->setFrom($username, 'Hanak');
   $mail->addAddress('kowyzu@gmail.com', 'Kowyzu');     //Add a recipient
 
-  //Content
+  // Content
   $mail->isHTML(true);                                  //Set email format to HTML
   $mail->Subject = $data['name'];
   $mail->Body = $data['message'];
