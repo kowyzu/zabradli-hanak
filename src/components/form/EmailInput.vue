@@ -51,6 +51,7 @@ export default {
         return this.handleError('Neplatná e-mailová adresa. Zadejte e-mail ve formátu: example@domena.cz', 'invalid')
       }
       this.error = null;
+      this.errorMsg = '';
       this.$emit('error', null);
       return true;
     },

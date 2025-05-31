@@ -44,7 +44,7 @@ export default {
   },
   methods: {
     onInput(event) {
-      const rawValue = event.target.value.replace(/^(\+)?|[^\d]/g, (match, plus) => plus ? '+' : ''); // only numbers + sign
+      const rawValue = event.target.value.replace(/[^\d+]/g, ''); // only numbers + sign
       this.$emit('update:modelValue', rawValue);
     },
     handleError(errorDescription, type, displayErrorMsg = true) {
@@ -65,9 +65,6 @@ export default {
 
       if (!trimmedValue) {
         return this.handleError('Zadejte své telefonní číslo.', 'missing', false);
-      }
-      if (/[a-zA-Z]/.test(trimmedValueNoPlusSign)) {
-        return this.handleError('Telefonní číslo nesmí obsahovat písmena.', 'invalid');
       }
       if (trimmedValueNoPlusSign.length > 12) {
         return this.handleError('Telefonní číslo nesmí mít více než 12 číslic.', 'invalid');

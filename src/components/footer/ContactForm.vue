@@ -9,13 +9,13 @@
       <div class="col">
         <PhoneInput :class="{ 'form-error-missing': phoneError }" ref="phoneInput" id="phone"
           placeholder="Telefonní číslo" v-model.trim="phoneNumber" @error="handlePhoneError"
-          @input="requirePhoneOrEmail" />
+          @change="requirePhoneOrEmail" />
       </div>
     </div>
     <div class="row mb-3 justify-content-center">
       <div class="col">
         <EmailInput :class="{ 'form-error-missing': emailError }" ref="emailInput" id="email" placeholder="E-mail"
-          v-model.trim="email" @error="handleEmailError" />
+          v-model.trim="email" @error="handleEmailError" @change="requirePhoneOrEmail" />
       </div>
     </div>
     <div class="row mb-3 justify-content-center">
@@ -79,8 +79,22 @@ export default {
     handlePhoneError(msg) {
       this.phoneError = msg;
     },
+
     handleEmailError(msg) {
       this.emailError = msg;
+    },
+
+    // After input in Email/Phone check if at least one of them is correctly filled
+    requirePhoneOrEmail() {
+      let isPhoneValid = this.$refs.phoneInput.validate();
+      let isEmailValid = this.$refs.emailInput.validate();
+
+      if (!isPhoneValid && !isEmailValid && this.phoneError.errorType === 'missing' && this.emailError.errorType === 'missing') {
+        this.error = true;
+        this.phonerOrEmailMissing = true;
+        return false;
+      }
+      this.phonerOrEmailMissing = null;
     },
 
     // Validate form inputs via specific validation methods from form conponents
@@ -91,15 +105,18 @@ export default {
       let isEmailValid = this.$refs.emailInput.validate();
       let isMessageValid = this.$refs.messageTextArea.validate();
 
-      if (!isNameValid || !isMessageValid || (!isPhoneValid && !isEmailValid)) {
-        // Either mail or phonNumber is required
+      // Either mail or phonNumber is required
+      if (!isPhoneValid && !isEmailValid) {
         if (this.phoneError.errorType === 'missing' && this.emailError.errorType === 'missing') {
           this.error = true;
           this.phonerOrEmailMissing = true;
           return false;
         }
+        this.phonerOrEmailMissing = null;
+      }
+
+      if (!isNameValid || !isMessageValid || !isPhoneValid || !isEmailValid) {
         this.error = true;
-        this.displayToast();
         return false;
       }
 
