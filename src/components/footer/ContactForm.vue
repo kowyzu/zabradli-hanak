@@ -29,7 +29,7 @@
           v-model.trim="message" />
       </div>
     </div>
-    <button type="submit" class="btn btn-primary">Odeslat</button>
+    <button type="submit" class="btn btn-primary" :disabled="postBtnDisabled">Odeslat</button>
   </form>
 
   <div class="toast-container position-fixed bottom-0 end-0 p-3">
@@ -72,6 +72,7 @@ export default {
       phoneError: '',
       emailError: '',
       phonerOrEmailMissing: null,
+      postBtnDisabled: false,
     }
   },
   methods: {
@@ -115,7 +116,7 @@ export default {
         this.phonerOrEmailMissing = null;
       }
 
-      if (!isNameValid || !isMessageValid || !isPhoneValid || !isEmailValid) {
+      if (!isNameValid || !isMessageValid) {
         this.error = true;
         return false;
       }
@@ -169,12 +170,18 @@ export default {
 
     },
 
+    // When the form is posted the post btn is disabled for avoiding multiple form posts
+    disablePostButton() {
+      this.postBtnDisabled = true;
+    },
+
     // After form submitting validate data, prepare object with filled data and post to index.php
     handleFormSubmit() {
       if (!this.isFormValid()) {
         return;
       };
       let formData = this.extractData();
+      this.disablePostButton();
       this.postData(formData);
     },
 

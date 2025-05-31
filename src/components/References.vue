@@ -4,14 +4,14 @@
     <div class="container text-center">
       <div class="row row-cols-1 justify-content-center">
         <div class="row d-lg-none p-0">
-          <div @click="handleTabClicked('first')"
+          <div @click="handleTabClicked('third')"
             class="col ms-1 ms-sm-0 me-1 tab py-3 d-flex align-items-center justify-content-center"
-            :class="{ 'active-tab': this.firstTabStatus === 'active' }">
+            :class="{ 'active-tab': this.thirdTabStatus === 'active' }">
             <nav class="nav flex-column">
-              <button class="nav-link p-0" :class="firstTabStatus" type="button" aria-expanded="false"
-                aria-controls="collapseReferenceFirst">
-                <span class="h5 d-none d-sm-block">Rodinný dům – interiér</span>
-                <span class="h5 d-block d-sm-none">Interiér</span>
+              <button class="nav-link p-0" :class="thirdTabStatus" type=" button" aria-expanded="false"
+                aria-controls="#collapseReferenceThird">
+                <span class="h5 d-none d-sm-block">Rodinný dům – exteriér</span>
+                <span class="h5 d-block d-sm-none">Exteriér</span>
               </button>
             </nav>
           </div>
@@ -26,26 +26,26 @@
               </button>
             </nav>
           </div>
-          <div @click="handleTabClicked('third')"
+          <div @click="handleTabClicked('first')"
             class="col me-1 me-sm-0 ms-1 tab py-3 d-flex align-items-center justify-content-center"
-            :class="{ 'active-tab': this.thirdTabStatus === 'active' }">
+            :class="{ 'active-tab': this.firstTabStatus === 'active' }">
             <nav class="nav flex-column">
-              <button class="nav-link p-0" :class="thirdTabStatus" type=" button" aria-expanded="false"
-                aria-controls="#collapseReferenceThird">
-                <span class="h5 d-none d-sm-block">Rodinný dům – exteriér</span>
-                <span class="h5 d-block d-sm-none">Exteriér</span>
+              <button class="nav-link p-0" :class="firstTabStatus" type="button" aria-expanded="false"
+                aria-controls="collapseReferenceFirst">
+                <span class="h5 d-none d-sm-block">Rodinný dům – interiér</span>
+                <span class="h5 d-block d-sm-none">Interiér</span>
               </button>
             </nav>
           </div>
         </div>
         <!-- from md -->
         <div class="col-md-2 col-2 d-none d-lg-block">
-          <div class="row mb-3 tab" :class="{ 'active-tab': this.firstTabStatus === 'active' }">
+          <div class="row mb-3 tab" :class="{ 'active-tab': this.thirdTabStatus === 'active' }">
             <nav class="nav flex-column">
-              <button @click="handleTabClicked('first')" class="nav-link p-0 p-md-3" :class="firstTabStatus"
-                type="button" aria-expanded="false" aria-controls="collapseReferenceFirst">
-                <span class="h5">Rodinný dům – interiér</span>
-              </button>
+              <button @click="handleTabClicked('third')" class="nav-link p-0 p-md-3" :class="thirdTabStatus"
+                type=" button" aria-expanded="false" aria-controls="#collapseReferenceThird"><span class="h5">Rodinný
+                  dům –
+                  exteriér</span></button>
             </nav>
           </div>
           <div class="row mb-3 tab" :class="{ 'active-tab': this.secondTabStatus === 'active' }">
@@ -55,24 +55,26 @@
                   nápis</span></button>
             </nav>
           </div>
-          <div class="row tab" :class="{ 'active-tab': this.thirdTabStatus === 'active' }">
+          <div class="row tab" :class="{ 'active-tab': this.firstTabStatus === 'active' }">
             <nav class="nav flex-column">
-              <button @click="handleTabClicked('third')" class="nav-link p-0 p-md-3" :class="thirdTabStatus"
-                type=" button" aria-expanded="false" aria-controls="#collapseReferenceThird"><span class="h5">Rodinný
-                  dům –
-                  exteriér</span></button>
+              <button @click="handleTabClicked('first')" class="nav-link p-0 p-md-3" :class="firstTabStatus"
+                type="button" aria-expanded="false" aria-controls="collapseReferenceFirst">
+                <span class="h5">Rodinný dům – interiér</span>
+              </button>
             </nav>
           </div>
         </div>
+
         <div class="col-lg-10 reference-detail px-sm-5 pt-5 pt-lg-3 pb-5 mb-sm-5">
-          <div class="row text-start ">
-            <div class="collapse show " id="collapseReferenceFirst" ref="collapseFirst">
-              <h3 class="py-3">Rodinný dům – interiérové schodišťové zábradlí</h3>
+          <div class="row text-start">
+            <div class="collapse" id="collapseReferenceThird" ref="collapseThird">
+              <h3 class="py-3">Rodinný dům – oplocení s hliníkovou výplní</h3>
               <hr class="references-underline">
-              <p class="pb-2">V podkroví rodinného domu jsme instalovali nerezové zábradlí s výplní z mléčného skla.
-                Systém sloupků s kotvením do podlahy a madlem po celé délce zajišťuje bezpečnost i elegantní vzhled.
-                Výplně z matného skla dodávají prostoru soukromí a ladí s moderním interiérem.</p>
-              <div id="galerry-preview" class="row row-cols-xl-3 row-cols-md-2 row-cols-1 gy-3 gx-3 pb-3">
+              <p class="pb-2">Pro rodinný dům ve městě jsme vyrobili a namontovali moderní plot s hliníkovou lamelovou
+                výplní v hnědé barvě. Součástí byla dvoukřídlá brána pro vjezd, branka pro pěší a boční části plotu,
+                které jsme umístili mezi betonové sloupky s kamenným obkladem. Výsledek působí elegantně a zároveň
+                poskytuje dostatek soukromí.</p>
+              <div id="galerry-preview" class="row row-cols-xl-3 row-cols-md-2 row-cols-1 gy-3 gx-3">
                 <div v-for="(img, index) in getGalleryJson()" :key="img.id" class="col">
                   <img @click="showLightbox(index)" :src="img.src" class="img-fluid" alt="galerry img of rail">
                 </div>
@@ -93,15 +95,14 @@
               </div>
             </div>
           </div>
-          <div class="row text-start">
-            <div class="collapse" id="collapseReferenceThird" ref="collapseThird">
-              <h3 class="py-3">Rodinný dům – oplocení s hliníkovou výplní</h3>
+          <div class="row text-start ">
+            <div class="collapse show " id="collapseReferenceFirst" ref="collapseFirst">
+              <h3 class="py-3">Rodinný dům – interiérové schodišťové zábradlí</h3>
               <hr class="references-underline">
-              <p class="pb-2">Pro rodinný dům ve městě jsme vyrobili a namontovali moderní plot s hliníkovou lamelovou
-                výplní v hnědé barvě. Součástí byla dvoukřídlá brána pro vjezd, branka pro pěší a boční části plotu,
-                které jsme umístili mezi betonové sloupky s kamenným obkladem. Výsledek působí elegantně a zároveň
-                poskytuje dostatek soukromí.</p>
-              <div id="galerry-preview" class="row row-cols-xl-3 row-cols-md-2 row-cols-1 gy-3 gx-3">
+              <p class="pb-2">V podkroví rodinného domu jsme instalovali nerezové zábradlí s výplní z mléčného skla.
+                Systém sloupků s kotvením do podlahy a madlem po celé délce zajišťuje bezpečnost i elegantní vzhled.
+                Výplně z matného skla dodávají prostoru soukromí a ladí s moderním interiérem.</p>
+              <div id="galerry-preview" class="row row-cols-xl-3 row-cols-md-2 row-cols-1 gy-3 gx-3 pb-3">
                 <div v-for="(img, index) in getGalleryJson()" :key="img.id" class="col">
                   <img @click="showLightbox(index)" :src="img.src" class="img-fluid" alt="galerry img of rail">
                 </div>
@@ -137,12 +138,12 @@ export default {
       thirdGalleryJson: third_rererence_JSON,
       isFirstTabActive: true,
       isSecondTabActive: false,
-      firstTabStatus: 'active',
+      firstTabStatus: 'non-active',
       secondTabStatus: 'non-active',
-      thirdTabStatus: 'non-active',
+      thirdTabStatus: 'active',
       visible: false,
       currentImgIndex: 0,
-      currentGallery: 'first',
+      currentGallery: 'third',
     }
   },
   methods: {
