@@ -91,7 +91,8 @@ $context = stream_context_create([
     'content' => http_build_query([
       'secret' => $secretKey,
       'response' => $token,
-    ])
+      'remoteip' => $_SERVER['REMOTE_ADDR'],
+    ]),
   ]
 ]);
 
@@ -99,7 +100,7 @@ $response = file_get_contents($verifyUrl, false, $context);
 if ($response === false) {
   echo json_encode([
     'success' => false,
-    'message' => 'Chyba při ověřování CAPTCHA.',
+    'message' => 'Chyba při ověřování CAPTCHA. Zkuste to, prosím, znovu.',
   ]);
   exit;
 }
@@ -108,7 +109,7 @@ $verification = json_decode($response, true);
 if (!is_array($verification) || !$verification['success']) {
   echo json_encode([
     'success' => false,
-    'message' => 'Ověření CAPTCHA selhalo.',
+    'message' => 'Ověření CAPTCHA selhalo. Zkuste to, prosím, znovu.',
   ]);
   exit;
 }

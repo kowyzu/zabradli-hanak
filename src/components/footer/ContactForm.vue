@@ -32,17 +32,20 @@
     <div class="row mb-3 justify-content-center">
       <div class="col" style="display: block; flex-flow: row;">
         <div class="cf-turnstile" :data-sitekey="getSiteKeyEnv()" data-size="flexible"
-          data-callback="onTurnstileSuccess" ref="turnstile"></div>
+          data-callback="onTurnstileSuccess" data-language="cs" ref="turnstile"></div>
       </div>
     </div>
     <button type="submit" class="btn btn-primary" :disabled="postBtnDisabled">Odeslat</button>
   </form>
 
   <div class="toast-container position-fixed bottom-0 end-0 p-3">
-    <div id="success-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" ref="toast">
-      <div class="toast-header">
-        <strong v-if="error" class="me-auto toast-error"><i class="fa-solid fa-triangle-exclamation"></i></strong>
-        <strong v-if="!error" class="me-auto toast-success"><i class="fa-solid fa-check"></i></strong>
+    <div id="success-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" ref="toast"
+      data-bs-autohide="false">
+      <div class="toast-header" :class="{ 'bg-danger-subtle': error, 'bg-success-subtle': !error }">
+        <strong v-if="error" class="me-auto toast-error text-danger"><i class="fa-solid fa-triangle-exclamation"></i>
+          Chyba</strong>
+        <strong v-if="!error" class="me-auto toast-success text-success"><i class="fa-solid fa-check"></i>
+          Formulář byl úspěšně odeslán</strong>
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
       <div class="toast-body form-msg form-success-msg">
@@ -91,8 +94,7 @@ export default {
       this.turnstileToken = token;
     },
     getSiteKeyEnv() {
-      const siteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY;
-      return siteKey
+      return import.meta.env.VITE_TURNSTILE_SITE_KEY;
     },
     // Handle errors emmited from EmailInput.vue and PhoneInput.vue components
     handlePhoneError(msg) {
@@ -183,7 +185,7 @@ export default {
           if (data.success) {
             this.error = null;
             this.phoneOrEmailMissing = null;
-            this.statusMessage = 'Formulář byl úspěšně odeslán. Brzy se ozveme.';
+            this.statusMessage = 'Děkujeme za zprávu, brzy se ozveme.';
             this.displayToast();
             this.cleanForm();
           } else {
@@ -194,7 +196,7 @@ export default {
         })
         .catch((error) => {
           this.error = true
-          this.statusMessage = 'Nepodařilo se odeslat formulář. Zkuste to prosím znovu.';
+          this.statusMessage = 'Nepodařilo se odeslat formulář. Zkuste to, prosím, znovu.';
           this.displayToast();
         });
 
