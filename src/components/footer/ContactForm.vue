@@ -131,7 +131,6 @@ export default {
         return false;
       }
 
-      console.log('all valid');
       this.error = null;
       this.phoneOrEmailMissing = false;
       this.phoneError = '';
