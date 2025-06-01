@@ -66,6 +66,8 @@ $username = $_ENV['USERNAME'];
 $password = $_ENV['PASSWORD'];
 $SMTPServer = $_ENV['SMTP_SERVER'];
 $portNumber = $_ENV['PORT_NUMBER'];
+$recipientEmailAddress = $_ENV['CONTACT_FORM_RECIPIENT_EMAIL_ADDRESS'];
+
 
 // Read JSON input from body
 $rawInput = file_get_contents("php://input");
@@ -170,7 +172,7 @@ try {
 
   // Recipients
   $mail->setFrom($username, 'Formulář Zábradlí Hanák');
-  $mail->addAddress('kowyzu@gmail.com', 'Kowyzu');     //Add a recipient
+  $mail->addAddress($recipientEmailAddress);     //Add a recipient
 
   // Content
   $mail->CharSet = 'UTF-8';
