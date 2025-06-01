@@ -151,7 +151,8 @@ export default {
 
     // POST filled form data to index.php
     postData(formData) {
-      fetch('http://localhost:8080/index.php', {
+      const formUrl = import.meta.env.VITE_CONTACT_FORM_URL;
+      fetch(formUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json; charset=UTF-8',
