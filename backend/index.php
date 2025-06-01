@@ -77,7 +77,41 @@ $name = $data['name'] ?? '';
 $email = $data['email'] ?? '';
 $message = $data['message'] ?? '';
 $phone = $data['phoneNumber'] ?? '';
+$token = $data['turnstileToken'] ?? '';
 $date = date('d.m.Y H:i');
+
+// Verify the Turnstile token with Cloudflare
+$verifyUrl = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
+$secretKey = $_ENV['TURNSTILE_SECRET_KEY'];
+
+$context = stream_context_create([
+  'http' => [
+    'method' => 'POST',
+    'header' => "Content-Type: application/x-www-form-urlencoded\r\n",
+    'content' => http_build_query([
+      'secret' => $secretKey,
+      'response' => $token,
+    ])
+  ]
+]);
+
+$response = file_get_contents($verifyUrl, false, $context);
+if ($response === false) {
+  echo json_encode([
+    'success' => false,
+    'message' => 'Chyba při ověřování CAPTCHA.',
+  ]);
+  exit;
+}
+
+$verification = json_decode($response, true);
+if (!is_array($verification) || !$verification['success']) {
+  echo json_encode([
+    'success' => false,
+    'message' => 'Ověření CAPTCHA selhalo.',
+  ]);
+  exit;
+}
 
 // Data validation
 if (!$name || !$message || (!$email && !$phone)) {

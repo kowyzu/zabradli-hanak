@@ -29,6 +29,12 @@
           v-model.trim="message" />
       </div>
     </div>
+    <div class="row mb-3 justify-content-center">
+      <div class="col" style="display: block; flex-flow: row;">
+        <div class="cf-turnstile" :data-sitekey="getSiteKeyEnv()" data-size="flexible"
+          data-callback="onTurnstileSuccess" ref="turnstile"></div>
+      </div>
+    </div>
     <button type="submit" class="btn btn-primary" :disabled="postBtnDisabled">Odeslat</button>
   </form>
 
@@ -47,6 +53,7 @@
 </template>
 
 <script>
+import { onMounted } from 'vue';
 import * as bootstrap from "bootstrap";
 import NameInput from '../form/NameInput.vue';
 import PhoneInput from '../form/PhoneInput.vue';
@@ -54,6 +61,9 @@ import EmailInput from '../form/EmailInput.vue';
 import MessageTextArea from '../form/MessageTextArea.vue';
 
 export default {
+  mounted() {
+    window.onTurnstileSuccess = this.onTurnstileSuccess;
+  },
   components: {
     NameInput,
     PhoneInput,
@@ -73,9 +83,17 @@ export default {
       emailError: '',
       phoneOrEmailMissing: null,
       postBtnDisabled: false,
+      turnstileToken: '',
     }
   },
   methods: {
+    onTurnstileSuccess(token) {
+      this.turnstileToken = token;
+    },
+    getSiteKeyEnv() {
+      const siteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY;
+      return siteKey
+    },
     // Handle errors emmited from EmailInput.vue and PhoneInput.vue components
     handlePhoneError(msg) {
       this.phoneError = msg;
@@ -144,7 +162,8 @@ export default {
         "name": this.name,
         "phoneNumber": this.phoneNumber,
         "email": this.email,
-        "message": this.message
+        "message": this.message,
+        "turnstileToken": this.turnstileToken,
       }
       return formFilledData
     },
