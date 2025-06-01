@@ -4,9 +4,9 @@ import logo from '../imgs/logo_zabradli_hanak.png'
 
 <template>
   <header class="sticky-top">
-    <nav class="navbar navbar-expand-lg shadow-sm">
+    <nav id="mainNavbar" class="navbar navbar-expand-lg shadow-sm">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="#introduction">
           <img class="img-logo" :src="logo" alt="Logo Zábradlí Hanák">
         </a>
 
@@ -20,7 +20,7 @@ import logo from '../imgs/logo_zabradli_hanak.png'
           id="navbarSupportedContent" ref="collapseNavbar">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Úvod</a> <!--mozno pouzit class "active"-->
+              <a class="nav-link" aria-current="page" href="#introduction">Úvod</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="#process">Služby</a>

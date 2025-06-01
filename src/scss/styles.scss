@@ -166,8 +166,10 @@ strong {
 //
 // INTRODUCTION
 // ----------------------------------------------------
+
 #introduction {
     background-color: $color-bg-primary;
+    scroll-margin-top: $scroll-margin-bigger;
 }
 
 #introduction p{
