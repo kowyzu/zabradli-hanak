@@ -1,4 +1,14 @@
 <?php
+// Set timezone
+date_default_timezone_set('Europe/Prague');
+
+// Include Composer's autoloader
+require __DIR__ . '/vendor/autoload.php';
+
+// Environmental variables
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
 /////////////////
 // FUNCTIONS
 /////////////////
@@ -47,22 +57,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
   http_response_code(200);
   exit();
 }
-;
 
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
 header("Content-Type: application/json; charset=UTF-8");
-
-// Set timezone
-date_default_timezone_set('Europe/Prague');
-
-// Include Composer's autoloader
-require __DIR__ . '/vendor/autoload.php';
-
-
-// Environmental variables
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
 
 $username = $_ENV['USERNAME'];
 $password = $_ENV['PASSWORD'];
@@ -207,7 +205,7 @@ try {
 
 
   // Handle mail sending
-  //$mail->send();
+  $mail->send();
   echo json_encode([
     'success' => true,
     'message' => 'Formulář byl úspěšně odeslán.'
