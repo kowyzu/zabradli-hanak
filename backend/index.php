@@ -8,7 +8,6 @@ function clean($input): string
 {
   $input = trim($input);
   $input = strip_tags($input);
-
   return $input;
 }
 ;
@@ -40,6 +39,7 @@ function validatePhone($input): bool
 // MAIN PROGRAMM
 ////////////////
 
+// Headers
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
   header("Access-Control-Allow-Origin: *");
   header("Access-Control-Allow-Headers: Content-Type");
@@ -53,6 +53,8 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
 header("Content-Type: application/json; charset=UTF-8");
 
+// Set timezone
+date_default_timezone_set('Europe/Prague');
 
 // Include Composer's autoloader
 require __DIR__ . '/vendor/autoload.php';
@@ -75,7 +77,9 @@ $name = $data['name'] ?? '';
 $email = $data['email'] ?? '';
 $message = $data['message'] ?? '';
 $phone = $data['phoneNumber'] ?? '';
+$date = date('d.m.Y H:i');
 
+// Data validation
 if (!$name || !$message || (!$email && !$phone)) {
   echo json_encode([
     'success' => false,
@@ -109,21 +113,16 @@ if (!is_array($data)) {
   exit;
 }
 
-// Data validation and sanitization
-
-
 // Import PHPMailer classes into the global namespace
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-
 
 // Load Composer's autoloader
 require 'vendor/autoload.php';
 
 // Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
-
 
 try {
   // Server settings
@@ -141,12 +140,39 @@ try {
   $mail->addAddress('kowyzu@gmail.com', 'Kowyzu');     //Add a recipient
 
   // Content
+  $mail->CharSet = 'UTF-8';
   $mail->isHTML(true);                                  //Set email format to HTML
-  $mail->Subject = $data['name'];
-  $mail->Body = $data['message'];
-  $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+  $mail->Subject = 'Zábradlí Hanák kontaktní formulář ' . $date;
 
-  // $mail->send();
+  // Body
+  $mail->Body = "<h2>Nová zpráva z kontaktního formuláře z " . $date . ":</h2>";
+  $mail->Body .= "<hr style='border-top: 2px solid #a40c24'>";
+  $mail->Body .= "<p><strong>Jméno:</strong> " . htmlspecialchars(clean($name)) . "</p>";
+  if (!empty($phone)) {
+    $mail->Body .= "<p><strong>Telefonní číslo:</strong> " . htmlspecialchars(clean($phone)) . "</p>";
+  }
+  if (!empty($email)) {
+    $mail->Body .= "<p><strong>E-mail:</strong> " . htmlspecialchars(clean($email)) . "</p>";
+  }
+  $mail->Body .= "<p><strong>Zpráva:</strong><br>" . nl2br(htmlspecialchars(clean($message))) . "</p>";
+  $mail->Body .= "<hr><p style='font-size:12px;color:#888;'>Zpráva byla odeslána z kontaktního formuláře na webu Zábradlí Hanák.</p>";
+
+
+  // Alt Body
+  $mail->AltBody = "Nová zpráva z webového formuláře z:" . $date . "\n\n";
+  $mail->AltBody .= "Jméno: " . htmlspecialchars(clean($name)) . "\n";
+  if (!empty($phone)) {
+    $mail->AltBody .= "Telefonní číslo: " . htmlspecialchars(clean($phone)) . "\n";
+  }
+  if (!empty($email)) {
+    $mail->AltBody .= "E-mail: " . htmlspecialchars(clean($email)) . "\n";
+  }
+  $mail->AltBody .= "Zpráva:\n" . htmlspecialchars(clean($message)) . "\n\n";
+  $mail->AltBody .= "Zpráva byla odeslána z webu Zábradlí Hanák.";
+
+
+  // Handle mail sending
+  $mail->send();
   echo json_encode([
     'success' => true,
     'message' => 'Formulář byl úspěšně odeslán.'
@@ -158,7 +184,6 @@ try {
     'message' => 'Chyba: Data nejsou validní.',
     'debug' => $e->getMessage()
   ]);
-
 }
 
 
