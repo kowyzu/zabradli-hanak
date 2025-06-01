@@ -61,9 +61,8 @@ $scroll-margin-gallery: 30rem;
 //
 //BOOTSTRAP IMPORT
 // ----------------------------------------------------
+
 @import "../../node_modules/bootstrap/scss/bootstrap";
-
-
 
 //
 // GENERAL
@@ -74,7 +73,6 @@ html {
 
 body {
     color: $color-text;
-    // background: $color-bg-body;
     background-repeat: no-repeat;
     background-attachment: fixed;
 
@@ -88,7 +86,6 @@ body {
 h1, h2, h3 {
     font: {
         family: $font-family-serif;
-        // weight: bolder;
     }
 }
 
@@ -119,7 +116,6 @@ strong {
 }
 
 //Vue-easy-lightbox
-
 .toolbar-btn__resize {
   display: none !important;
 }
@@ -127,6 +123,7 @@ strong {
 .vel-modal {
   background: rgb(0 0 0 / 73%) !important;
 }
+
 //
 // NAVBAR
 // ----------------------------------------------------
@@ -176,18 +173,10 @@ strong {
   font-weight: 300;
 }
 
-// #introduction img{
-//     max-height: 500px;
-// }
-
 // show masks only from md breakpoint
-@include media-breakpoint-up(md) {
+@include media-breakpoint-up(lg) {
   .shape-mask {
-  //first wariant
-  clip-path: polygon(0 0, 100% 0%, 90% 75%, 50% 99%, 0 75%);
-  //second wariant
   clip-path: polygon(0 0, 100% 0%, 90% 75%, 50% 100%, 0 100%);
-  /* You can tweak the points for a more rounded or dramatic curve */
   overflow: hidden;
   }    
 }
@@ -312,7 +301,7 @@ h5 {
     border-radius: $border-radius-secondary;
     transition: .4s all ease-in-out;
     max-height: 315.47px;
-    animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
+    animation: fadeIn;
     animation-duration: 1.5s;
 }
 
@@ -345,7 +334,6 @@ h5 {
 .show-more-container {
     position: relative;
     text-align: center;
-    // color: white;
 }
 
 .show-less-container{
@@ -390,6 +378,7 @@ h5 {
 //
 // REFERENCES
 // ----------------------------------------------------
+
 #references {
   scroll-margin-top: $scroll-margin-bigger;
 }
@@ -464,7 +453,7 @@ color: $color-text;
 #references img {
   border-radius: $border-radius-secondary;
   transition: .4s all ease-in-out;
-  animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
+  animation: fadeIn;
   animation-duration: 1.5s;
 }
 
