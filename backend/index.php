@@ -123,7 +123,7 @@ if (!$name || !$message || (!$email && !$phone)) {
   exit;
 }
 
-if ($email && !validateEmail($email)) {
+if ($phone === '' && !validateEmail($email)) {
   echo json_encode([
     'success' => false,
     'message' => 'Zkontrolujte prosím zadaný e-mail.',
@@ -131,7 +131,7 @@ if ($email && !validateEmail($email)) {
   exit;
 }
 
-if ($phone && !validatePhone($phone)) {
+if ($email === '' && !validatePhone($phone)) {
   echo json_encode([
     'success' => false,
     'message' => 'Zkontrolujte prosím zadané telefonní číslo.',
@@ -207,7 +207,7 @@ try {
 
 
   // Handle mail sending
-  $mail->send();
+  //$mail->send();
   echo json_encode([
     'success' => true,
     'message' => 'Formulář byl úspěšně odeslán.'

@@ -183,8 +183,6 @@ export default {
         .then(response => response.json())
         .then(data => {
           if (data.success) {
-            this.error = null;
-            this.phoneOrEmailMissing = null;
             this.statusMessage = 'Děkujeme za zprávu, brzy se ozveme.';
             this.displayToast();
             this.cleanForm();
@@ -229,6 +227,12 @@ export default {
       this.phoneNumber = '';
       this.email = '';
       this.message = '';
+      this.phoneError = null;
+      this.emailError = null;
+      this.phoneOrEmailMissing = null;
+      this.error = null;
+      this.$refs.phoneInput.cleanErrors();
+      this.$refs.emailInput.cleanErrors();
     }
   }
 }

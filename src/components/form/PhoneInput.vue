@@ -85,6 +85,11 @@ export default {
       this.$emit('error', null);
       return true;
     },
+    cleanErrors() {
+      this.error = null;
+      this.errorMsg = '';
+      this.$emit('error', null);
+    }
   },
 };
 </script>
