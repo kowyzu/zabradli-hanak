@@ -32,7 +32,7 @@
     <div class="row mb-3 justify-content-center">
       <div class="col" style="display: block; flex-flow: row;">
         <div class="cf-turnstile" :data-sitekey="getSiteKeyEnv()" data-size="flexible"
-          data-callback="onTurnstileSuccess" data-language="cs" ref="turnstile"></div>
+          data-callback="onTurnstileSuccess" data-language="cs" data-theme="light" ref="turnstile"></div>
       </div>
     </div>
     <button type="submit" class="btn btn-primary" :disabled="postBtnDisabled">Odeslat</button>
