@@ -13,8 +13,6 @@
 </template>
 
 <script>
-import { handleError } from 'vue'
-
 export default {
   props: {
     id: String,
@@ -32,23 +30,34 @@ export default {
       this.$emit('update:modelValue', event.target.value);
     },
     handleError(errorDescription, type, displayErrorMsg = true) {
-      // specify error and emit to ContactForm.vue
+      // Specify error and emit to ContactForm.vue
       this.error = { description: errorDescription, errorType: type };
       this.$emit('error', this.error);
 
-      // display error under input element if it is wanted
+      // Display error under input element if it is wanted
       if (displayErrorMsg) {
         this.errorMsg = errorDescription;
+        return
       }
 
-      return false;
+      this.errorMsg = '';
+      return;
     },
+
+    validateEmail() {
+      let email = this.$refs.emailInput.value;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    },
+
     validate() {
       if (!this.modelValue.trim()) {
+        console.log('prazdny');
         return this.handleError('Zadejte svůj e-mail.', 'missing', false);
       }
-      if (this.$refs.emailInput.checkValidity() === false) {
-        return this.handleError('Neplatná e-mailová adresa. Zadejte e-mail ve formátu: example@domena.cz', 'invalid')
+      if (!this.validateEmail()) {
+        console.log('nonvalid');
+        return this.handleError('Neplatná e-mailová adresa. Zadejte e-mail ve formátu: example@domena.cz', 'invalid');
       }
       this.error = null;
       this.errorMsg = '';

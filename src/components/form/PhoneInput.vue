@@ -72,6 +72,7 @@ export default {
         return this.handleError('Telefonní číslo musí mít alespoň 9 číslic.', 'invalid');
       }
       this.error = null;
+      this.errorMsg = '';
       this.$emit('error', null);
       return true;
     },
