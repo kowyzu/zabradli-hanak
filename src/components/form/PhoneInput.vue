@@ -2,8 +2,8 @@
   <div>
     <div class="input-group">
       <div class="input-group-text"><i class="fa-solid fa-phone fa-fw"></i></div>
-      <input type="tel" :class="['form-control']" :id="id" name="name" :placeholder="placeholder"
-        :value="formattedValue" @input="onInput" @change="validate">
+      <input type="tel" :class="['form-control']" :id="id" name="name" :placeholder="placeholder" @input="onInput"
+        @change="validate" :value="validationExecuted && !error ? formattedValue : modelValue">
     </div>
     <div v-if="errorMsg" class="form-error-msg">
       {{ errorMsg }}
@@ -22,11 +22,14 @@ export default {
     return {
       error: null,
       errorMsg: '',
+      phoneRegex: /[^\d+]/,
+      phoneRegexReplace: /[^\d+]/g,
+      validationExecuted: false,
     };
   },
   computed: {
     formattedValue() {
-      let digits = this.modelValue.replace(/[^\d+]/g, '');
+      let digits = this.modelValue.replace(this.phoneRegexReplace, '');
 
       if (digits.startsWith('+') || digits.length > 6) {
         // Format the number with the country code (e.g., +420)
@@ -43,7 +46,7 @@ export default {
   },
   methods: {
     onInput(event) {
-      const rawValue = event.target.value.replace(/[^\d+]/g, ''); // only numbers + sign
+      const rawValue = event.target.value
       this.$emit('update:modelValue', rawValue);
     },
     handleError(errorDescription, type, displayErrorMsg = true) {
@@ -54,16 +57,22 @@ export default {
       // Display error under input element if it is wanted
       if (displayErrorMsg) {
         this.errorMsg = errorDescription;
+        return
       }
 
-      return false;
+      this.errorMsg = '';
+      return;
     },
     validate() {
-      let trimmedValue = this.modelValue.trim();
+      this.validationExecuted = true;
+      let trimmedValue = (this.modelValue.trim()).replaceAll(' ', '');
       let trimmedValueNoPlusSign = trimmedValue.replace('+', '');
 
       if (!trimmedValue) {
         return this.handleError('Zadejte své telefonní číslo.', 'missing', false);
+      }
+      if (this.phoneRegex.test(trimmedValue)) {
+        return this.handleError('Telefonní číslo obsahuje nepovolené znaky.', 'invalid');
       }
       if (trimmedValueNoPlusSign.length > 12) {
         return this.handleError('Telefonní číslo nesmí mít více než 12 číslic.', 'invalid');

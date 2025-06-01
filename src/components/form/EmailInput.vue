@@ -52,11 +52,9 @@ export default {
 
     validate() {
       if (!this.modelValue.trim()) {
-        console.log('prazdny');
         return this.handleError('Zadejte svůj e-mail.', 'missing', false);
       }
       if (!this.validateEmail()) {
-        console.log('nonvalid');
         return this.handleError('Neplatná e-mailová adresa. Zadejte e-mail ve formátu: example@domena.cz', 'invalid');
       }
       this.error = null;
