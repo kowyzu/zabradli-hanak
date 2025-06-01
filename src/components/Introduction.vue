@@ -8,7 +8,7 @@ import thirdImg from '../imgs/introduction-imgs/third.webp'
   <section id="introduction">
     <div class="container-fluid introduction-container">
       <div class="row justify-content-md-left align-items-xl-center">
-        <div class="col-lg-7 introduction-carousel p-0">
+        <div class="col-lg-7 col-xxl-6 introduction-carousel p-0">
           <div id="carouselIntroduction" class="carousel slide shape-mask carousel-fade">
             <!--data-bs-ride="carousel" -->
             <div class="carousel-inner">
@@ -33,7 +33,7 @@ import thirdImg from '../imgs/introduction-imgs/third.webp'
           </div>
         </div>
 
-        <div class="col-lg-5 offset-xxl-1 col-xxl-3 introduction-text p-xxl-0 p-3 p-md-5 p-lg-4 p-xl-5">
+        <div class="col-lg-5 offset-xxl-1 col-xxl-4 introduction-text p-xxl-0 p-3 p-md-5 p-lg-4 p-xl-5">
           <!-- text to update? -->
           <h1 class="mb-xxl-3 mb-xl-2">
             Zakázková výroba schodišť a zábradlí
