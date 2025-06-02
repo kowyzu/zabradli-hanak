@@ -30,9 +30,8 @@
       </div>
     </div>
     <div class="row mb-3 justify-content-center">
-      <div class="col" style="display: block; flex-flow: row;">
-        <div class="cf-turnstile" :data-sitekey="getSiteKeyEnv()" data-size="flexible"
-          data-callback="onTurnstileSuccess" data-language="cs" data-theme="light" ref="turnstile"></div>
+      <div class="col">
+        <div id="turnstile-wrapper"></div>
       </div>
     </div>
     <button type="submit" class="btn btn-primary" :disabled="postBtnDisabled">Odeslat</button>
@@ -64,7 +63,8 @@ import MessageTextArea from '../form/MessageTextArea.vue';
 
 export default {
   mounted() {
-    window.onTurnstileSuccess = this.onTurnstileSuccess;
+    this.loadTurnstileScript();
+
   },
   components: {
     NameInput,
@@ -89,12 +89,32 @@ export default {
     }
   },
   methods: {
-    onTurnstileSuccess(token) {
-      this.turnstileToken = token;
+    // Turnstile captcha
+    loadTurnstileScript() {
+      if (window.turnstile) {
+        this.renderTurnstile();
+        return;
+      }
+
+      const script = document.createElement('script');
+      script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback';
+      script.defer = true;
+      window.onloadTurnstileCallback = this.renderTurnstile;
+      document.head.appendChild(script);
     },
-    getSiteKeyEnv() {
-      return import.meta.env.VITE_TURNSTILE_SITE_KEY;
+
+    renderTurnstile() {
+      window.turnstile.render('#turnstile-wrapper', {
+        sitekey: import.meta.env.VITE_TURNSTILE_SITE_KEY,
+        theme: 'light',
+        language: 'cs',
+        size: 'flexible',
+        callback: (token) => {
+          this.turnstileToken = token;
+        },
+      });
     },
+
     // Handle errors emmited from EmailInput.vue and PhoneInput.vue components
     handlePhoneError(msg) {
       this.phoneError = msg;
