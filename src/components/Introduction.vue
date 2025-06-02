@@ -33,7 +33,8 @@ import thirdImg from '../imgs/introduction-imgs/third.webp'
           </div>
         </div>
 
-        <div class="col-lg-5 offset-xxl-1 col-xxl-4 introduction-text p-xxl-0 p-3 p-md-5 p-lg-4 p-xl-5">
+        <div
+          class="col-lg-5 offset-xxl-1 col-xxl-4 introduction-text p-3 py-5 p-md-5 p-lg-4 p-xl-5 p-xxl-0 text-center text-sm-start">
           <!-- text to update? -->
           <h1 class="mb-xxl-3 mb-xl-2">
             Zakázková výroba schodišť a zábradlí

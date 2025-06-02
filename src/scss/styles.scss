@@ -14,6 +14,7 @@ $white: white;
 $color-error: #dc3545;
 $color-success: #198574;
 
+$font-size-megaloman: 7rem;
 $font-size-primary: 1.2rem;
 $font-size-smaller: 1rem;
 $font-size-message: 0.875rem;
@@ -52,6 +53,7 @@ $btn-box-shadow: 3px 4px 14px -3px rgba(0, 0, 0, 0.75);
 
 $border-radius-primary: 10px;
 $border-radius-secondary: 5px;
+$border-radius-tab: 6px;
 
 $scroll-margin-bigger: 19.508rem;
 $scroll-margin-smaller: 5.509rem;
@@ -75,26 +77,35 @@ body {
     color: $color-text;
     background-repeat: no-repeat;
     background-attachment: fixed;
-
     font: {
         family: $font-family-sans;
         weight: normal;
-        size: $font-size-primary;
+        size: $font-size-smaller;
     }
+    @include media-breakpoint-up(md) { 
+      font-size: $font-size-primary;
+     }
 }
 
+
 h1, h2, h3 {
-    font: {
-        family: $font-family-serif;
-    }
+    font-family: $font-family-serif; 
 }
 
 h5 {
-  font-size: $font-size-primary;
+  font-size: $font-size-smaller;
+  
+  @include media-breakpoint-up(md) { 
+    font-size: $font-size-primary;
+  }
 }
 
 .nav-link{
- font-size: $font-size-primary;
+  font-size: $font-size-smaller;
+
+  @include media-breakpoint-up(md) { 
+    font-size: $font-size-primary;
+  }
 }
 
 .img-logo{
@@ -191,12 +202,16 @@ strong {
 
 }
 
-#introduction .btn {
-  font-size: $font-size-primary;
-}
 
-.btn-contact-form:hover {
+.btn-contact-form {
+  font-size: $font-size-smaller;
+  @include media-breakpoint-up(md) { 
+  font-size: $font-size-primary;
+  }
+  &:hover {
     color: $secondary !important;
+  }
+
 }
 
 //
@@ -214,7 +229,6 @@ strong {
 
 .process p {
     margin: 0;
-    font-size: $font-size-primary;
 }
 
 .process-header-icon .icon-link .fa-chevron-down {
@@ -236,6 +250,8 @@ strong {
 #process-title {
   scroll-margin-top: 7rem;
 }
+
+
 
 .process .process-step-icon {
     background-color: $primary;
@@ -281,6 +297,14 @@ h5 {
 
 #gallery .nav-link{
   color: $color-text;
+  border-radius: var(--bs-nav-tabs-border-radius);
+
+  @include media-breakpoint-up(sm) { 
+    border-top-left-radius: var(--bs-nav-tabs-border-radius);
+    border-top-right-radius: var(--bs-nav-tabs-border-radius);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }      
 }
 
 #gallery .nav-link:hover{

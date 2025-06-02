@@ -3,9 +3,9 @@
     <h1 class="p-4">Vybrané reference</h1>
     <div class="container text-center">
       <div class="row row-cols-1 justify-content-center">
+        <!-- on small displays tabs at the top -->
         <div class="row d-lg-none p-0">
-          <div @click="handleTabClicked('third')"
-            class="col ms-1 ms-sm-0 me-1 tab py-3 d-flex align-items-center justify-content-center"
+          <div @click="handleTabClicked('third')" class="col tab py-3 d-flex align-items-center justify-content-center"
             :class="{ 'active-tab': this.thirdTabStatus === 'active' }">
             <nav class="nav flex-column">
               <button class="nav-link p-0" :class="thirdTabStatus" type=" button" aria-expanded="false"
@@ -16,7 +16,7 @@
             </nav>
           </div>
           <div @click="handleTabClicked('second')"
-            class="col me-1 ms-1 tab py-3 d-flex align-items-center justify-content-center"
+            class="col me-1 ms-1 me-sm-2 ms-sm-2 tab py-3 d-flex align-items-center justify-content-center"
             :class="{ 'active-tab': this.secondTabStatus === 'active' }">
             <nav class="nav flex-column">
               <button class="nav-link p-0" :class="secondTabStatus" type=" button" aria-expanded="false"
@@ -26,8 +26,7 @@
               </button>
             </nav>
           </div>
-          <div @click="handleTabClicked('first')"
-            class="col me-1 me-sm-0 ms-1 tab py-3 d-flex align-items-center justify-content-center"
+          <div @click="handleTabClicked('first')" class="col tab py-3 d-flex align-items-center justify-content-center"
             :class="{ 'active-tab': this.firstTabStatus === 'active' }">
             <nav class="nav flex-column">
               <button class="nav-link p-0" :class="firstTabStatus" type="button" aria-expanded="false"
@@ -38,7 +37,7 @@
             </nav>
           </div>
         </div>
-        <!-- from md -->
+        <!-- on md and bigger displays tabs on the left-->
         <div class="col-md-2 col-2 d-none d-lg-block">
           <div class="row mb-3 tab" :class="{ 'active-tab': this.thirdTabStatus === 'active' }">
             <nav class="nav flex-column">
@@ -65,9 +64,10 @@
           </div>
         </div>
 
+        <!-- References details: header, detail and pictures -->
         <div class="col-lg-10 reference-detail px-sm-5 pt-5 pt-lg-3 pb-5 mb-sm-5">
           <div class="row text-start">
-            <div class="collapse" id="collapseReferenceThird" ref="collapseThird">
+            <div class="collapse show" id="collapseReferenceThird" ref="collapseThird">
               <h3 class="py-3">Rodinný dům – oplocení s hliníkovou výplní</h3>
               <hr class="references-underline">
               <p class="pb-2">Pro rodinný dům ve městě jsme vyrobili a namontovali moderní plot s hliníkovou lamelovou
@@ -96,10 +96,11 @@
             </div>
           </div>
           <div class="row text-start ">
-            <div class="collapse show " id="collapseReferenceFirst" ref="collapseFirst">
+            <div class="collapse" id="collapseReferenceFirst" ref="collapseFirst">
               <h3 class="py-3">Rodinný dům – interiérové schodišťové zábradlí</h3>
               <hr class="references-underline">
-              <p class="pb-2">V podkroví rodinného domu jsme instalovali nerezové zábradlí s výplní z mléčného skla.
+              <p class="pb-2">V podkroví rodinného domu jsme vyrobili a instalovali nerezové zábradlí s výplní z
+                mléčného skla.
                 Systém sloupků s kotvením do podlahy a madlem po celé délce zajišťuje bezpečnost i elegantní vzhled.
                 Výplně z matného skla dodávají prostoru soukromí a ladí s moderním interiérem.</p>
               <div id="galerry-preview" class="row row-cols-xl-3 row-cols-md-2 row-cols-1 gy-3 gx-3 pb-3">
@@ -136,8 +137,6 @@ export default {
       firstGalleryJson: first_rererence_JSON,
       secondGalleryJson: second_rererence_JSON,
       thirdGalleryJson: third_rererence_JSON,
-      isFirstTabActive: true,
-      isSecondTabActive: false,
       firstTabStatus: 'non-active',
       secondTabStatus: 'non-active',
       thirdTabStatus: 'active',
@@ -147,6 +146,7 @@ export default {
     }
   },
   methods: {
+    // Show or hide defined elements
     collapseElement(elementToShow, elementsToHide) {
       const bsCollapse = new bootstrap.Collapse(elementToShow, {
         toggle: false // Prevent auto toggle on init
@@ -159,8 +159,7 @@ export default {
         bsCollapseHide.hide();
       });
 
-      bsCollapse.show(); // Or .show() to expand
-
+      bsCollapse.show();
     },
 
     // Set status of clicked tab to active
@@ -170,12 +169,14 @@ export default {
       this.thirdTabStatus = 'non-active';
       if (clickedTab === 'second') {
         this.secondTabStatus = 'active';
-      } else if (clickedTab === 'third') {
-        this.thirdTabStatus = 'active';
-      } else {
+      } else if (clickedTab === 'first') {
         this.firstTabStatus = 'active';
+      } else {
+        this.thirdTabStatus = 'active';
       }
     },
+
+    // After click on tab activate the tab
     handleTabClicked(clickedTab) {
       if (clickedTab === 'first') {
         this.collapseElement(this.$refs.collapseFirst, [this.$refs.collapseSecond, this.$refs.collapseThird])
@@ -187,10 +188,14 @@ export default {
       this.currentGallery = clickedTab
       this.activateTab(clickedTab)
     },
+
+    // Use vue-easy-lightbox
     showLightbox(index) {
       this.currentImgIndex = index;
       this.visible = true;
     },
+
+    // Import imgs from json and display only relevant imgs according to currentGallery
     getGalleryJson() {
       let firstResolvedGallery = this.firstGalleryJson.map(item => ({
         ...item,

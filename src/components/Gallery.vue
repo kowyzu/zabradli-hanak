@@ -1,10 +1,10 @@
 <template>
-  <section id="gallery" class="pt-5 pb-5 mb-5">
+  <section id="gallery" class="pt-5 pb-5 mb-2 mb-sm-5">
     <h1 class="p-3 text-center">Galerie</h1>
     <div class="container text-center galerry-container ">
       <div class="row gallery-tabs align-items-center">
         <div class="col p-0 mt-3">
-          <ul id="gallery-start" class="nav nav-tabs justify-content-md-center ps-4 ps-md-0">
+          <ul id="gallery-start" class="nav nav-tabs justify-content-md-center pb-2 pb-md-0 px-3 px-md-0">
             <li class="nav-item">
               <button @click="setCategory(this.categoryTypeAll)" class="nav-link"
                 :class="{ 'active': this.category === this.categoryTypeAll }" type="submit">Vše</button>
