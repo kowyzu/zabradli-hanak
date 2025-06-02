@@ -39,8 +39,7 @@
   </form>
 
   <div class="toast-container position-fixed bottom-0 end-0 p-3">
-    <div id="success-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" ref="toast"
-      data-bs-autohide="false">
+    <div id="success-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" ref="toast">
       <div class="toast-header" :class="{ 'bg-danger-subtle': error, 'bg-success-subtle': !error }">
         <strong v-if="error" class="me-auto toast-error text-danger"><i class="fa-solid fa-triangle-exclamation"></i>
           Chyba</strong>
