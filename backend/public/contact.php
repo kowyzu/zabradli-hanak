@@ -3,10 +3,10 @@
 date_default_timezone_set('Europe/Prague');
 
 // Include Composer's autoloader
-require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 // Environmental variables
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
 
 /////////////////
