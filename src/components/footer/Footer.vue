@@ -1,5 +1,5 @@
 <template>
-  <footer id="footer" class="mt-sm-5 py-sm-5">
+  <footer id="footer" class="mt-sm-5 pt-sm-5">
     <div class="container">
       <div class="row">
         <div class="col-xl-5 pt-5 pb-lg-5 pb-0">
@@ -26,6 +26,11 @@
               </p>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-start text-md-end created-by-text">
+          <p>Vytvořil <a href="https://w3design.cz" target="_blank">W3Design</a></p>
         </div>
       </div>
     </div>

@@ -537,6 +537,10 @@ color: $color-text;
 #footer {
   background-color: $color-bg-primary;
   scroll-margin-top: $scroll-margin-bigger;
+
+  .created-by-text {
+    font-size: $font-size-smaller;
+  }
 }
 
 @include media-breakpoint-up(xl) {
