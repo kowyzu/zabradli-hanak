@@ -30,7 +30,7 @@
       </div>
       <div class="row">
         <div class="col text-start text-md-end created-by-text">
-          <p>Vytvořil <a href="https://w3design.cz" target="_blank">W3Design</a></p>
+          <p>Vytvořil <a href="https://w3design.cz" target="_blank">w3design</a></p>
         </div>
       </div>
     </div>
